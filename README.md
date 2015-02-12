@@ -1,3 +1,4 @@
 # WhiteWhale
 
-Ruby On Rails Application 
+Ruby On Rails Application
+:whale::whale::whale::whale::whale::whale::whale:
