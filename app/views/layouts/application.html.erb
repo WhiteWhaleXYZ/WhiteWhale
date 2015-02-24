@@ -55,11 +55,11 @@
             <a class="navbar-brand" href="#">Bootstrap 3</a>
           </div>
           <div class="col-md-5 col-md-offset-1">
-            <div id="row custom-search-input clearfix">
+            <div id="row header-search clearfix">
               <div class="input-group col-md-12">
-                <input type="text" class="  search-query form-control" placeholder="Search Items, Collections, Sets" />
+                <input id="header-search-input" name="header-search-input" type="text" class="search-query form-control" placeholder="Search Items, Collections, Sets" />
                 <span class="input-group-btn">
-                    <button class="btn" type="button">
+                    <button id="header-search-submit" name="header-search-submit" class="btn" type="button">
                       <span class=" glyphicon glyphicon-search"></span>
                     </button>
                 </span>
@@ -154,10 +154,10 @@
     <div id="registration" class="container center text-center col-md-12">
       <form class="form-inline" role="form">
         <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Enter email">
+          <input type="email" class="form-control" id="reg-email" name="reg-email" placeholder="Enter email">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+          <input type="password" class="form-control" id="reg-pwd" name="reg-pwd" placeholder="Enter password">
         </div>
         <button id="register-submit" name="register-submit" type="submit" class="btn btn-default">Submit</button>
       </form>
@@ -186,20 +186,20 @@
   </div><!-- /.container -->
 
   <!-- Modal Login -->
-  <div class="modal fade" id="Login-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="Login-Modal" tabindex="-1" role="dialog" aria-labelledby="Login-Modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Login Form</h4>
+          <h4 class="modal-title" id="Login-Modal-Label">Login Form</h4>
         </div>
         <div class="modal-body">
           <form class="form-inline" role="form">
             <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="Enter email">
+              <input type="email" class="form-control" id="login-email" name="login-email" placeholder="Enter email">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="password" class="form-control" id="login-pwd" name="login-pwd" placeholder="Enter password">
             </div>
             <button type="submit" class="btn btn-default">Login</button>
           </form>
