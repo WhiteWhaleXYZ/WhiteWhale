@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>index.html.erb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,255); font-weight: bold; }
+.s1 { color: rgb(0,0,0); font-weight: bold; }
+.s2 { color: rgb(102,14,122); font-weight: bold; font-style: italic; }
+.s3 { }
+.s4 { }
+.s5 { color: rgb(0,0,128); font-weight: bold; }
+.s6 { color: rgb(0,0,255); font-weight: bold; }
+.s7 { color: rgb(0,128,0); font-weight: bold; }
+.s8 { color: rgb(0,128,0); font-weight: bold; }
+.s9 { color: rgb(102,14,122); font-weight: bold; }
+.s10 { color: rgb(0,0,255); font-weight: bold; font-style: italic; }
+.s11 { color: rgb(0,0,128); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+index.html.erb</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">&lt;%- </span><span class="s1">model_class </span><span class="s0">= </span><span class="s2">Article </span><span class="s0">-%&gt;</span><span class="s3"> 
+</span><span class="s4">&lt;</span><span class="s5">div </span><span class="s6">class=</span><span class="s7">&quot;page-header&quot;</span><span class="s4">&gt;</span><span class="s3"> 
+  </span><span class="s4">&lt;</span><span class="s5">h1</span><span class="s4">&gt;</span><span class="s5">&lt;%=</span><span class="s1">t </span><span class="s8">'.title'</span><span class="s0">, </span><span class="s9">:default </span><span class="s10">=&gt; </span><span class="s1">model_class</span><span class="s0">.</span><span class="s1">model_name</span><span class="s0">.</span><span class="s1">human</span><span class="s0">.</span><span class="s1">pluralize</span><span class="s0">.</span><span class="s1">titleize </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">h1</span><span class="s4">&gt;</span><span class="s3"> 
+</span><span class="s4">&lt;/</span><span class="s5">div</span><span class="s4">&gt;</span><span class="s3"> 
+</span><span class="s4">&lt;</span><span class="s5">table </span><span class="s6">class=</span><span class="s7">&quot;table table-striped&quot;</span><span class="s4">&gt;</span><span class="s3"> 
+  </span><span class="s4">&lt;</span><span class="s5">thead</span><span class="s4">&gt;</span><span class="s3"> 
+    </span><span class="s4">&lt;</span><span class="s5">tr</span><span class="s4">&gt;</span><span class="s3"> 
+      </span><span class="s4">&lt;</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s5">&lt;%= </span><span class="s1">model_class</span><span class="s0">.</span><span class="s1">human_attribute_name</span><span class="s0">(</span><span class="s9">:id</span><span class="s0">) </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s3"> 
+      </span><span class="s4">&lt;</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s5">&lt;%= </span><span class="s1">model_class</span><span class="s0">.</span><span class="s1">human_attribute_name</span><span class="s0">(</span><span class="s9">:title</span><span class="s0">) </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s3"> 
+      </span><span class="s4">&lt;</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s5">&lt;%= </span><span class="s1">model_class</span><span class="s0">.</span><span class="s1">human_attribute_name</span><span class="s0">(</span><span class="s9">:body</span><span class="s0">) </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s3"> 
+      </span><span class="s4">&lt;</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s5">&lt;%= </span><span class="s1">model_class</span><span class="s0">.</span><span class="s1">human_attribute_name</span><span class="s0">(</span><span class="s9">:created_at</span><span class="s0">) </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s3"> 
+      </span><span class="s4">&lt;</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s5">&lt;%=</span><span class="s1">t </span><span class="s8">'.actions'</span><span class="s0">, </span><span class="s9">:default </span><span class="s10">=&gt; </span><span class="s1">t</span><span class="s0">(</span><span class="s8">&quot;helpers.actions&quot;</span><span class="s0">) </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">th</span><span class="s4">&gt;</span><span class="s3"> 
+    </span><span class="s4">&lt;/</span><span class="s5">tr</span><span class="s4">&gt;</span><span class="s3"> 
+  </span><span class="s4">&lt;/</span><span class="s5">thead</span><span class="s4">&gt;</span><span class="s3"> 
+  </span><span class="s4">&lt;</span><span class="s5">tbody</span><span class="s4">&gt;</span><span class="s3"> 
+    </span><span class="s0">&lt;% </span><span class="s9">@articles</span><span class="s0">.</span><span class="s1">each </span><span class="s11">do </span><span class="s0">|</span><span class="s1">article</span><span class="s0">| %&gt;</span><span class="s3"> 
+      </span><span class="s4">&lt;</span><span class="s5">tr</span><span class="s4">&gt;</span><span class="s3"> 
+        </span><span class="s4">&lt;</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s5">&lt;%= </span><span class="s1">link_to article</span><span class="s0">.</span><span class="s1">id</span><span class="s0">, </span><span class="s1">article_path</span><span class="s0">(</span><span class="s1">article</span><span class="s0">) </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s3"> 
+        </span><span class="s4">&lt;</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s5">&lt;%= </span><span class="s1">article</span><span class="s0">.</span><span class="s1">title </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s3"> 
+        </span><span class="s4">&lt;</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s5">&lt;%= </span><span class="s1">article</span><span class="s0">.</span><span class="s1">body </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s3"> 
+        </span><span class="s4">&lt;</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s5">&lt;%=</span><span class="s1">l article</span><span class="s0">.</span><span class="s1">created_at </span><span class="s5">%&gt;</span><span class="s4">&lt;/</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s3"> 
+        </span><span class="s4">&lt;</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s3"> 
+          </span><span class="s5">&lt;%= </span><span class="s1">link_to t</span><span class="s0">(</span><span class="s8">'.edit'</span><span class="s0">, </span><span class="s9">:default </span><span class="s10">=&gt; </span><span class="s1">t</span><span class="s0">(</span><span class="s8">&quot;helpers.links.edit&quot;</span><span class="s0">)), 
+                      </span><span class="s1">edit_article_path</span><span class="s0">(</span><span class="s1">article</span><span class="s0">), </span><span class="s9">:class </span><span class="s10">=&gt; </span><span class="s8">'btn btn-default btn-xs' </span><span class="s5">%&gt;</span><span class="s3"> 
+          </span><span class="s5">&lt;%= </span><span class="s1">link_to t</span><span class="s0">(</span><span class="s8">'.destroy'</span><span class="s0">, </span><span class="s9">:default </span><span class="s10">=&gt; </span><span class="s1">t</span><span class="s0">(</span><span class="s8">&quot;helpers.links.destroy&quot;</span><span class="s0">)), 
+                      </span><span class="s1">article_path</span><span class="s0">(</span><span class="s1">article</span><span class="s0">), 
+                      </span><span class="s9">:method </span><span class="s10">=&gt; </span><span class="s9">:delete</span><span class="s0">, 
+                      </span><span class="s9">:data </span><span class="s10">=&gt; </span><span class="s0">{ </span><span class="s9">:confirm </span><span class="s10">=&gt; </span><span class="s1">t</span><span class="s0">(</span><span class="s8">'.confirm'</span><span class="s0">, </span><span class="s9">:default </span><span class="s10">=&gt; </span><span class="s1">t</span><span class="s0">(</span><span class="s8">&quot;helpers.links.confirm&quot;</span><span class="s0">, </span><span class="s9">:default </span><span class="s10">=&gt; </span><span class="s8">'Are you sure?'</span><span class="s0">)) }, 
+                      </span><span class="s9">:class </span><span class="s10">=&gt; </span><span class="s8">'btn btn-xs btn-danger' </span><span class="s5">%&gt;</span><span class="s3"> 
+        </span><span class="s4">&lt;/</span><span class="s5">td</span><span class="s4">&gt;</span><span class="s3"> 
+      </span><span class="s4">&lt;/</span><span class="s5">tr</span><span class="s4">&gt;</span><span class="s3"> 
+    </span><span class="s0">&lt;% </span><span class="s11">end </span><span class="s0">%&gt;</span><span class="s3"> 
+  </span><span class="s4">&lt;/</span><span class="s5">tbody</span><span class="s4">&gt;</span><span class="s3"> 
+</span><span class="s4">&lt;/</span><span class="s5">table</span><span class="s4">&gt;</span><span class="s3"> 
+ 
+</span><span class="s5">&lt;%= </span><span class="s1">link_to t</span><span class="s0">(</span><span class="s8">'.new'</span><span class="s0">, </span><span class="s9">:default </span><span class="s10">=&gt; </span><span class="s1">t</span><span class="s0">(</span><span class="s8">&quot;helpers.links.new&quot;</span><span class="s0">)), 
+            </span><span class="s1">new_article_path</span><span class="s0">, 
+            </span><span class="s9">:class </span><span class="s10">=&gt; </span><span class="s8">'btn btn-primary' </span><span class="s5">%&gt;</span><span class="s3"> 
+</span></pre>
+</body>
+</html>
