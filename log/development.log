@@ -15107,3 +15107,27 @@ Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 
 
 
 Started GET "/assets/bootstrap-91416daf9f05a6e9ca13ef54aa8dcb39.js?body=1" for ::1 at 2015-02-25 16:20:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordDigestToUsers (20150225212908)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150225212908"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('mhartl@example.com') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Michael Hartl"], ["email", "mhartl@example.com"], ["password_digest", "$2a$10$iGw0I9d6U4lLmefD/GQw0uExywjqi2MX/.1u/WJUIsnfxrEZYrg0."], ["created_at", "2015-02-25 21:47:20.463020"], ["updated_at", "2015-02-25 21:47:20.463020"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "mhartl@example.com"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "mhartl@example.com"]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "mhartl@example.com"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "mhartl@example.com"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "mhartl@example.com"]]
