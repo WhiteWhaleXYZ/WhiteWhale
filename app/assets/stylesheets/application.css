@@ -19,7 +19,8 @@
 -------------------------------------------------- */
 body {
     padding-bottom: 40px;
-    color: #5a5a5a;
+    color: #5E9AC7;
+    background-color: #F4F4F4;
 }
 
 /* GENERAL GLOBAL
@@ -237,4 +238,16 @@ body {
         line-height: 1.4;
     }
 
+}
+
+
+
+footer {
+    text-align: center;
+
+}
+
+navbar-brand
+{
+    font-size: 100px;
 }

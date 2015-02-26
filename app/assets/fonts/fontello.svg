@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="collection" unicode="&#xe800;" d="m1146-132h-630v963h630v-963z m-40 918h-549v-879h549v879z m-476-259v93h42v65h39v-46h37v-112h179v128h31v41h51v-169h68v225h-487v-225h40z m87-296v129h44v-129h36v165h36v-13h28v13h45v-165h171v258h-487v-258h127z m-88-293v164h46v-49h37v-115h188v115h35v77h42v-55h41v-137h59v254h-487v-254h39z" horiz-adv-x="1714" />
+<glyph glyph-name="test" unicode="&#xe801;" d="m1349 613c0 0-66 39-110 140 0 0-16 32-7 61 0 0-7-79 141-110 23-5 59-53 61-71 9 21 50 55 82 65 31-5 153 31 173 80-7-47-33-144-231-217-23-14-47-100-68-125-25-29-151-268-764-238-216 30-479 33-588 298-32 85-14 242 151 254 165 12 573-175 693-209 120-35 460-118 507-13 0 0 31 47-40 85z m-905-391c2-54 13-124 56-130 0 0 40-65 47-43 0 0 34-52 49-14 0 0 31 1 35 47 0 0 12 34-34 119" horiz-adv-x="1714" />
+<glyph glyph-name="trending" unicode="&#xe802;" d="m1131 490l-311-313-242 242-242-242-68 68 310 310 241-241 244 244 68-68z m29 262l-231-62 169-169 169-169 62 231 62 230-231-61z" horiz-adv-x="1714" />
+<glyph glyph-name="set" unicode="&#xe803;" d="m944 767l-373-136v-601l-55-20v665l428 156v-64z m100-7l-428-156v-665l54 20v601l374 136v64z m102-71l-428-156v-665l428 153v668z" horiz-adv-x="1714" />
+</font>
+</defs>
+</svg>
