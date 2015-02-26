@@ -20,3 +20,4 @@ config/database.yml
 !/log/.keep
 /tmp
 /tmp/**
+/tmp/cache/**
