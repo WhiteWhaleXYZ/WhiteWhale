@@ -21,3 +21,5 @@ config/database.yml
 /tmp
 /tmp/**
 /tmp/cache/**
+/.idea/**
+/.idea/

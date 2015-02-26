@@ -111,7 +111,7 @@ body {
     top: 0;
     left: 0;
     min-height: 400px;
-    widows: 100%;
+    width: 100%;
 }
 
 /* Fixed black box showing up*/
@@ -250,4 +250,12 @@ footer {
 navbar-brand
 {
     font-size: 100px;
+}
+
+#social-icons img{
+    height: 50px;
+}
+
+.icon-test{
+    color: white;
 }
