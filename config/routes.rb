@@ -1,5 +1,29 @@
 Rails.application.routes.draw do
 
+  get 'user_pages/collections'
+
+  get 'user_pages/sets'
+
+  get 'user_pages/profile'
+
+  get 'user_pages/followlist'
+
+  get 'user_pages/wishlist'
+
+  get 'user_pages/rank'
+
+  get 'non_user_pages/home'
+
+  get 'non_user_pages/privacy'
+
+  get 'non_user_pages/terms'
+
+  get 'non_user_pages/advertise'
+
+  get 'non_user_pages/contact'
+
+  get 'non_user_pages/support'
+
   get 'users/new'
 
   resources :articles
