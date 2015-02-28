@@ -54,7 +54,7 @@
         <a class="navbar-brand" href="#"> <p class="icon-test" style="font-size:65px"> </p> </a>
       </div>
       <div class="col-md-5 col-md-offset-1">
-        <div id="row header-search clearfix">
+        <div id="header-search" class="row clearfix">
           <div class="input-group col-md-12">
             <input id="header-search-input" name="header-search-input" type="text" class="search-query form-control" placeholder="Search Items, Collections, Sets" />
                 <span class="input-group-btn">
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="row navbar-collapse collapse clearfix">
-          <ul class="nav navbar-nav">
+          <ul class="nav nav-justified">
             <li class="active"><a href="#">SETS</a></li>
             <li><a href="#" target="ext">COLLECTIONS</a></li>
             <li><a href="#">TRENDING</a></li>
@@ -73,8 +73,12 @@
         </div>
       </div>
       <div class="col-md-2 col-md-offset-1 pull-right text-right">
-        <a id="top-right-login" href="#" data-toggle="modal" data-target="#Login-Modal">LOGIN</a>
-
+        <div class="col-md-6">
+          <a id="top-right-login" href="#" data-toggle="modal" data-target="#Login-Modal">LOGIN</a>
+        </div>
+        <div class="col-md-6">
+          <a id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal">SIGNUP</a>
+        </div>
 
         <!--<div id="top-right" class="row">
           <div class="col-md-6"><a href="#">ICON1</a></div>
@@ -150,7 +154,7 @@
 <div id="main-body" class="container">
 
   <!-- Registration Form -->
-  <div id="registration" class="container center text-center col-md-12">
+ <!-- <div id="registration" class="container center text-center col-md-12">
     <form class="form-inline" role="form">
       <div class="form-group">
         <input type="email" class="form-control" id="reg-email" name="reg-email" placeholder="Enter email">
@@ -160,7 +164,8 @@
       </div>
       <button id="register-submit" name="register-submit" type="submit" class="btn btn-default">Submit</button>
     </form>
-  </div>
+  </div>-->
+
   <!-- Menu below Registration Form -->
   <div id="post-menu-icons" class="menu-icons row center text-center col-md-10">
     <div class="col-md-12">
@@ -205,6 +210,35 @@
       </div>
       <div class="modal-footer">
         <button id="login-submit" name="login-submit" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Register -->
+<div class="modal fade" id="Signup-Modal" tabindex="-1" role="dialog" aria-labelledby="Signup-Modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="Signup-Modal-Label">Signup Form</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <input type="email" class="form-control" id="signup-email" name="signup-email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="signup-pwd" name="signup-pwd" placeholder="Enter password">
+          </div>
+          <div class="form-group">
+            <input type="confirm-password" class="form-control" id="signup-pwd-confirm" name="signup-pwd-confirm" placeholder="Confirm password">
+          </div>
+          <button type="submit" class="btn btn-default">Signup</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="signup-submit" name="signup-submit" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

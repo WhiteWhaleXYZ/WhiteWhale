@@ -137,6 +137,9 @@ body {
 /* Make Slider-Nav Ions Big*/
 .carousel-control .icon-next:before, .carousel-control .icon-prev:before {
     font-size: 125px;
+    width: auto;
+    line-height: 40%;
+    l
 }
 
 /* Bring navigation upfront*/
@@ -258,4 +261,9 @@ navbar-brand
 
 .icon-test{
     color: white;
+}
+
+.navbar-inverse {
+    background-color: rgba(255,255,255,.5);
+    border-color: #080808;
 }
