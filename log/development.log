@@ -15325,3 +15325,99 @@ ActionController::RoutingError (No route matches [GET] "/users"):
   Rendered /Users/bjorn/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /Users/bjorn/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
   Rendered /Users/bjorn/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (92.6ms)
+
+
+Started GET "/?login-email=adfasdf&login-pwd=asdfadsf" for ::1 at 2015-02-28 19:09:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"login-email"=>"adfasdf", "login-pwd"=>"asdfadsf"}
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 514ms (Views: 499.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/non_user_pages-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides-c898afd34e65cf96cc891719e5c6da70.css?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/application-edfdc138eacb726a2334c3f0256a098b.css?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/user_pages-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/scaffolds-4c6a1ed062da93f60e47c4c6fc6bae22.css?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert-4fa131fff2ae05a1d89df662cd4a8531.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy-f3a0e91892e9edb7ccced4ed84ff23ec.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip-1727c885f6618bb619e6a29ef0496d11.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover-c19ae92999a32fa658ffe5d5cc13d195.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition-49c071d4d736acca69daed5bd6c4fdbd.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal-d403efa7333c333fdeecc5daa727c437.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown-89b3696cc302eaf377aca640fae08632.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab-fab339701c02e2cb7d02570dd26fcf10.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button-dcd83af4b8aa46a9026dec4ea360a003.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse-cfd6f6e5cff9c41e78cc52464a71358b.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix-745457a96802e8f61e15a7622b54b68f.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/non_user_pages-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/application-2d6f51438ee5abc17f9a32ccf7bc1d3f.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel-ac6115504ba6a31f58406c5978a6aa20.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/twitter/bootstrap-4a7c8463ef111cbe52eec5efe89f8319.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/bootstrap-91416daf9f05a6e9ca13ef54aa8dcb39.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500
+
+
+Started GET "/assets/user_pages-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-28 19:09:43 -0500

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'non_user_pages/404'
+
   get 'user_pages/collections'
 
   get 'user_pages/sets'
