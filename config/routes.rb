@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get 'users/new'
 
   root  :to => 'non_user_pages#home'
+  
+
+
   #resources :articles
   #root :to => "articles#index"
   get 'signup'  => 'users#new'
