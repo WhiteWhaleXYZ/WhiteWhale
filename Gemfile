@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "rb-readline"
 gem "execjs"
 gem "therubyracer"
 gem "less-rails"
