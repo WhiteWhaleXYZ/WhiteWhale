@@ -17,6 +17,6 @@ class NonUserPagesController < ApplicationController
   def support
   end
 
-  def 404
+  def not_found
   end
 end

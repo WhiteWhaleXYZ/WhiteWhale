@@ -28,8 +28,9 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  resources :articles
-  root :to => "articles#index"
+  root  :to => 'non_user_pages#home'
+  #resources :articles
+  #root :to => "articles#index"
   get 'signup'  => 'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
