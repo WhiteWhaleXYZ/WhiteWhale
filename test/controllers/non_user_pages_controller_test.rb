@@ -32,7 +32,7 @@ class NonUserPagesControllerTest < ActionController::TestCase
   end
 
   test "should get 404" do
-    get :404
+    get :"404"
     assert_response :success
   end
 
