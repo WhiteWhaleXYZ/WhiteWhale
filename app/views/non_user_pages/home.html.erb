@@ -224,18 +224,27 @@
         <h4 class="modal-title" id="Signup-Modal-Label">Signup Form</h4>
       </div>
       <div class="modal-body">
-        <form class="form-inline" role="form">
-          <div class="form-group">
-            <input type="email" class="form-control" id="signup-email" name="signup-email" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" id="signup-pwd" name="signup-pwd" placeholder="Enter password">
-          </div>
-          <div class="form-group">
-            <input type="confirm-password" class="form-control" id="signup-pwd-confirm" name="signup-pwd-confirm" placeholder="Confirm password">
-          </div>
-          <button type="submit" class="btn btn-default">Signup</button>
-        </form>
+
+      <!-- FORM-->
+        <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="BJYHGjFHWEl/EOPqclt0STjToeZejA4F6PWqq6nAjyzVcT19auR51aKmd6w9L6EWaPb4CtWYAINcrDERy2B3jw==" />
+      
+
+      <label for="user_name">Name</label>
+      <input class="form-control" type="text" name="user[name]" id="user_name" />
+
+      <label for="user_email">Email</label>
+      <input class="form-control" type="email" name="user[email]" id="user_email" />
+
+      <label for="user_password">Password</label>
+      <input class="form-control" type="password" name="user[password]" id="user_password" />
+
+      <label for="user_password_confirmation">Confirmation</label>
+      <input class="form-control" type="password" name="user[password_confirmation]" id="user_password_confirmation" />
+
+      <input type="submit" name="commit" value="Create my account" class="btn btn-primary" />
+      </form>
+        <!-- FORM -->
+
       </div>
       <div class="modal-footer">
         <button id="signup-submit" name="signup-submit" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
