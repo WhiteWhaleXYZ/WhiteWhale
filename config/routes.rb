@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  root  :to => 'non_user_pages#home'
+
+  get 'sessions/new'
+
   get 'non_user_pages/404'
 
   get 'user_pages/collections'
@@ -28,7 +32,11 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  root  :to => 'non_user_pages#home'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
+  
   
 
 
