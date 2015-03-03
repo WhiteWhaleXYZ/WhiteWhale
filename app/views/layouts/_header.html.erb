@@ -30,7 +30,12 @@
       </div>
       <div class="col-md-2 col-md-offset-1 pull-right text-right">
         <div class="col-md-6">
-          <a id="top-right-login" href="#" data-toggle="modal" data-target="#Login-Modal">LOGIN</a>
+          <% if logged_in? %>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+                
+        <% else %>
+          <a id="top-right-login" href="#" data-toggle="modal" data-target="#Login-Modal">LOGIN
+        <% end %></a>
         </div>
         <div class="col-md-6">
           <a id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal">SIGNUP</a>
