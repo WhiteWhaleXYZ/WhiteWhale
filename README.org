@@ -11,5 +11,3 @@ flow of code from Dev --->Test ---> Prod , to keep clean code only in Production
 [git branching](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 [markdown guide for wiki] (https://guides.github.com/features/mastering-markdown/)
 [emoji:whale:](http://www.emoji-cheat-sheet.com/)
-
-andrew baumann is 2cool
