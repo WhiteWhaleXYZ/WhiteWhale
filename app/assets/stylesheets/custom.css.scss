@@ -71,3 +71,15 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+.push-down {
+  padding-top: 100px;
+}
+
+#profile-photo img, #set-photo img, #pod-preview img, #view-set-results img, .suggestions img, #collection-item img, #sets-item img{
+  width: 100%;
+  border-radius: 50%;
+}
+#profile-container{
+  background-image: url("/img/placeholderbg.jpg");
+}
