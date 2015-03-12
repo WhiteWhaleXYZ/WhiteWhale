@@ -46,6 +46,9 @@ $ git pull
 $ git push 
 
 #+END_SRC:
+* Bundle commands 
+  - $ bundle exec rake db:migrate RAILS_ENV=development 
+
 * Run App Server :
 #+BEGIN_SRC:
 $ bundle install 
