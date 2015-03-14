@@ -1,0 +1,40 @@
+#main-nav.navbar-wrapper
+  .navbar.navbar-inverse.navbar-static-top.navbar-fixed-top.container-fluid
+    .container
+      .navbar-header.col-md-3
+        a.navbar-toggle[data-toggle="collapse" data-target=".navbar-collapse"]
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand[href="/"]
+
+        p.icon-test[style="font-size:65px"]
+
+      .col-md-5.col-md-offset-1
+        #header-search.row.clearfix
+          .input-group.col-md-12
+            input#header-search-input.search-query.form-control[name="header-search-input" type="text" placeholder="Search Items, Collections, Sets"]
+            span.input-group-btn
+              button#header-search-submit.btn[name="header-search-submit" type="button"]
+                span.glyphicon.glyphicon-search
+        .row.navbar-collapse.collapse.clearfix
+          ul.nav.nav-justified
+            li.active
+              a[href="#"]
+                | SETS
+            li
+              a[href="#" target="ext"]
+                | COLLECTIONS
+            li
+              a[href="#"]
+                | TRENDING
+      .col-md-2.col-md-offset-1.pull-right.text-right
+        .col-md-6
+          - if logged_in?
+            = link_to "Log out", logout_path, method: "delete"
+          - else
+            a#top-right-login[href="#" data-toggle="modal" data-target="#Login-Modal"]
+              | LOGIN 
+        .col-md-6
+          a#top-right-signup[href="#" data-toggle="modal" data-target="#Signup-Modal"]
+            | SIGNUP

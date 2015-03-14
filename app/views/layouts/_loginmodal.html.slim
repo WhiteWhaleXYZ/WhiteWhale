@@ -1,0 +1,57 @@
+#Login-Modal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="Login-Modal" aria-hidden="true"]
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close[type="button" data-dismiss="modal" aria-label="Close"]
+          span[aria-hidden="true"]
+            | ×
+        h4#Login-Modal-Label.modal-title
+          | Login Form
+      .modal-body
+        form[accept-charset="UTF-8" action="/login" method="post"]
+          input[name="utf8" type="hidden" value="&#x2713;"]
+          input[name="authenticity_token" type="hidden" value="NNb6+J/j46LcrgYUC60wQ2titMuJQ5lLqyAbnbAUkdo="]
+          label[for="session_email"]
+            | Email
+          input#session_email.form-control[name="session[email]" type="text"]
+          label[for="session_password"]
+            | Password
+          input#session_password[name="session[password]" type="password"]
+          input.btn.btn-primary[name="commit" type="submit" value="Log in"]
+          label.checkbox.inline[for="session_remember_me" type="remember"]
+            input[name="session[remember_me]" type="hidden" value="0"]
+            input#session_remember_me[type="checkbox" value="1" name="session[remember_me]"]
+            span
+              | Remember me on this computer
+      .modal-footer
+        button#login-submit.btn.btn-default[name="login-submit" type="button" data-dismiss="modal"]
+          | Close
+#Signup-Modal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="Signup-Modal" aria-hidden="true"]
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close[type="button" data-dismiss="modal" aria-label="Close"]
+          span[aria-hidden="true"]
+            | ×
+        h4#Signup-Modal-Label.modal-title
+          | Signup Form
+      .modal-body
+        form#new_user.new_user[action="/users" accept-charset="UTF-8" method="post"]
+          input[name="utf8" type="hidden" value="&#x2713;"]
+          input[type="hidden" name="authenticity_token" value="BJYHGjFHWEl/EOPqclt0STjToeZejA4F6PWqq6nAjyzVcT19auR51aKmd6w9L6EWaPb4CtWYAINcrDERy2B3jw=="]
+          label[for="user_name"]
+            | Name
+          input#user_name.form-control[type="text" name="user[name]"]
+          label[for="user_email"]
+            | Email
+          input#user_email.form-control[type="email" name="user[email]"]
+          label[for="user_password"]
+            | Password
+          input#user_password.form-control[type="password" name="user[password]"]
+          label[for="user_password_confirmation"]
+            | Confirmation
+          input#user_password_confirmation.form-control[type="password" name="user[password_confirmation]"]
+          input.btn.btn-primary[type="submit" name="commit" value="Create my account"]
+      .modal-footer
+        button#signup-submit.btn.btn-default[name="signup-submit" type="button" data-dismiss="modal"]
+          | Close

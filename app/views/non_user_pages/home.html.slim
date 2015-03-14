@@ -1,0 +1,61 @@
+#myCarousel.carousel.slide
+  ol.carousel-indicators
+    li.active[data-target="#myCarousel" data-slide-to="0"]
+    li[data-target="#myCarousel" data-slide-to="1"]
+    li[data-target="#myCarousel" data-slide-to="2"]
+  #home-slider.carousel-inner
+    .item.active
+      img.img-responsive[src="http://i.imgur.com/M6297Wh.png" style="width:100%"]
+      .container
+        .carousel-caption
+          h1
+            | White Whale
+          p
+            | Explore. Interact. Trade Items & Collect
+          p
+            a.btn.btn-lg.btn-primary[href="http://getbootstrap.com"]
+              | Learn More
+    .item
+      img.img-responsive[src="http://th04.deviantart.net/fs9/PRE/i/2006/152/2/c/yugioh_cards_in_my_deck_10_by_inuyasha666hiei.jpg " style="..."]
+      .container
+        .carousel-caption
+          h1
+            | See what others are collecting
+          p
+            | These featured sets and collections are the hottest things right now.
+          p
+            a.btn.btn-large.btn-primary[href="#"]
+              | Whats Trending?
+    .item
+      img.img-responsive[src="http://th06.deviantart.net/fs71/PRE/i/2013/230/b/5/all_poke_balls_by_seancantrell-d5wl230.png" style="..."]
+      .container
+        .carousel-caption
+          h1
+            | Show off your sets
+          p
+            | Share and show off that collection of yours to the world!
+          p
+            a.btn.btn-large.btn-primary[href="#"]
+              | Signup Now
+  a.left.carousel-control[href="#myCarousel" data-slide="prev"]
+    span.icon-prev
+  a.right.carousel-control[href="#myCarousel" data-slide="next"]
+    span.icon-next
+#main-body.container
+  #post-menu-icons.menu-icons.row.center.text-center.col-md-10
+    .col-md-12
+      .col-md-4
+        img.img-circle[src="http://i.imgur.com/zdbDv0L.png" width="140px"]
+        h2
+          | SETS
+      .col-md-4
+        img.img-circle[src="http://i.imgur.com/rRxFAfT.png" width="140px"]
+        h2
+          | COLLECTIONS
+      .col-md-4
+        img.img-circle[src="http://i.imgur.com/zemJmEe.png" width="140px"]
+        h2
+          | TRENDING
+  #home-description.row.center.text-center.col-md-8
+    p.
+      | Set up collections — Interact with a community, show off your sets, trade with others, and achieve your goals
