@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315192332) do
+ActiveRecord::Schema.define(version: 20150315195634) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -23,8 +23,12 @@ ActiveRecord::Schema.define(version: 20150315192332) do
   create_table "pods", force: :cascade do |t|
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "pods", ["user_id"], name: "index_pods_on_user_id"
@@ -44,8 +48,12 @@ ActiveRecord::Schema.define(version: 20150315192332) do
     t.text     "name"
     t.text     "description"
     t.integer  "pod_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "whales", ["pod_id"], name: "index_whales_on_pod_id"
