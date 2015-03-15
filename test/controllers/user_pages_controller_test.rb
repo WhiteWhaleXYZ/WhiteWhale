@@ -11,10 +11,6 @@ class UserPagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get profile" do
-    get :profile
-    assert_response :success
-  end
 
   test "should get followlist" do
     get :followlist
