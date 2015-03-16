@@ -23,6 +23,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #server
 gem 'puma'
 
+#paperclip
+gem "paperclip", "~> 4.2"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -37,6 +40,6 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring', '~> 1.3.2'
-  gem "paperclip", "~> 4.2"
+  
 end
 
