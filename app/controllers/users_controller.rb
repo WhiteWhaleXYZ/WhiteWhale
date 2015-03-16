@@ -14,7 +14,6 @@ class UsersController < ApplicationController
       log_in @user
       flash[:success] = "Welcome to White Whale!"
       redirect_to @user
-      # Handle a successful save.
     else
       render 'new'
     end
@@ -27,7 +26,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      # Handle a successful update.
+      flash[:success] = "Profile updated"
+      redirect_to @user
     else
       render 'edit'
     end
@@ -37,6 +37,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :photo)
     end
 end
