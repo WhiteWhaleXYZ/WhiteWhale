@@ -37,11 +37,11 @@
                 <%= link_to "Settings", edit_user_path(current_user) %>
                 
         <% else %>
-          <a id="top-right-login" href="#" data-toggle="modal" data-target="#Login-Modal">LOGIN
-        </a>
+          <button id="top-right-login" data-toggle="modal" data-target="#Login-Modal">LOGIN
+        </button>
         </div>
         <div class="col-md-6">
-          <a id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal">SIGNUP</a>
+          <button id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal">SIGNUP</button>
         </div>
         <% end %>
         <!--Once user is logged in to display-->

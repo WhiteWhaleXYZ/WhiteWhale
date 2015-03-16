@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap_and_overrides
  *= require_tree .
  *= require_self
  */
@@ -18,9 +19,10 @@
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
 body {
-    padding-bottom: 40px;
-    color: #5E9AC7;
-    background-color: #F4F4F4;
+    background-image: url("/assets/wwmainbg.jpg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    padding-bottom: 60px;
 }
 
 /* GENERAL GLOBAL
@@ -28,7 +30,7 @@ body {
 .center{
     float:none;
     margin:0 auto;
-    padding:30px;
+    /*padding:30px;*/
 }
 
 
@@ -42,6 +44,22 @@ body {
     left: 0;
     right: 0;
     z-index: 10px;
+}
+/* Bring navigation upfront*/
+#main-nav {
+    z-index: 100;
+}
+
+#main-nav .navbar{
+    padding-top: 15px;
+}
+.navbar-brand {
+    font-size: 100px;
+}
+.navbar-inverse {
+    /*background-color: rgba(0,0,0,0.4);*/
+    background-color: transparent;
+    border: transparent;
 }
 
 /* Search Bar */
@@ -113,7 +131,6 @@ body {
     min-height: 400px;
     width: 100%;
 }
-
 /* Fixed black box showing up*/
 .carousel-control:hover, .carousel-control:focus {
     outline: 0;
@@ -141,15 +158,9 @@ body {
     line-height: 40%;
    
 }
-
-/* Bring navigation upfront*/
-#main-nav {
-    z-index: 100px;
+#home-slider{
+    height: 500px;
 }
-#main-nav .navbar{
-    padding-top: 15px;
-}
-
 /* Fix for icons not ce*/
 .carousel-control .icon-next:before {
     padding-left: 10%;
@@ -212,6 +223,30 @@ body {
 }
 
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+input {
+    height: auto !important;
+}
+
+.push-down {
+    padding-top: 100px;
+}
+
+#profile-photo img, #set-photo img, #pod-preview img, #view-set-results img, .suggestions img, #collection-item img, #sets-item img{
+    width: 100%;
+    border-radius: 50%;
+}
+#profile-container{
+    background-image: url("/img/placeholderbg.jpg");
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -240,22 +275,10 @@ body {
         font-size: 21px;
         line-height: 1.4;
     }
-
 }
 
 
-
-footer {
-    text-align: center;
-
-}
-
-navbar-brand
-{
-    font-size: 100px;
-}
-
-#social-icons img{
+#social-icons img {
     height: 50px;
 }
 
@@ -263,10 +286,6 @@ navbar-brand
     color: white;
 }
 
-.navbar-inverse {
-    background-color: rgba(255,255,255,.5);
-    border-color: #080808;
-}
 
 
 .checkbox {
@@ -282,3 +301,20 @@ navbar-brand
   width: auto;
   margin-left: 0;
   }
+
+#myCarousel{
+    height: auto;
+}
+
+#myCarousel .overlay {
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    position: absolute;
+    z-index: 1;
+    pointer-events:none;
+}
+.carousel-control{
+    z-index: 1;
+}
