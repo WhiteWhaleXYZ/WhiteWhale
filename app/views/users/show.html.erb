@@ -4,7 +4,11 @@
 <div class="container push-down">
     <div id="profile-container" class="row clearfix">
       <div class="col-md-4 h4" id="profile-left">
-        <div class="row clearfix" id="profile-photo"><a href="#"><img src="/img/placeholder.png"/></a></div>
+        <div class="row clearfix" id="profile-photo">
+          <a href="#">
+            <%= image_tag @user.photo.url %>
+          </a>
+        </div>
         <div class="row clearfix">[LOC-ICON] LOCATION</div>
         <div class="row clearfix"><a href="#">[RNK-ICON] RANK</a></div>
         <div class="row clearfix">[DSC-ICON] DESCRIPTION</div>
