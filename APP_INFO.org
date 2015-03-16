@@ -46,7 +46,12 @@ $ git pull
 $ git push 
 
 #+END_SRC:
-* Bundle Commands :
+
+* Bundle commands 
+  - $ bundle exec rake db:migrate RAILS_ENV=development 
+
+* Run App Server :
+
 #+BEGIN_SRC:
 $ bundle install 
 $ bundle exec puma -C config/puma.rb
@@ -118,4 +123,4 @@ $ bundle exec rake test
 
 
 
-Testing* 
+
