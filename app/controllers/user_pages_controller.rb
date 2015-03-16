@@ -5,9 +5,6 @@ class UserPagesController < ApplicationController
   def sets
   end
 
-  def profile
-  end
-
   def followlist
   end
 

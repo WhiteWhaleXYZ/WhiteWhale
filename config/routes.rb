@@ -20,15 +20,15 @@ Rails.application.routes.draw do
 
   get 'non_user_pages/home'
 
-  get 'non_user_pages/privacy'
+  get 'privacy' => 'non_user_pages#privacy'
 
-  get 'non_user_pages/terms'
+  get 'terms' => 'non_user_pages#terms'
 
-  get 'non_user_pages/advertise'
+  get 'advertise' => 'non_user_pages#advertise'
 
-  get 'non_user_pages/contact'
+  get 'contact' => 'non_user_pages#contact'
 
-  get 'non_user_pages/support'
+  get 'support' => 'non_user_pages#support'
 
   get 'users/new'
 
@@ -40,8 +40,7 @@ Rails.application.routes.draw do
   
 
 
-  #resources :articles
-  #root :to => "articles#index"
+ 
   get 'signup'  => 'users#new'
 
   resources :users

@@ -22,9 +22,11 @@
         </div>
         <div class="row navbar-collapse collapse clearfix">
           <ul class="nav nav-justified">
+          <% if logged_in? %>
             <li class="active"><a href="#">SETS</a></li>
             <li><a href="#" target="ext">COLLECTIONS</a></li>
             <li><a href="#">TRENDING</a></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -32,15 +34,16 @@
         <div class="col-md-6">
           <% if logged_in? %>
                 <%= link_to "Log out", logout_path, method: "delete" %>
+                <%= link_to "Settings", edit_user_path(current_user) %>
                 
         <% else %>
           <a id="top-right-login" href="#" data-toggle="modal" data-target="#Login-Modal">LOGIN
-        <% end %></a>
+        </a>
         </div>
         <div class="col-md-6">
           <a id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal">SIGNUP</a>
         </div>
-
+        <% end %>
         <!--Once user is logged in to display-->
         <!--<div id="top-right-logged-in">
             <!--<div id="top-right" class="row">
