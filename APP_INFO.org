@@ -46,14 +46,19 @@ $ git pull
 $ git push 
 
 #+END_SRC:
+
 * Bundle commands 
   - $ bundle exec rake db:migrate RAILS_ENV=development 
 
 * Run App Server :
+
 #+BEGIN_SRC:
 $ bundle install 
-$ bundle exec puma 
+$ bundle exec puma -C config/puma.rb
+$ RAILS_ENV=production bundle exec rake db:migrate 
 #+END_SRC:
+* Run App Server :
+
 * Ruby version
 2.2.0
 * Rails Version
@@ -118,4 +123,4 @@ $ bundle exec rake test
 
 
 
-Testing* 
+
