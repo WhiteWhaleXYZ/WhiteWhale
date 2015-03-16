@@ -15,11 +15,15 @@ rails_env = ENV['RACK_ENV'] || 'production'
 
 rackup      DefaultRackup
 #port        ENV['PORT']     ||   "unix://#{app_path}/tmp/puma/sock"
-bind "unix://#{app_path}/tmp/puma/sock"
+# until further notice port is used over socket 
+# bind "unix://#{app_path}/tmp/puma/sock"
+bind 'tcp://0.0.0.0:9292'
 
 environment rails_env
 
+# puma pid kept on file
 pidfile    "#{app_path}/tmp/puma/pid"
+# puma stdout and stderror directed to log files 
 stdout_redirect      "#{app_path}/log/puma_access.log", "#{app_path}/log/puma_error.log"
 
 
