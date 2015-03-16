@@ -318,3 +318,9 @@ input {
 .carousel-control{
     z-index: 1;
 }
+.modal-dialog{
+    color: #000;
+}
+.form-control{
+    color: #000;
+}
