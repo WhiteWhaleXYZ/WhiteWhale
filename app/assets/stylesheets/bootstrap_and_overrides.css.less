@@ -2,56 +2,12 @@
 @import 'twitter/bootstrap/bootstrap';
 
 // Core variables and mixins
-/*@import "twitter/bootstrap/variables.less";
-@import "twitter/bootstrap/mixins.less";
+@import "twitter/bootstrap/variables.less";
 
-// Reset and dependencies
-@import "twitter/bootstrap/normalize.less";
-@import "twitter/bootstrap/print.less";
-//@import "twitter/bootstrap/glyphicons.less"; // Excludes glyphicons
+@import "twitter/bootstrap/glyphicons.less"; // Excludes glyphicons
 
-// Core CSS
-@import "twitter/bootstrap/scaffolding.less";
-@import "twitter/bootstrap/type.less";
-@import "twitter/bootstrap/code.less";
-@import "twitter/bootstrap/grid.less";
-@import "twitter/bootstrap/tables.less";
-@import "twitter/bootstrap/forms.less";
-@import "twitter/bootstrap/buttons.less";
-
-// Components
-@import "twitter/bootstrap/component-animations.less";
-@import "twitter/bootstrap/dropdowns.less";
-@import "twitter/bootstrap/button-groups.less";
-@import "twitter/bootstrap/input-groups.less";
-@import "twitter/bootstrap/navs.less";
-@import "twitter/bootstrap/navbar.less";
-@import "twitter/bootstrap/breadcrumbs.less";
-@import "twitter/bootstrap/pagination.less";
-@import "twitter/bootstrap/pager.less";
-@import "twitter/bootstrap/labels.less";
-@import "twitter/bootstrap/badges.less";
-@import "twitter/bootstrap/jumbotron.less";
-@import "twitter/bootstrap/thumbnails.less";
-@import "twitter/bootstrap/alerts.less";
-@import "twitter/bootstrap/progress-bars.less";
-@import "twitter/bootstrap/media.less";
-@import "twitter/bootstrap/list-group.less";
-@import "twitter/bootstrap/panels.less";
-@import "twitter/bootstrap/responsive-embed.less";
-@import "twitter/bootstrap/wells.less";
-@import "twitter/bootstrap/close.less";
-
-// Components w/ JavaScript
-@import "twitter/bootstrap/modals.less";
-@import "twitter/bootstrap/tooltip.less";
-@import "twitter/bootstrap/popovers.less";
-@import "twitter/bootstrap/carousel.less";
-
-// Utility classes
-@import "twitter/bootstrap/utilities.less";
 @import "twitter/bootstrap/responsive-utilities.less";
-*/
+
 
 // Set the correct sprite paths
 @iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
@@ -81,27 +37,131 @@
 // Example:
 //@link-color: #ff0000;
 
-@gray-base: #fff;
-@text-color: @gray-base;
-
-
 
 /*
-  BUTTON
+  ------------------GLOBALS---------------------------
+*/
+@gray-base: #fff;
+@blue: #568acb;
+//@blue-rgba: rgba(86,138,203, 0.075);
+@lighter-blue: #5795c6;
+//@lighter-blue-rgba: rgba(87,149,198, 0.075);
+@darker-blue: darken(#428bca, 20%);
+@dark-blue: #1c4667;
+//@dark-blue-rgba: rgba(28,70,103, 0.075);
+@font-size-base: 16px;
+@font-size-large: ceil((@font-size-base * 1.57)); // ~18px
+@text-color: @gray-base;
+@link-color: @gray-base;
+@link-hover-color: lighten(@lighter-blue, 32%);
+@link-hover-decoration: none;
+@border-width: 3px;
+
+/*
+  ------------------TYPOGRAPHY---------------------------
+*/
+.lead {
+  font-size: floor((@font-size-base * 1.5));
+  @media (min-width: @screen-sm-min) {
+    font-size: (@font-size-base * 2);
+  }
+}
+.lead-title{
+  font-size: floor((@font-size-base * 2));
+  @media (min-width: @screen-sm-min) {
+    font-size: (@font-size-base * 3);
+  }
+}
+
+/*
+  ------------------BUTTONS---------------------------
 */
 @btn-default-color:@gray-base;
 @btn-default-border:@gray-base;
-@btn-default-bg:transparent;
+@btn-default-bg:@lighter-blue;
+.btn-default{
+  border-width: @border-width;
+  &:hover{border-color: @link-hover-color;}
+}
 button{
   .btn;
   .btn-default;
 }
 
-
-
-//@text-color: #ff0000;
-
-/*a, a:visited {
-  color: #ff0000;
-}
+/*
+  ------------------INPUTS---------------------------
 */
+@input-group-addon-bg: #fff;
+@input-border-focus: transparent;
+@input-color: @darker-blue;
+.input-group{
+  /*border-radius: 5px 5px 22px 22px;*/
+}
+form{
+  .btn{.btn-lg;.btn-block}
+}
+.form-control{
+  /*padding: @padding-base-vertical @padding-large-horizontal;*/
+  .input-group &:first-child{border-radius: 5px 5px 22px 22px;}
+  font-size: @font-size-large;
+  height: auto;
+  &, &:focus {
+    border: 3px solid @lighter-blue;
+    /*box-shadow: none; */
+  }
+  &:focus{
+    box-shadow: inset 3px 3px 1px rgba(28,70,103, 0.9), 0px 0px 20px rgba(87,149,198, 0.075);
+  }
+  .transition(~"border-color ease-in-out .05s, box-shadow ease-in-out .05s");
+}
+//Makes all inputs inherit this format
+input{
+  .form-group;
+}
+/*
+  ------------------MAIN-NAV---------------------------
+*/
+.logins a{
+  .btn;
+  .btn-default;
+  &,&:hover{background-color: transparent;};
+  &:hover{border-color: @link-hover-color;};
+  font-size: ceil((@font-size-base * 1.43)); // ~18px
+}
+
+@nav-link-hover-bg: transparent;
+//== Pills
+@nav-pills-border-radius: 2px;
+@nav-pills-active-link-hover-bg: transparent;
+@nav-tabs-border-color: @link-hover-color;
+.nav-pills{
+  & a:hover{
+    border-bottom: 3px solid @nav-tabs-border-color;
+  }
+}
+
+/*
+  ------------------MODAL---------------------------
+*/
+.modal-dialog{
+  color: @darker-blue;
+}
+@modal-footer-border-color: transparent;
+@modal-header-border-color: transparent;
+.modal-footer{
+  background-color: @lighter-blue;
+}
+.close{
+  font-size: 54px;
+  &:hover {
+    background-color: transparent;
+    color: @blue;
+  }
+}
+
+/*
+  ------------------CAROUSEL---------------------------
+*/
+.carousel { /*Add little shaddow*/
+  box-shadow: 0px 5px 5px rgba(28, 70, 103, 0.9);
+}

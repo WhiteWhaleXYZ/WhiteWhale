@@ -24,7 +24,9 @@ body {
     background-size: 100% auto;
     padding-bottom: 60px;
 }
-
+input{/*Fix bleed of borders around input*/
+    background-clip: padding-box;
+}
 /* GENERAL GLOBAL
 -------------------------------------------------- */
 .center{
@@ -32,7 +34,33 @@ body {
     margin:0 auto;
     /*padding:30px;*/
 }
-
+.push-down {
+    padding-top: 80px;
+}
+.push-down40{
+    padding-top: 40px;
+}
+.push-down20{
+    padding-top: 20px;
+}
+.push-down120 {
+    padding-top: 120px;
+}
+.push-down160 {
+    padding-top: 160px;
+}
+.push-down200 {
+    padding-top: 200px;
+}
+.addbottom{
+    padding-bottom: 80px;
+}
+.addbottom40{
+    padding-bottom: 40px;
+}
+.addbottom20{
+    padding-bottom: 20px;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -51,8 +79,9 @@ body {
 }
 
 #main-nav .navbar{
-    padding-top: 15px;
+    padding-top: 25px;
 }
+/* Size of logo font */
 .navbar-brand {
     font-size: 100px;
 }
@@ -63,41 +92,37 @@ body {
 }
 
 /* Search Bar */
-
-
 #custom-search-input {
     margin:0;
-    margin-top: 10px;
     padding: 0;
-}
+    margin-top: 10px;
 
+}
 #custom-search-input .search-query {
-    padding-right: 3px;
+    /*padding-right: 3px;
     padding-right: 4px \9;
     padding-left: 3px;
-    padding-left: 4px \9;
+    padding-left: 4px \9;*/
     /* IE7-8 doesn't have border-radius, so don't indent the padding */
-
     margin-bottom: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
-
 #custom-search-input button {
-    border: 0;
-    background: none;
+    /*border: 0;
+    background: none;*/
     /** belows styles are working good */
-    padding: 2px 5px;
+    /*padding: 2px 5px;
     margin-top: 2px;
     position: relative;
-    left: -28px;
+    left: -28px;*/
     /* IE7-8 doesn't have border-radius, so don't indent the padding */
     margin-bottom: 0;
-    -webkit-border-radius: 3px;
+    /*-webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    color:#568acb;
+    color:#568acb;*/
 }
 
 .search-query:focus + button {
@@ -128,7 +153,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    min-height: 400px;
+    min-height: 100%;
     width: 100%;
 }
 /* Fixed black box showing up*/
@@ -153,9 +178,9 @@ body {
 }
 /* Make Slider-Nav Ions Big*/
 .carousel-control .icon-next:before, .carousel-control .icon-prev:before {
-    font-size: 125px;
+    /*font-size: 125px;
     width: auto;
-    line-height: 40%;
+    line-height: 40%;*/
    
 }
 #home-slider{
@@ -225,7 +250,7 @@ body {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+/*input, textarea, select, .uneditable-input {
     border: 1px solid #bbb;
     width: 100%;
     margin-bottom: 15px;
@@ -234,13 +259,16 @@ input, textarea, select, .uneditable-input {
 
 input {
     height: auto !important;
-}
+}*/
 
-.push-down {
-    padding-top: 100px;
-}
 
-#profile-photo img, #set-photo img, #pod-preview img, #view-set-results img, .suggestions img, #collection-item img, #sets-item img{
+#profile-photo img,
+#set-photo img,
+#pod-preview img,
+#view-set-results img,
+.suggestions img,
+#collection-item img,
+#sets-item img{
     width: 100%;
     border-radius: 50%;
 }
@@ -288,19 +316,19 @@ input {
 
 
 
-.checkbox {
+/*.checkbox {
   margin-top: 10px;
   margin-bottom: 10px;
   span {
     margin-left: 20px;
     font-weight: normal;
   }
-}
+}*/
 
 #session_remember_me {
   width: auto;
-  margin-left: 0;
-  }
+  /*margin-left: 0;*/
+}
 
 #myCarousel{
     height: auto;
@@ -318,9 +346,12 @@ input {
 .carousel-control{
     z-index: 1;
 }
-.modal-dialog{
-    color: #000;
+
+.input-group-btn button, .input-group-btn button:hover{
+    background-color: transparent;
+    border: transparent;
 }
-.form-control{
-    color: #000;
+
+#footer{
+    background-color: rgba(0,0,0,0.75);
 }
