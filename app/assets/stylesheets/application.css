@@ -22,7 +22,6 @@ body {
     background-image: url("/assets/wwmainbg.jpg");
     background-repeat: repeat-y;
     background-size: 100% auto;
-    padding-bottom: 60px;
 }
 input{/*Fix bleed of borders around input*/
     background-clip: padding-box;

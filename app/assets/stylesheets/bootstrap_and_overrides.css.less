@@ -150,7 +150,13 @@ input{
 @modal-header-border-color: transparent;
 .modal-footer{
   background-color: @lighter-blue;
+  .border-bottom-radius(27px);
+  background-clip: padding-box;
 }
+.modal-content{
+  .border-bottom-radius(35px);
+}
+
 .close{
   font-size: 54px;
   &:hover {
