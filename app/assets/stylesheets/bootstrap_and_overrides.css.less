@@ -102,11 +102,11 @@ form{
 }
 .form-control{
   /*padding: @padding-base-vertical @padding-large-horizontal;*/
-  .input-group &:first-child{border-radius: 5px 5px 22px 22px;}
-  font-size: @font-size-large;
+  /*.input-group &:first-child{border-radius: 5px 5px 22px 22px;}*/
+  /*font-size: @font-size-large;*/
   height: auto;
   &, &:focus {
-    border: 3px solid @lighter-blue;
+    /*border: 3px solid @lighter-blue;*/
     /*box-shadow: none; */
   }
   &:focus{
@@ -126,7 +126,7 @@ input{
   .btn-default;
   &,&:hover{background-color: transparent;};
   &:hover{border-color: @link-hover-color;};
-  font-size: ceil((@font-size-base * 1.43)); // ~18px
+  /*font-size: ceil((@font-size-base * 1.43));*/ // ~18px
 }
 
 @nav-link-hover-bg: transparent;
@@ -169,5 +169,10 @@ input{
   ------------------CAROUSEL---------------------------
 */
 .carousel { /*Add little shaddow*/
-  box-shadow: 0px 5px 5px rgba(28, 70, 103, 0.9);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
+
+.btn-lg {
+  font-size: 18px;
+}
+

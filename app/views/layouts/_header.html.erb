@@ -7,15 +7,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="navbar-brand" href="/"> <p class="icon-test" style="font-size:65px"> </p> </a>
+        <a class="navbar-brand" href="/"> <p class="icon-icon-whale"> </p> </a>
       </div>
       <div class="col-md-6 col-md-offset-1">
         <div id="header-search" class="row clearfix">
           <div class="input-group">
-            <input id="header-search-input" name="header-search-input" type="text" class="search-query form-control text-center" placeholder="Search Items, Collections, Sets" />
+            <input id="header-search-input" name="header-search-input" type="text" class="search-query form-control" placeholder="Search Items, Collections, Sets" />
                 <span class="input-group-btn">
                     <button id="header-search-submit" name="header-search-submit" class="btn" type="button">
-                      <span class="glyphicon glyphicon-search"></span>
+                      <span class="icon-icon-search"></span>
                     </button>
                 </span>
           </div>
@@ -35,7 +35,7 @@
           <% if logged_in? %>
                 <%= link_to "Log out", logout_path, method: "delete" %>
                 <%= link_to "Settings", edit_user_path(current_user), :method => "get" %>
-                
+
           <% else %>
             <a href="#" id="top-right-login" data-toggle="modal" data-target="#Login-Modal">LOGIN
             </a>
