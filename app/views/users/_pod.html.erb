@@ -1,8 +1,0 @@
-<li id="pod-<%= pod.id %>">
-<%= link_to gravatar_for(pod.user, size: 50), pod.user %>
-<span class="user"><%= link_to pod.user.name, pod.user %></span>
-<span class="content"><%= pod.content %></span>
-<span class="timestamp">
-Posted <%= time_ago_in_words(pod.created_at) %> ago.
-</span>
-</li>

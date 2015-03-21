@@ -28,6 +28,21 @@
 
         <div id="pod-preview" class="row clearfix">
           <div clas="row clearfix">
+            <% if @user.pods.any? %>
+           <h3>Pods (<%= @user.pods.count %>)</h3>
+           <ol class="pods">
+              <%= render @pods %>
+            </ol>
+            <%= will_paginate @pods %> 
+            <% end %>
+
+
+
+
+
+
+
+            
             <span class="col-md-3"><a href="#">Object1<img src="/img/placeholder.png"/></a></span>
             <span class="col-md-3"><a href="#">Object2<img src="/img/placeholder.png"/></a></span>
             <span class="col-md-3"><a href="#">Object3<img src="/img/placeholder.png"/></a></span>
