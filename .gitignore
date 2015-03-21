@@ -23,3 +23,6 @@ config/database.yml
 /tmp/cache/**
 /.idea/**
 /.idea/
+
+#ignore photo files
+/photos/**
