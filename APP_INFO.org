@@ -1,4 +1,6 @@
 #+TITLE: APP_INFO
+#+BEGIN_SRC
+#+END_SRC
 
 * Git Links
 Links Below for working with Git.  Branching and merging need to be solid. Also, need to be solid about
@@ -57,7 +59,7 @@ $ bundle install
 $ bundle exec puma -C config/puma.rb
 $ RAILS_ENV=production bundle exec rake db:migrate 
 #+END_SRC:
-* Run App Server :
+
 
 * Ruby version
 2.2.0
@@ -112,6 +114,18 @@ end
 * Database creation
 
 * Database initialization
+* Database migrations and console
+    #+BEGIN_SRC
+    $ bundle exec rails generate migration AddNameToPods name:string
+    $ bundle exec rails generate migration RemoveNameFromPods name:string
+
+    $ bundle exec rails console
+      >Pods.count
+       1
+      >Pods.first
+
+
+    #+END_SRC
 
 * How to run the test suite
 #+BEGIN_SRC: 
