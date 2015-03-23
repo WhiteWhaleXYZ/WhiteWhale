@@ -378,3 +378,16 @@ input {
     padding-top: 140px;
     font-size: 72px;
 }
+
+.menu {
+    font-size: 50px;
+}
+
+.menu .text{
+    font-size:18px;
+}
+
+.big_Arrows p{
+    font-size:50px;
+    color: #2576bc;
+}
