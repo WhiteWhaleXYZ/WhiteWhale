@@ -35,6 +35,7 @@ gem 'bootstrap-will_paginate',    '0.0.10'
 
 group :development, :test do
   gem 'capistrano', '~> 3.1.0'
+  gem "better_errors"
   # Capistrano tasks to manage puma app server
   gem 'capistrano3-puma' , require: false
   gem 'capistrano-rails', '~> 1.1', require: false
