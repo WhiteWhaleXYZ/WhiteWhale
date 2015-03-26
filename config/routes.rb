@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   get 'non_user_pages/404'
 
-  get 'user_pages/collections'
+  #get 'user_pages/collections'
 
-  get 'user_pages/sets'
+  #get 'user_pages/sets'
 
   get 'user_pages/profile'
 
@@ -42,9 +42,12 @@ Rails.application.routes.draw do
 
  
   get 'signup'  => 'users#new'
+  #get ':controller/:action/:user_id/pods'
 
-  resources :users
-  resources :pods
+
+  resources :users do 
+    resources :pods,  only: [:new, :show, :create, :destroy, :edit, :update]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

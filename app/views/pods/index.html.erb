@@ -1,7 +1,7 @@
 <% provide(:title, 'All Pods') %>
 <h1>All pods</h1>
 <ul class="pods">
-  <% @pods.each do |pod| %>
+  <% @user.pods do |pod| %>
   <li>
     <%= gravatar_for pod, size: 50 %>
     <%= link_to pod.name, pod %>

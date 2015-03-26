@@ -1,15 +1,17 @@
 class PodsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update]
+  before_action :logged_in_user, only: [:new,:show, :edit, :update, :create, :destroy]
   def show
     @pod = Pod.find(params[:id])
   end
 
-  def index
-    @pod=Pod.all
-  end
+  #def index
+  #  @pod=Pod.all
+  #end
   
   def new
-    @pod = Pod.new
+    @user=User.find(params[:user_id])
+    @pod = @user.pods.build(params[:pod])
+    #respond_with(@pod)
   end
   
   def edit
@@ -27,12 +29,12 @@ class PodsController < ApplicationController
   end
 
   def create
-    @pod = Pod.new(pod_params)
+    @pod = current_user.pods.build(pod_params)
     if @pod.save
       flash[:success] = "New White Whale Pod Created!"
-      redirect_to @pod
+      redirect_to current_user
     else
-      render 'new'
+      render current_user# 'new' # this isn't right ? 
     end
   end
 
