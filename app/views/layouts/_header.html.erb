@@ -15,7 +15,7 @@
             <input id="header-search-input" name="header-search-input" type="text" class="search-query form-control" placeholder="Search Items, Collections, Sets" />
                 <span class="input-group-btn">
                     <button id="header-search-submit" name="header-search-submit" class="btn" type="button">
-                      <span class="icon-icon-search"></span>
+                      <span class="icon-search"></span>
                     </button>
                 </span>
           </div>
@@ -25,7 +25,7 @@
           <% if logged_in? %>
 
             <li class="active"><a href="#"> <p class ="icon-icon-sets"> </p> <div class="row clearfix text"> SETS </div> </a></li>
-            <li><a href="#" target="ext"> <p class ="icon-icon-collections"> </p> <div class="row clearfix text"> COLLECTIONS </div> </a></li>
+            <li><a href="#" target="ext"> <p class ="icon-collection"> </p> <div class="row clearfix text"> COLLECTIONS </div> </a></li>
             <li><a href="#"> <p class ="icon-icon-trending"> </p> <div class="row clearfix text"> TRENDING </div> </a></li>
             <% end %>
           </ul>
@@ -35,16 +35,15 @@
         <div class="col-md-6">
           <% if logged_in? %>
 
-                <%= link_to "Log out", logout_path, method: "delete" %>
-                <%= link_to "Settings", edit_user_path(current_user), :method => "get" %>
-                <%= link_to "Users", users_path %>
+                <%= link_to "Log out", logout_path, method: "delete", :class=> "icon-logout" %>
+                <%= link_to "Settings", edit_user_path(current_user), :method => "get", :class=> "icon-cog" %>
+                <%= link_to "Users", users_path, :class=> "icon-user"%>
 
           <% else %>
-            <a href="#" id="top-right-login" data-toggle="modal" data-target="#Login-Modal">LOGIN
-            </a>
+            <a href="#" id="top-right-login" data-toggle="modal" data-target="#Login-Modal"> <p class="icon-login login-icons"> LOGIN </p> </a>
         </div>
         <div class="col-md-6">
-          <a href="#" id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal">SIGNUP</a>
+          <a href="#" id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal"> <p class="icon-opentable login-icons"> SIGNUP </p></a>
         </div>
         <% end %>
         <!--Once user is logged in to display-->
