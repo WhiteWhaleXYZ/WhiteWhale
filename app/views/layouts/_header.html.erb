@@ -23,6 +23,7 @@
         <div class="row navbar-collapse collapse clearfix menu">
           <ul class="nav nav-justified nav-pills">
           <% if logged_in? %>
+
             <li class="active"><a href="#"> <p class ="icon-icon-sets"> </p> <div class="row clearfix text"> SETS </div> </a></li>
             <li><a href="#" target="ext"> <p class ="icon-icon-collections"> </p> <div class="row clearfix text"> COLLECTIONS </div> </a></li>
             <li><a href="#"> <p class ="icon-icon-trending"> </p> <div class="row clearfix text"> TRENDING </div> </a></li>
@@ -33,8 +34,10 @@
       <div class="col-md-3 pull-right text-right logins">
         <div class="col-md-6">
           <% if logged_in? %>
+
                 <%= link_to "Log out", logout_path, method: "delete" %>
                 <%= link_to "Settings", edit_user_path(current_user), :method => "get" %>
+                <%= link_to "Users", users_path %>
 
           <% else %>
             <a href="#" id="top-right-login" data-toggle="modal" data-target="#Login-Modal">LOGIN
