@@ -26,6 +26,23 @@
           <span class="col-md-2"><a href="#">[Big Right Arrow ICON]</a></span>
         </div>
 
+        <% if logged_in? %>
+        <div class="row">
+          <aside class="col-md-4">
+            <section class="user_info">
+              <!--<= render 'shared/user_info' > -->
+            </section>
+            <section class="pods_form">
+              <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary" %>
+            </section>
+          </aside>
+        </div>
+        <% else %>
+
+
+        <% end %>
+
+       
         <div id="pod-preview" class="row clearfix">
           <div clas="row clearfix">
             <% if @user.pods.any? %>
@@ -36,7 +53,7 @@
             <%= will_paginate @pods %> 
             <% end %>
 
-
+       
 
 
 
