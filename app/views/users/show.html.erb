@@ -33,7 +33,7 @@
               <!--<= render 'shared/user_info' > -->
             </section>
             <section class="pods_form">
-              <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary" %>
+              <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary", :class=> "icon-edit" %>
             </section>
           </aside>
         </div>
@@ -81,9 +81,9 @@
 
         <div class="row clearfix small_Arrows">
           <span class="col-md-3"><a href="#"><p class ="icon-angle-left"> </p></a></span>
-          <div class="col-md-3"><button>FORK</button></div>
-          <div class="col-md-3"><button>VIEW</button></div>
-          <span class="col-md-3"><a href="#"><p class ="icon-angle-right"> </p></a></span>
+          <div class="col-md-3"> <a href="#"> <p class="icon-google-circles"> </p> </a> </div>
+          <div class="col-md-3"> <a href="#"> <p class="icon-eye"> </p> </a> </div>
+          <span class="col-md-3"> <a href="#"> <p class ="icon-angle-right"> </p></a></span>
         </div>
       </div>
       <div class="col-md-1" id="set-social-share">Vertical Floating Social Network</div>

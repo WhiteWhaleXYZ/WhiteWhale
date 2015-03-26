@@ -330,8 +330,8 @@ input {
 }
 
 .icon-icon-whale{
-    font-size: 108px;
-    margin-top: -48px;
+    font-size: 90px;
+    margin-top: -40px;
 }
 
 /*.checkbox {
@@ -390,4 +390,13 @@ input {
 .big_Arrows p{
     font-size:50px;
     color: #2576bc;
+}
+
+.logins a {
+    font-size:14px;
+    border: none;
+}
+
+.login-icons{
+    line-height: 2.5em;
 }
