@@ -1,16 +1,6 @@
 require 'test_helper'
 
 class UserPagesControllerTest < ActionController::TestCase
-  test "should get collections" do
-    get :collections
-    assert_response :success
-  end
-
-  test "should get sets" do
-    get :sets
-    assert_response :success
-  end
-
 
   test "should get followlist" do
     get :followlist
