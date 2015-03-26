@@ -366,8 +366,8 @@ input {
 }
 
 .input-group-btn button, .input-group-btn button:hover{
-    background-color: transparent;
-    border: transparent;
+    background-color: #2576bc;
+    border: white;
 }
 
 #footer{
@@ -399,4 +399,8 @@ input {
 
 .login-icons{
     line-height: 2.5em;
+}
+
+.icon-collection {
+    padding-right:30px
 }

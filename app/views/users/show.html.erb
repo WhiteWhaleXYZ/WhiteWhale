@@ -9,9 +9,9 @@
             <%= image_tag @user.photo.url %>
           </a>
         </div>
-        <div class="row clearfix">[LOC-ICON] LOCATION</div>
-        <div class="row clearfix"><a href="#">[RNK-ICON] RANK</a></div>
-        <div class="row clearfix">[DSC-ICON] DESCRIPTION</div>
+        <div class="row clearfix"><a href="#"><p class="icon-location"></p> LOCATION</a></div>
+        <div class="row clearfix"><a href="#"><p class="icon-star"></p> RANK</a></div>
+        <div class="row clearfix"><a href="#"><p class="icon-info-1"></p> DESCRIPTION</a></div>
       </div>
       <div class="col-md-8" id="profile-right">
         <div id="profile-name"><h1><%= @user.name %>'s Ocean</h1></div>
@@ -33,7 +33,7 @@
               <!--<= render 'shared/user_info' > -->
             </section>
             <section class="pods_form">
-              <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary", :class=> "icon-edit" %>
+              <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary"%>
             </section>
           </aside>
         </div>
