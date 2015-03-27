@@ -1,4 +1,6 @@
 module PodsHelper
+include ActsAsTaggableOn::TagsHelper
+
 
   # Returns the Gravatar for the given pod.
   def gravatar_for(pod)

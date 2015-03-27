@@ -27,6 +27,9 @@ gem 'puma'
 #paperclip
 gem "paperclip", "~> 4.2"
 
+#acts as taggable
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # responders ? 
 #gem 'responders', '~> 2.0' 
 # paginate
