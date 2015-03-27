@@ -13,6 +13,9 @@
           <%= f.label :description %>
           <%= f.text_field :description, :placeholder => "Description", class: 'form-control' %>
 
+          <%= f.label :tags %>
+          <%= f.text_field :tag_list, :placeholder => "Description", class: 'form-control' %>
+
           <%= f.file_field :photo %>
 
           <%= f.submit "Save changes", class: "btn btn-default" %>

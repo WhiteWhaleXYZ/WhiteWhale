@@ -38,11 +38,17 @@ class PodsController < ApplicationController
     end
   end
 
-  
+  def tagged
+    if params[:tag].present? 
+      @pods = Pods.tagged_with(params[:tag])
+    else 
+      @pods = Pods.postall
+    end  
+  end  
   private
 
   def pod_params
-    params.require(:pod).permit( :name, :description,:photo) 
+    params.require(:pod).permit( :name, :description, :photo, :tag_list) 
   end
   
 end

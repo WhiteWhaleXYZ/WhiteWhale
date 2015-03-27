@@ -36,11 +36,6 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  
-  
-
-
- 
   get 'signup'  => 'users#new'
   #get ':controller/:action/:user_id/pods'
 
@@ -100,6 +95,7 @@ Rails.application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
+  # resources :products
   #   end
+  
 end
