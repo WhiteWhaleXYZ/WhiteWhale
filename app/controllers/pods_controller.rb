@@ -1,6 +1,7 @@
 class PodsController < ApplicationController
   before_action :logged_in_user, only: [:new,:show, :edit, :update, :create, :destroy]
   def show
+    @user=User.find(params[:user_id])
     @pod = Pod.find(params[:id])
   end
 
