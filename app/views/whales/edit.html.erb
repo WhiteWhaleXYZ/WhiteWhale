@@ -1,0 +1,29 @@
+<h1>Whales#edit</h1>
+<div class="push-down160 container">
+  <h1>Whales#new</h1>
+  <% provide(:title, "Edit whale") %>
+  <p class="lead-title text-center text-capitalize addbottom40">Update your whale</p>
+
+  <div class="row clearfix">
+    <div class="col-md-8 center text-capitalize">
+      <%= form_for @whales, :html => { :multipart => true } do |f| %>
+          <!== %= render 'shared/error_messages' %> ==>
+
+          <%= f.label :name %>
+          <%= f.text_field :name, :placeholder => "Description", class: 'form-control' %>
+
+          <%= f.label :description %>
+          <%= f.text_field :description, :placeholder => "Description", class: 'form-control' %>
+
+          <%= f.file_field :photo %>
+
+          <%= f.submit "Save changes", class: "btn btn-default" %>
+
+      <% end %>
+
+      <p>
+
+      </p>
+    </div>
+  </div>
+</div>

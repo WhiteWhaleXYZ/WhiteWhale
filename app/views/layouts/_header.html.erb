@@ -31,8 +31,8 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-3 pull-right text-right logins">
-        <div class="col-md-6">
+      <div class="col-md-3 col-xs-12 pull-right text-right logins">
+        <div class="col-md-6 col-xs-6">
           <% if logged_in? %>
 
                 <%= link_to "Log out", logout_path, method: "delete", :class=> "icon-logout" %>
@@ -42,7 +42,7 @@
           <% else %>
             <a href="#" id="top-right-login" data-toggle="modal" data-target="#Login-Modal"> <p class="icon-login login-icons"> LOGIN </p> </a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-6">
           <a href="#" id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal"> <p class="icon-opentable login-icons"> SIGNUP </p> </a>
         </div>
         <% end %>
