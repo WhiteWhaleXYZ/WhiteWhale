@@ -1,0 +1,2 @@
+module WhalesHelper
+end

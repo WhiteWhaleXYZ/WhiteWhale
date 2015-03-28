@@ -1,0 +1,11 @@
+<h1>Whales#index</h1>
+<% provide(:title, 'All Whales') %>
+<h1>All pods</h1>
+<ul class="whales">
+  <% @user.whales do |whales| %>
+      <li>
+        <%= gravatar_for whales, size: 50 %>
+        <%= link_to whales.name, whales %>
+      </li>
+  <% end %>
+</ul>
