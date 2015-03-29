@@ -13,13 +13,6 @@ class WhalesController < ApplicationController
   end
 
   def create
-     @whale = current_user.whale.build(whale_params)
-    if @whale.save
-      flash[:success] = "New White Whale Pod Created!"
-      redirect_to current_user
-    else
-      render current_user# 'new' # this isn't right ? 
-    end
   end
 
   def edit
