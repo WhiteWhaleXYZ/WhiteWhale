@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'fontello-rails'
 gem "rb-readline"
 gem "execjs"
 gem "therubyracer"
