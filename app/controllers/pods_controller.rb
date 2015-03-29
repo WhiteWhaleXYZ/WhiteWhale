@@ -16,7 +16,8 @@ class PodsController < ApplicationController
   end
   
   def edit
-    @pod = Pod.find(params[:id])
+    @user=User.find(params[:user_id])
+    @pod = @user.pods.build(params[:pod])
   end
 
   def update
