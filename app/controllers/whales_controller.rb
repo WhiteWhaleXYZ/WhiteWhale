@@ -7,7 +7,8 @@ class WhalesController < ApplicationController
 
   def new
     @user=User.find(params[:user_id])
-    @whales= @user.whales.build(params[:whales])
+    @pod = Pod.find(params[:user_id],params[:pod_id])
+    @whales= @pod.whales.build(params[:whales])
     #respond_with(@pod)
   end
 

@@ -3,8 +3,8 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@whales, :url=>user_whales_path(@user)) do |f| %>
-        <!== %= render 'shared/error_messages' %> ==>
+    <%= form_for(@whales, :url=>user_pod_whales_path(@user, @pod)) do |f| %>
+        <%#= render 'shared/error_messages' %>
 
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
