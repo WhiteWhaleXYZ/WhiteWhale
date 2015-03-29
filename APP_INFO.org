@@ -50,14 +50,20 @@ $ git push
 #+END_SRC:
 
 * Bundle commands 
-  - $ bundle exec rake db:migrate RAILS_ENV=development 
+#+BEGIN_SRC
+// Dev 
+$ bundle exec rake db:migrate RAILS_ENV=development 
+$ bundle install --path vendor/bundle
 
-* Run App Server :
-
+// Production 
+$ bundle install --deployment
+$ RAILS_ENV=production bundle exec rake db:migrate
+#+END_SRC
+* App Server Commands :
 #+BEGIN_SRC:
-$ bundle install 
+// Production Kill the puma pid 
+$ kill -s SIGTERM `cat tmp/puma/pid
 $ bundle exec puma -C config/puma.rb
-$ RAILS_ENV=production bundle exec rake db:migrate 
 #+END_SRC:
 
 
