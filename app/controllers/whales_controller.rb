@@ -1,7 +1,7 @@
 class WhalesController < ApplicationController
   #def index
   #end
-
+ 
   def show
   end
 
