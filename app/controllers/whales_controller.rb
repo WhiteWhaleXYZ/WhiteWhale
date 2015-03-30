@@ -3,6 +3,7 @@ class WhalesController < ApplicationController
   #end
  
   def show
+
   end
 
   def new
@@ -13,6 +14,16 @@ class WhalesController < ApplicationController
   end
 
   def create
+    @user=User.find(params[:user_id])
+    @pod = Pod.find(params[:user_id],params[:pod_id])
+    @whales= @pod.whales.build(params[:whales])
+
+    if @whales.save
+      flash[:success] = "New White Whale Created!"
+      redirect_to user_pod_whales_path(@user, @pod, @whales)
+    else
+      redirect_to user_pod_path(@user, @pod)# 'new' # this isn't right ?
+    end
   end
 
   def edit
