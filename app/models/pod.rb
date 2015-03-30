@@ -1,5 +1,5 @@
 class Pod < ActiveRecord::Base
-  belongs_to :pod
+  belongs_to :user
   has_many :whales ,dependent: :destroy
   acts_as_taggable_on :tags
   default_scope -> { order(created_at: :desc) }
