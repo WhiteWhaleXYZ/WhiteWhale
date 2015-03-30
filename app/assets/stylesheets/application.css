@@ -402,5 +402,12 @@ input {
 }
 
 .icon-collection {
-    padding-right:30px
+    padding-right:30px;
+}
+
+.lost-fisherman {
+    padding-top:125px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }
