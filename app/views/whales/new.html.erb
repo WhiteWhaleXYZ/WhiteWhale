@@ -1,25 +1,23 @@
-<div class="push-down160 container">
-    <% provide(:title, 'Create New Whale') %>
-    <h1>Create New Whale</h1>
-    
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <%= form_for(@whales, :url=>user_pod_whales_path(@user, @pod)) do |f| %>
-            <%#= render 'shared/error_messages' %>
-    
-            <%= f.label :name %>
-            <%= f.text_field :name, class: 'form-control' %>
-    
-            <%= f.label :description %>
-            <%= f.text_field :description, class: 'form-control' %>
-    
-            <%= f.file_field :photo %>
-    
-            <%= f.submit "Create this whale", class: "btn btn-primary" %>
-    
-        <% end %>
-      </div>
-    </div>
+<% provide(:title, 'Create New Whale') %>
+<h1>Create New Whale</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@whales, :url=>user_pod_whales_path(@user, @pod)) do |f| %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'form-control' %>
+
+        <%= f.file_field :photo %>
+
+        <%= f.submit "Create this whale", class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
 </div>
+
 
 
