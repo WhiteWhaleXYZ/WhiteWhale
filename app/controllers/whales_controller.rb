@@ -9,18 +9,18 @@ class WhalesController < ApplicationController
   def new
     @user=User.find(params[:user_id])
     @pod = Pod.find(params[:user_id],params[:pod_id])
-    @whales= @pod.whales.build(params[:whales])
+    @whale= @pod.whales.build(params[:whale])
     #respond_with(@pod)
   end
 
   def create
     @user=User.find(params[:user_id])
     @pod = Pod.find(params[:user_id],params[:pod_id])
-    @whales= @pod.whales.build(params[:whales])
+    @whale= @pod.whales.build(whale_params)
 
-    if @whales.save
+    if @whale.save
       flash[:success] = "New White Whale Created!"
-      redirect_to user_pod_whales_path(@user, @pod, @whales)
+      redirect_to user_pod_path(@user, @pod)#(@user, @pod)#current_user#user_pod_whales_path(@user, @pod, @whale)
     else
       redirect_to user_pod_path(@user, @pod)# 'new' # this isn't right ?
     end
