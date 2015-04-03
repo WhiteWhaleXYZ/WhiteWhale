@@ -11,7 +11,11 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, allow_blank: true
 
 
-  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "150x150>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :photo,
+  :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
+  :url => "/system/:attachment/:id/:basename_:style.:extension",
+  :styles => { :medium => "300x300>", :thumb => "150x150>" },
+  :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   # Returns the hash digest of the given string.

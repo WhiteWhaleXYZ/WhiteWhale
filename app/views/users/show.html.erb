@@ -17,15 +17,18 @@
         <div id="profile-name"><h1><%= @user.name %>'s Ocean</h1></div>
       </div>
     </div>
+    <!--   -->
     <div id="set-container" class="row clearfix text-center big_Arrows">
-      <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div>
+      <!--   <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div> -->
       <div class="col-md-7" class="set-right">
         <div class="row clearfix">
+           <!--
           <span class="col-md-2"><a href="#"><p class ="icon-angle-left"> </p></a></span>
           <div class="col-md-8">PODNAME(same as SetName) Goes Here</div>
           <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
+           -->
         </div>
-
+      
         <% if logged_in? %>
         <div class="row">
           <aside class="col-md-4">
@@ -53,30 +56,8 @@
             <%= will_paginate @pods %> 
             <% end %>
 
-       
-
-
-
-
-
-            
-            <span class="col-md-3"><a href="#">Object1<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object2<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object3<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object4<img src="/img/placeholder.png"/></a></span>
           </div>
-          <div clas="row clearfix">
-            <span class="col-md-3"><a href="#">Object5<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object6<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object7<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object8<img src="/img/placeholder.png"/></a></span>
-          </div>
-          <div clas="row clearfix">
-            <span class="col-md-3"><a href="#">Object9<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object10<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object11<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object12<img src="/img/placeholder.png"/></a></span>
-          </div>
+
         </div>
 
         <div class="row clearfix small_Arrows">
@@ -91,12 +72,7 @@
     <div id="view-set-container" class="row clearfix">
       <div id="view-set-results" class="col-md-10 text-center">
         <!-- Should dynamically add rows in multiples of 4-->
-        <div class="row clearfix">
-          <span class="col-md-3"><a href="#">item1<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item2<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item3<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item4<img src="/img/placeholder.png"/></a></span>
-        </div>
+     
         <!-- should not be visible if max number of items is reached-->
         <div class="row clearfix"><button>LOAD MORE BTN</button></div>
       </div>
