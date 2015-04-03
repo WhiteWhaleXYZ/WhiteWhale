@@ -3,22 +3,26 @@ class WhalesController < ApplicationController
   #end
  
   def show
+
   end
 
   def new
     @user=User.find(params[:user_id])
-    @whales= @user.whales.build(params[:whales])
+    @pod = Pod.find(params[:user_id],params[:pod_id])
+    @whale= @pod.whales.build(params[:whale])
     #respond_with(@pod)
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      log_in @user
-      flash[:success] = "Welcome to White Whale!"
-      redirect_to @user
+    @user=User.find(params[:user_id])
+    @pod = Pod.find(params[:user_id],params[:pod_id])
+    @whale= @pod.whales.build(whale_params)
+
+    if @whale.save
+      flash[:success] = "New White Whale Created!"
+      redirect_to user_pod_path(@user, @pod)#(@user, @pod)#current_user#user_pod_whales_path(@user, @pod, @whale)
     else
-      render current_user
+      redirect_to user_pod_path(@user, @pod)# 'new' # this isn't right ?
     end
   end
 
@@ -30,6 +34,12 @@ class WhalesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def whale_params
+    params.require(:whale).permit( :name, :description, :photo, :tag_list) 
   end
 
 end

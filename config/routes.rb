@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete]
+
   root  :to => 'non_user_pages#home'
 
   get 'sessions/new'
@@ -41,8 +43,9 @@ Rails.application.routes.draw do
 
 
   resources :users do 
-    resources :pods,  only: [:new, :show, :create, :destroy, :edit, :update]
-    resources :whales,  only: [:new, :show, :create, :destroy, :edit, :update]
+    resources :pods,  only: [:new, :show, :create, :destroy, :edit, :update] do
+      resources :whales,  only: [:new, :show, :create, :destroy, :edit, :update]
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
