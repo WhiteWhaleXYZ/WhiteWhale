@@ -1,8 +1,8 @@
 <li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
+  <%#=gravatar_for user, size: 50 %>
+  <%=link_to user.name, user%>
+  <%=link_to image_tag(user.photo.url, size: "100"), user_path(user.id)%>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+    | <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
 </li>
