@@ -28,6 +28,10 @@
           <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
         </div>
 
+        <section class="pods_form">
+              <%=  link_to "Create A Whale", new_user_pod_whale_path(@user.id,@pod.id), class: "btn btn-lg btn-primary"%>
+            </section>
+
         <div id="pod-preview" class="row clearfix">
           <div clas="row clearfix">
             <span class="col-md-3"><a href="#">Object1<img src="/img/placeholder.png"/></a></span>
