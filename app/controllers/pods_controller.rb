@@ -14,6 +14,16 @@ class PodsController < ApplicationController
     @pod = @user.pods.build(params[:pod])
     #respond_with(@pod)
   end
+
+    def create
+    @pod = current_user.pods.build(pod_params)
+    if @pod.save
+      flash[:success] = "New White Whale Pod Created!"
+      redirect_to current_user
+    else
+      render current_user# 'new' # this isn't right ? 
+    end
+  end
   
   def edit
     @user=User.find(params[:user_id])
@@ -27,16 +37,6 @@ class PodsController < ApplicationController
       redirect_to @pod
     else
       render 'edit'
-    end
-  end
-
-  def create
-    @pod = current_user.pods.build(pod_params)
-    if @pod.save
-      flash[:success] = "New White Whale Pod Created!"
-      redirect_to current_user
-    else
-      render current_user# 'new' # this isn't right ? 
     end
   end
 
