@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete]
 
   root  :to => 'non_user_pages#home'
@@ -39,8 +41,14 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
 
   get 'signup'  => 'users#new'
-  #get ':controller/:action/:user_id/pods'
 
+  get    'fork'   => 'fork#new'
+  post   'fork'   => 'fork#create'
+
+  #get ':controller/:action/:user_id/pods'
+  #post '/users/:user_id/pods/:pod_id' => 'fork#create'
+
+  post '/users/:user_id/pods/:id(.:format)' => 'pods#fork'
 
   resources :users do 
     resources :pods,  only: [:new, :show, :create, :destroy, :edit, :update] do
