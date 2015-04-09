@@ -1,17 +1,17 @@
   <!--<h1>UserPages#profile</h1>
 <p>Find me in app/views/user_pages/profile.html.erb</p>-->
 <!--********PROFILE PAGE********-->
-<div class="container push-down200">
+<div class="container">
     <div id="profile-container" class="row clearfix">
       <div class="col-md-4 h4" id="profile-left">
         <div class="row clearfix" id="profile-photo">
           <a href="#">
-            <%= image_tag @user.photo.url %>
+            <%= image_tag @user.photo.url(:medium) %>
           </a>
         </div>
-        <div class="row clearfix"><a href="#"><p class="icon-location"></p> LOCATION</a></div>
-        <div class="row clearfix"><a href="#"><p class="icon-star"></p> RANK</a></div>
-        <div class="row clearfix"><a href="#"><p class="icon-info-1"></p> DESCRIPTION</a></div>
+        <div class="row clearfix"><a href="#"><span class="icon-location"></span> LOCATION</a></div>
+        <div class="row clearfix"><a href="#"><span class="icon-star"></span> RANK</a></div>
+        <div class="row clearfix"><a href="#"><span class="icon-info-1"></span> DESCRIPTION</a></div>
       </div>
       <div class="col-md-8" id="profile-right">
         <div id="profile-name"><h1><%= @user.name %>'s Ocean</h1></div>
@@ -20,45 +20,53 @@
     <!--   -->
     <div id="set-container" class="row clearfix text-center big_Arrows">
       <!--   <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div> -->
+
+      <div id="pod-preview" class="col-md-4">
+        <div class="row clearfix">
+          <% if @user.pods.any? %>
+              <h3>Pods (<%= @user.pods.count %>)</h3>
+              <ol class="pods">
+                <%= render @pods %>
+              </ol>
+              <%= will_paginate @pods %>
+          <% end %>
+
+        </div>
+        <div class="row clearfix">
+          <% if logged_in? %>
+              <div class="row">
+                <aside class="col-md-4">
+                  <section class="user_info col-md-12">
+                    <!--<= render 'shared/user_info' > -->
+                  </section>
+                  <section class="pods_form col-xs-6">
+                    <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-sm btn-primary"%>
+                  </section>
+                  <section class="pods_form col-xs-6">
+                    <%=  link_to "Edit A Pod", '#' ,class: "btn btn-sm btn-primary"%>
+                  </section>
+                </aside>
+              </div>
+          <% else %>
+
+          <% end %>
+        </div>
+
+      </div>
+
       <div class="col-md-7" class="set-right">
         <div class="row clearfix">
-           <!--
+
           <span class="col-md-2"><a href="#"><p class ="icon-angle-left"> </p></a></span>
-          <div class="col-md-8">PODNAME(same as SetName) Goes Here</div>
+          <div class="col-md-8"><%= @user.pods.name %></div>
           <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
-           -->
+
         </div>
       
-        <% if logged_in? %>
-        <div class="row">
-          <aside class="col-md-4">
-            <section class="user_info">
-              <!--<= render 'shared/user_info' > -->
-            </section>
-            <section class="pods_form">
-              <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary"%>
-            </section>
-          </aside>
-        </div>
-        <% else %>
 
-
-        <% end %>
 
        
-        <div id="pod-preview" class="row clearfix">
-          <div clas="row clearfix">
-            <% if @user.pods.any? %>
-           <h3>Pods (<%= @user.pods.count %>)</h3>
-           <ol class="pods">
-              <%= render @pods %>
-            </ol>
-            <%= will_paginate @pods %> 
-            <% end %>
 
-          </div>
-
-        </div>
 
         <div class="row clearfix small_Arrows">
           <span class="col-md-3"><a href="#"><p class ="icon-angle-left"> </p></a></span>
