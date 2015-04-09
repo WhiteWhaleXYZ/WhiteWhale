@@ -15,7 +15,7 @@ class PodsController < ApplicationController
     #respond_with(@pod)
   end
 
-    def create
+  def create
     @pod = current_user.pods.build(pod_params)
     if @pod.save
       flash[:success] = "New White Whale Pod Created!"
@@ -47,10 +47,21 @@ class PodsController < ApplicationController
       @pods = Pods.postall
     end  
   end  
+
+  def fork
+      @pod = Pod.find(params[:id])
+      @newPod = @pod.dup
+      #@newPod.user_id = current_user
+      @newPod.save
+      redirect_to current_user# 'new' # this isn't right ? 
+    
+  end
+
+
   private
 
   def pod_params
-    params.require(:pod).permit( :name, :description, :photo, :tag_list) 
+    params.require(:pod).permit( :user_id, :name, :description, :photo, :tag_list) 
   end
   
 end
