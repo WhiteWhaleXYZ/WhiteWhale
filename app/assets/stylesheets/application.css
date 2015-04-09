@@ -289,10 +289,20 @@ input {
 #collection-item img,
 #sets-item img{
     width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
+
+/* USER PROFILE
+-------------------------------------------------- */
 #profile-container{
     background-image: url("/img/placeholderbg.jpg");
+}
+#profile-left > div {
+    margin-bottom: 15px;
+}
+#profile-photo{
+
 }
 
 /* RESPONSIVE CSS
