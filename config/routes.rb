@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
 
-  
+  #namespace :user do
+  #  root  to: redirect( "/users/:user_id")
+  #end
 
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete]
 
-  root  :to => 'non_user_pages#home'
-
+    #root  :to => 'non_user_pages#home'
+  root  :to => 'application#logged_in_user'
+  
   get 'sessions/new'
 
   get 'non_user_pages/404'
-
-  #get 'user_pages/collections'
-
-  #get 'user_pages/sets'
-
+  
   get 'user_pages/profile'
 
   get 'user_pages/followlist'
