@@ -18,13 +18,14 @@
       </div>
     </div>
     <!--   -->
-    <div id="set-container" class="row clearfix text-center big_Arrows">
+  <% if @user.pods.any? %>
+      <h3 class="lead"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
+    <div id="set-container" class="push-down20 row clearfix text-center big_Arrows">
       <!--   <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div> -->
 
       <div id="pod-preview" class="col-md-4">
         <div class="row clearfix">
-          <% if @user.pods.any? %>
-              <h3>Pods (<%= @user.pods.count %>)</h3>
+
               <ol class="pods">
                 <%= render @pods %>
               </ol>
@@ -32,40 +33,22 @@
           <% end %>
 
         </div>
-        <div class="row clearfix">
-          <% if logged_in? %>
-              <div class="row">
-                <aside class="col-md-4">
-                  <section class="user_info col-md-12">
-                    <!--<= render 'shared/user_info' > -->
-                  </section>
-                  <section class="pods_form col-xs-6">
-                    <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-sm btn-primary"%>
-                  </section>
-                  <section class="pods_form col-xs-6">
-                    <%=  link_to "Edit A Pod", '#' ,class: "btn btn-sm btn-primary"%>
-                  </section>
-                </aside>
-              </div>
-          <% else %>
+          <div class="user_info row clearfix">
+            <!--<= render 'shared/user_info' > -->
+          </div>
 
-          <% end %>
-        </div>
+
 
       </div>
 
-      <div class="col-md-7" class="set-right">
+      <!--<div class="col-md-8" class="set-right">
         <div class="row clearfix">
 
           <span class="col-md-2"><a href="#"><p class ="icon-angle-left"> </p></a></span>
-          <div class="col-md-8"><%= @user.pods.name %></div>
+          <div class="col-md-8"><%#= @user.pods.name %></div>
           <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
 
         </div>
-      
-
-
-       
 
 
         <div class="row clearfix small_Arrows">
@@ -74,8 +57,8 @@
           <div class="col-md-3"> <a href="#"> <p class="icon-eye"> </p> </a> </div>
           <span class="col-md-3"> <a href="#"> <p class ="icon-angle-right"> </p></a></span>
         </div>
-      </div>
-      <div class="col-md-1" id="set-social-share">Vertical Floating Social Network</div>
+      </div>-->
+      <!--<div class="col-md-1" id="set-social-share">Vertical Floating Social Network</div>-->
     </div>
     <div id="view-set-container" class="row clearfix">
       <div id="view-set-results" class="col-md-10 text-center">
