@@ -35,6 +35,9 @@ body {
 input{/*Fix bleed of borders around input*/
     background-clip: padding-box;
 }
+ul, ol {
+    padding-left: 0px;
+}
 /* GENERAL GLOBAL
 -------------------------------------------------- */
 .center{
