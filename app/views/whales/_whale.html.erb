@@ -1,7 +1,8 @@
 <li id="whale-<%= whale.id %>">
   
-    <%=link_to image_tag(whale.photo.url), user_pod_whale_path(whale.pod.id,whale.id)%>
-    <span class="user"><%= link_to whale.user.name, whale.user %></span>
+    <%#=#link_to image_tag(whale.photo.url), user_pod_whale_path(whale.pod.id,whale.id)%>
+    <%=image_tag(whale.photo.url)%>
+    <span class="user"><%= link_to whale.pod.name, whale.pod.user %></span>
     <span class="description"><%= whale.description %></span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(whale.created_at) %> ago.

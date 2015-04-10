@@ -38,6 +38,11 @@
                 <%= link_to "Log out", logout_path, method: "delete", :class=> "icon-logout" %>
                 <%= link_to "Settings", edit_user_path(current_user), :method => "get", :class=> "icon-cog" %>
                 <%= link_to "Users", users_path, :class=> "icon-user"%>
+                <div class="row clearfix" id="profile-photo">
+                  <a href="#">
+                    <%= link_to image_tag(@user.photo.url), (@user) %>
+                  </a>
+                </div>
 
           <% else %>
             <a href="#" id="top-right-login" data-toggle="modal" data-target="#Login-Modal"> <p class="icon-login login-icons"> LOGIN </p> </a>

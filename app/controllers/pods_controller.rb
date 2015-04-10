@@ -3,6 +3,9 @@ class PodsController < ApplicationController
   def show
     @user=User.find(params[:user_id])
     @pod = Pod.find(params[:id])
+    @whales = @pod.whales.paginate(page: params[:page])
+    #@pods = @user.pods.paginate(page: params[:page])
+                              
   end
 
   #def index
