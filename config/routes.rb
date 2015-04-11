@@ -6,9 +6,8 @@ Rails.application.routes.draw do
 
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete]
 
-    #root  :to => 'non_user_pages#home'
-  root  :to => 'application#logged_in_user'
-  
+  root  :to => 'non_user_pages#home'
+     
   get 'sessions/new'
 
   get 'non_user_pages/404'
