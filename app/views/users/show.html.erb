@@ -18,6 +18,7 @@
       </div>
     </div>
     <!--   -->
+  <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-primary"%>
   <% if @user.pods.any? %>
       <h3 class="lead"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
     <div id="set-container" class="push-down20 row clearfix text-center big_Arrows">
