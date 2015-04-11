@@ -54,7 +54,8 @@ class PodsController < ApplicationController
   def fork
       @pod = Pod.find(params[:id])
       @newPod = @pod.dup
-      #@newPod.user_id = current_user
+      @user = User.find_by(id: session[:user_id])
+      @newPod.update_attributes(user_id: @user.id)
       @newPod.save
       redirect_to current_user# 'new' # this isn't right ? 
     
