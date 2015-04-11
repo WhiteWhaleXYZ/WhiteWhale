@@ -37,6 +37,9 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'will_paginate',       '3.0.7'
 gem 'bootstrap-will_paginate',    '0.0.10'
 
+#for forking
+gem 'amoeba'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
