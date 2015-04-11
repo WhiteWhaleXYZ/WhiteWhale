@@ -4,8 +4,6 @@ class PodsController < ApplicationController
     @user=User.find(params[:user_id])
     @pod = Pod.find(params[:id])
     @whales = @pod.whales.paginate(page: params[:page])
-    #@pods = @user.pods.paginate(page: params[:page])
-                              
   end
 
   #def index
@@ -24,20 +22,20 @@ class PodsController < ApplicationController
       flash[:success] = "New White Whale Pod Created!"
       redirect_to current_user
     else
-      render current_user# 'new' # this isn't right ? 
+      render current_user
     end
   end
   
   def edit
-    @user=User.find(params[:user_id])
-    @pod = @user.pods.build(params[:pod])
+    @pod = Pod.find(params[:id])
   end
 
   def update
+    @user= User.find(params[:user_id])
     @pod = Pod.find(params[:id])
     if @pod.update_attributes(pod_params)
       flash[:success] = "Pod updated"
-      redirect_to @pod
+      redirect_to @user
     else
       render 'edit'
     end
