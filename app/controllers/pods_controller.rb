@@ -53,7 +53,7 @@ class PodsController < ApplicationController
 
   def fork
       @pod = Pod.find(params[:id])
-      @newPod = @pod.dup
+      @newPod = @pod.amoeba_dup
       @user = User.find_by(id: session[:user_id])
       @newPod.update_attributes(user_id: @user.id)
       @newPod.save
