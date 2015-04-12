@@ -1,0 +1,15 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= form_tag :controller => 'user_pages', :action => 'search', :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
+
+<ul class="users">
+  <li>
+    <%= render @userslist %>
+  </li>
+</ul>
