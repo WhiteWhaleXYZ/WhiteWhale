@@ -31,6 +31,15 @@ class WhalesController < ApplicationController
   end
 
   def update
+    @user= User.find(params[:user_id])
+    @pod = Pod.find(params[:pod_id])
+    @whale = Whale.find(params[:id])
+    if @whale.update_attributes(whale_params)
+      flash[:success] = "Whale updated"
+      redirect_to user_pod_path( params[:user_id],@pod.id)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
