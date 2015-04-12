@@ -56,7 +56,7 @@ class PodsController < ApplicationController
       @pod = Pod.find(params[:id])
       @newPod = @pod.amoeba_dup
       @user = User.find_by(id: session[:user_id])
-      @newPod.photo = @pod.photo
+      #@newPod.photo = @pod.photo
       @newPod.update_attributes(user_id: @user.id)
       @newPod.save
       redirect_to current_user# 'new' # this isn't right ? 
