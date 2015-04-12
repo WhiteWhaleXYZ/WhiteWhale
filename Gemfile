@@ -40,12 +40,16 @@ gem 'bootstrap-will_paginate',    '0.0.10'
 #for forking
 gem 'amoeba'
 
+#for searching
+gem 'sunspot_rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'capistrano', '~> 3.1.0'
-  gem "better_errors"
+  gem 'better_errors'
+  gem 'sunspot_solr'
   # Capistrano tasks to manage puma app server
   gem 'capistrano3-puma' , require: false
   gem 'capistrano-rails', '~> 1.1', require: false

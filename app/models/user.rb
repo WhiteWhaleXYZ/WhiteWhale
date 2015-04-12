@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }, allow_blank: true
 
+  searchable do
+    text :name, :email
+  end
+
 
   has_attached_file :photo,
   :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
@@ -46,4 +50,6 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+
 end
