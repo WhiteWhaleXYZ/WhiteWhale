@@ -1,4 +1,6 @@
 class WhalesController < ApplicationController
+  before_action :logged_in_user, only: [:new,:show, :create, :destroy]
+  before_action :correct_user,   only: [:edit, :update]
   #def index
   #end
  
@@ -51,4 +53,8 @@ class WhalesController < ApplicationController
     params.require(:whale).permit( :name, :description, :photo, :tag_list) 
   end
 
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(current_user) unless current_user?(@user)
+  end
 end
