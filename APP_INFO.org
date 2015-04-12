@@ -73,11 +73,16 @@ $ git diff --stat --color Dev..Prod
 // Dev 
 $ bundle exec rake db:migrate RAILS_ENV=development 
 $ bundle install --path vendor/bundle
+$ rake sunspot:solr:start
+$ rake sunspot:reindex
 
 // Production 
 $ bundle exec rake assets:precompile
 $ bundle install --deployment
 $ RAILS_ENV=production bundle exec rake db:migrate
+$ rake sunspot:solr:start
+$ rake sunspot:reindex
+
 #+END_SRC
 * App Server Commands :
 #+BEGIN_SRC:
