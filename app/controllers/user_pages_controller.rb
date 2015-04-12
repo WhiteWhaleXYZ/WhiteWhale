@@ -18,7 +18,7 @@ class UserPagesController < ApplicationController
     @query = User.search do
       fulltext params[:search]
     end
-    @userslist = @query.resultsls
+    @userslist = @query.results
   end
 
 end
