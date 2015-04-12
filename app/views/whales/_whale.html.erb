@@ -1,12 +1,12 @@
 <li id="whale-<%= whale.id %>">
   
-    <%#=#link_to image_tag(whale.photo.url), user_pod_whale_path(whale.pod.id,whale.id)%>
+    <%#=link_to image_tag(whale.photo.url), user_pod_whale_path(whale.pod.id,whale.id)%>
     <%=image_tag(whale.photo.url)%>
     <span class="user"><%= link_to whale.pod.name, whale.pod.user %></span>
     <span class="description"><%= whale.description %></span>
+      <%# if auth_user? %>
       <% if logged_in? %>
-
-
+     
       <div class="pods_form btn-group btn-group-justified">
         <%#=  link_to "Create A Whale", new_user_pod_path(@user.id), class: "btn btn-primary"%>
         <%=  link_to "Edit", edit_user_pod_whale_path(whale.pod.user.id,whale.pod.id,whale.id) ,class: "btn btn-primary"%>

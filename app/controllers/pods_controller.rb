@@ -1,5 +1,8 @@
 class PodsController < ApplicationController
-  before_action :logged_in_user, only: [:new,:show, :edit, :update, :create, :destroy]
+  before_action :logged_in_user, only: [:new,:show, :create, :destroy]
+  before_action :correct_user,   only: [:edit, :update]
+  # before_action :correct_user sets the @user variable 
+  
   def show
     @user=User.find(params[:user_id])
     @pod = Pod.find(params[:id])
@@ -65,6 +68,12 @@ class PodsController < ApplicationController
 
   def pod_params
     params.require(:pod).permit( :user_id, :name, :description, :photo, :tag_list) 
+  end
+
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(current_user) unless current_user?(@user)
   end
   
 end
