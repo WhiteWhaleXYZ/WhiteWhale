@@ -28,3 +28,6 @@ config/database.yml
 /photos/**
 /public/system/pods/**
 /public/system/**
+
+#ignore solr
+/solr/development/**
