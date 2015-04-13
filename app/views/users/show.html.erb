@@ -18,12 +18,15 @@
       </div>
     </div>
     <!--   -->
+  <% if current_user?(User.find(params[:id])) %>
+    <div class="row clearfix text-center">
+     <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
+   </div>
+   <% end %>
+
 
   <% if @user.pods.any? %>
       <h3 class="lead"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
-      <div class="row clearfix text-center">
-        <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
-      </div>
     <div id="set-container" class="row clearfix text-center big_Arrows push-down20">
       <!--   <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div> -->
 
