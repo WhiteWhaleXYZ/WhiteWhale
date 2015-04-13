@@ -18,5 +18,9 @@ class Whale < ActiveRecord::Base
 
 			copy_of_obj.photo = orig_obj.photo
 		})
-	end
+  end
+
+  searchable do
+    text :name, :description
+  end
 end

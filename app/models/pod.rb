@@ -21,8 +21,8 @@ class Pod < ActiveRecord::Base
         puts "and here"
         copy_of_obj.photo = orig_obj.photo
     })
-
-
-
+  end
+  searchable do
+    text :name, :description
   end
 end
