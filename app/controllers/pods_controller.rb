@@ -72,7 +72,7 @@ class PodsController < ApplicationController
 
   # Confirms the correct user.
   def correct_user
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     redirect_to(current_user) unless current_user?(@user)
   end
   
