@@ -63,20 +63,31 @@ The rest of the Internet will tell you to use git reset --hard, but this resets 
 
 #+END_SRC:
 
+** Testing Difference of Branches
+#+BEGIN_SRC
+
+$ git diff --stat --color Dev..Prod
+#+END_SRC
 * Bundle commands 
 #+BEGIN_SRC
 // Dev 
 $ bundle exec rake db:migrate RAILS_ENV=development 
 $ bundle install --path vendor/bundle
+$ rake sunspot:solr:start
+$ rake sunspot:reindex
 
 // Production 
+$ bundle exec rake assets:precompile
 $ bundle install --deployment
 $ RAILS_ENV=production bundle exec rake db:migrate
+$ rake sunspot:solr:start
+$ rake sunspot:reindex
+
 #+END_SRC
 * App Server Commands :
 #+BEGIN_SRC:
 // Production Kill the puma pid 
-$ kill -s SIGTERM `cat tmp/puma/pid
+$ kill -s SIGTERM `cat tmp/puma/pid`
 $ bundle exec puma -C config/puma.rb
 #+END_SRC:
 

@@ -13,4 +13,6 @@ class UserPagesController < ApplicationController
 
   def rank
   end
+
+
 end

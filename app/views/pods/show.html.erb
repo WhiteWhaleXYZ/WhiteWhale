@@ -1,57 +1,65 @@
-  <!--<h1>UserPages#profile</h1>
-<p>Pods pages </p>-->
-<!--********PROFILE PAGE********-->
-<div class="container push-down200">
-    <div id="profile-container" class="row clearfix">
-      <div class="col-md-4 h4" id="profile-left">
-        <div class="row clearfix" id="profile-photo">
+
+<!--********POD PAGE********-->
+<div class="container">
+
+    <div id="pod-container" class="row clearfix">
+      <div class="col-md-4 h4" id="pod-left">
+        <div class="row clearfix" id="pod-photo">
           <a href="#">
             <%= image_tag @pod.photo.url%> 
           </a>
+         
         </div>
+        <div class="pods_form btn-group btn-group-justified">
+          <%=  link_to "Edit", edit_user_pod_path(@user.id,@pod.id) ,class: "btn btn-primary"%>
+          </div>
         <div class="row clearfix">[LOC-ICON] LOCATION</div>
         <div class="row clearfix"><a href="#">[RNK-ICON] RANK</a></div>
         <div class="row clearfix">[DSC-ICON] DESCRIPTION</div>
       </div>
-      <div class="col-md-8" id="profile-right">
-        <div id="profile-name"><h1><%=@pod.name%> </h1></div>
+      <div class="col-md-8" id="pod-right">
+        <div id="pod-name"><h1><%=@pod.name%> </h1></div>
         <div id="bullshit"><h1><%=@pod.description%> </h1></div>
         <div id="bullshit"><h1>This Pod Belongs to User <%=@user.name%> </h1></div>
       </div>
     </div>
     <div id="set-container" class="row clearfix text-center">
-      <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div>
-      <div class="col-md-7" class="set-right">
-        <div class="row clearfix">
+      <!--<div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div>-->
+
+        <!--<div class="row clearfix">
           <span class="col-md-2"><a href="#"><p class ="icon-angle-left"> </p></a></span>
           <div class="col-md-8">PODNAME(same as SetName) Goes Here</div>
           <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
-        </div>
+        </div>-->
+        <%# if pod_user? %>
+        <% if logged_in? %>
+        <section class="pods_form row clearfix">
+              <%=  link_to "Create A Whale", new_user_pod_whale_path(@user.id,@pod.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
+        </section>
+        <% end %>
 
-        <div id="pod-preview" class="row clearfix">
+        <div id="pod-preview">
           <div clas="row clearfix">
-            <span class="col-md-3"><a href="#">Object1<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object2<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object3<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object4<img src="/img/placeholder.png"/></a></span>
+           <!--WHALES SHOULD BE RENDERED HERE  -->
+           <% @pod.whales.any? %>
+            <% if @pod.whales.any? %>
+            <h3>(<%= @pod.whales.count %>)</h3>
+            <ol class="whales">
+              <%= render @pod.whales %>
+            </ol>
+            <%#= will_paginate @whales %> 
+            <% end %>
           </div>
-          <div clas="row clearfix">
-            <span class="col-md-3"><a href="#">Object5<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object6<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object7<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object8<img src="/img/placeholder.png"/></a></span>
-          </div>
-          <div clas="row clearfix">
-            <span class="col-md-3"><a href="#">Object9<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object10<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object11<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object12<img src="/img/placeholder.png"/></a></span>
-          </div>
-        </div>
 
+          </div>
         <div class="row clearfix">
-          <span class="col-md-3"><a href="#"><p class ="icon-angle-left"> </p></a></span>
-          <div class="col-md-3"><button>FORK</button></div>
+
+          
+          <span class="col-md-3"><a href="#"><p class ="icon-angle-left">
+                
+
+          </p></a></span>
+          <div class="col-md-3"><%= button_to "Fork", method: :fork %></div>
           <div class="col-md-3"><button>VIEW</button></div>
           <span class="col-md-3"><a href="#"><p class ="icon-angle-right"> </p></a></span>
         </div>
@@ -62,10 +70,7 @@
       <div id="view-set-results" class="col-md-10 text-center">
         <!-- Should dynamically add rows in multiples of 4-->
         <div class="row clearfix">
-          <span class="col-md-3"><a href="#">item1<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item2<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item3<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item4<img src="/img/placeholder.png"/></a></span>
+         
         </div>
         <!-- should not be visible if max number of items is reached-->
         <div class="row clearfix"><button>LOAD MORE BTN</button></div>
@@ -77,4 +82,4 @@
       </div>
     </div>
 </div>
-<!----********/ PROFILE PAGE********----->
+<!----********/ POD PAGE********----->

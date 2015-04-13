@@ -27,3 +27,7 @@ config/database.yml
 #ignore photo files
 /photos/**
 /public/system/pods/**
+/public/system/**
+
+#ignore solr
+/solr/development/**

@@ -1,0 +1,14 @@
+<li id="whale-<%= whale.id %>" class="col-sm-3 col-xs-6">
+  
+    <%#=link_to image_tag(whale.photo.url), user_pod_whale_path(whale.pod.id,whale.id)%>
+    <%#=link_to image_tag(whale.photo.url)%>
+    <%=link_to image_tag(whale.photo.url), edit_user_pod_whale_path(whale.pod.user.id,whale.pod.id,whale.id)%>
+    <span class="whale"><%= link_to whale.pod.name, whale.pod.user %></span>
+    <div>
+    <span class="name"> <%= whale.name%></span>
+    </div>
+    <span class="description"><%= whale.description %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(whale.created_at) %> ago.
+    </span>
+</li>

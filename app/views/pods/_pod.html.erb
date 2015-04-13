@@ -1,9 +1,9 @@
-<li id="pod-<%= pod.id %>">
-  
-    <%=link_to image_tag(pod.photo.url), user_pod_path(pod.user.id,pod.id)%>
-    <span class="user"><%= link_to pod.user.name, pod.user %></span>
-    <span class="description"><%= pod.description %></span>
-    <span class="timestamp">
+<li id="pod-<%= pod.id %>" class="col-sm-3 col-xs-6">
+
+  <%=link_to image_tag(pod.photo.url), user_pod_path(pod.user.id,pod.id)%>
+  <span class="user"><%= link_to pod.name, pod.user %></span>
+  <span class="description"><%= pod.description %></span>
+  <span class="timestamp">
       Posted <%= time_ago_in_words(pod.created_at) %> ago.
     </span>
 </li>

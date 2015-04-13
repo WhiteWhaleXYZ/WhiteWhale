@@ -1,4 +1,4 @@
-<div class="push-down160 container">
+<div class="container">
   <% provide(:title, 'Create New Pod') %>
   <h1>Create New Whale Pod</h1>
 
@@ -6,7 +6,6 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@pod, :url=>user_pods_path(@user)) do |f| %>
       <%#= render 'shared/error_messages' %>
-
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -16,7 +15,6 @@
       
       <%= f.label :tags %>
       <%= f.text_field :tag_list, :placeholder => "Description", class: 'form-control' %>
-
 
       <%= f.file_field :photo %>
       

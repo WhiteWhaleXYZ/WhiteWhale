@@ -30,6 +30,14 @@ module SessionsHelper
     end
   end
 
+  def auth_user?
+    if (params[:id] && @user = User.find(params[:user_id]) && current_user?(@user))
+      true
+    else
+      false
+    end
+  end
+      
   # Returns true if the user is logged in, false otherwise.
   def logged_in?
     !current_user.nil?

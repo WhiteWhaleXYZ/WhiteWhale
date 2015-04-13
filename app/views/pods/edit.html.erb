@@ -1,10 +1,10 @@
-<div class="push-down160 container">
+<div class="container">
       <% provide(:title, "Edit pod") %>
     <p class="lead-title text-center text-capitalize addbottom40">Update your pod</p>
 
     <div class="row clearfix">
       <div class="col-md-8 center text-capitalize">
-        <%= form_for(@pod, :url=>user_pods_path(@user)) do |f| %>
+        <%= form_for  @pod, url: user_pod_path  do |f| %>
           <%#= render 'shared/error_messages' %> 
 
            <%= f.label :name %>

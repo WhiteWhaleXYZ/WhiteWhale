@@ -1,8 +1,12 @@
 class PodsController < ApplicationController
-  before_action :logged_in_user, only: [:new,:show, :edit, :update, :create, :destroy]
+  before_action :logged_in_user, only: [:new,:show, :create, :destroy]
+  before_action :correct_user,   only: [:edit, :update]
+  # before_action :correct_user sets the @user variable 
+  
   def show
     @user=User.find(params[:user_id])
     @pod = Pod.find(params[:id])
+    @whales = @pod.whales.paginate(page: params[:page])
   end
 
   #def index
@@ -14,21 +18,6 @@ class PodsController < ApplicationController
     @pod = @user.pods.build(params[:pod])
     #respond_with(@pod)
   end
-  
-  def edit
-    @user=User.find(params[:user_id])
-    @pod = @user.pods.build(params[:pod])
-  end
-
-  def update
-    @pod = Pod.find(params[:id])
-    if @pod.update_attributes(pod_params)
-      flash[:success] = "Pod updated"
-      redirect_to @pod
-    else
-      render 'edit'
-    end
-  end
 
   def create
     @pod = current_user.pods.build(pod_params)
@@ -36,7 +25,22 @@ class PodsController < ApplicationController
       flash[:success] = "New White Whale Pod Created!"
       redirect_to current_user
     else
-      render current_user# 'new' # this isn't right ? 
+      render current_user
+    end
+  end
+  
+  def edit
+    @pod = Pod.find(params[:id])
+  end
+
+  def update
+    @user= User.find(params[:user_id])
+    @pod = Pod.find(params[:id])
+    if @pod.update_attributes(pod_params)
+      flash[:success] = "Pod updated"
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
 
@@ -47,10 +51,29 @@ class PodsController < ApplicationController
       @pods = Pods.postall
     end  
   end  
+
+  def fork
+      @pod = Pod.find(params[:id])
+      @newPod = @pod.amoeba_dup
+      @user = User.find_by(id: session[:user_id])
+      #@newPod.photo = @pod.photo
+      @newPod.update_attributes(user_id: @user.id)
+      @newPod.save
+      redirect_to current_user# 'new' # this isn't right ? 
+    
+  end
+
+
   private
 
   def pod_params
-    params.require(:pod).permit( :name, :description, :photo, :tag_list) 
+    params.require(:pod).permit( :user_id, :name, :description, :photo, :tag_list) 
+  end
+
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find(params[:user_id])
+    redirect_to(current_user) unless current_user?(@user)
   end
   
 end

@@ -1,4 +1,6 @@
 class WhalesController < ApplicationController
+  before_action :logged_in_user, only: [:new,:show, :create, :destroy]
+  before_action :correct_user,   only: [:edit, :update]
   #def index
   #end
  
@@ -8,14 +10,14 @@ class WhalesController < ApplicationController
 
   def new
     @user=User.find(params[:user_id])
-    @pod = Pod.find(params[:user_id],params[:pod_id])
+    @pod = Pod.find(params[:pod_id])
     @whale= @pod.whales.build(params[:whale])
     #respond_with(@pod)
   end
 
   def create
     @user=User.find(params[:user_id])
-    @pod = Pod.find(params[:user_id],params[:pod_id])
+    @pod = Pod.find(params[:pod_id])
     @whale= @pod.whales.build(whale_params)
 
     if @whale.save
@@ -31,6 +33,15 @@ class WhalesController < ApplicationController
   end
 
   def update
+    @user= User.find(params[:user_id])
+    @pod = Pod.find(params[:pod_id])
+    @whale = Whale.find(params[:id])
+    if @whale.update_attributes(whale_params)
+      flash[:success] = "Whale updated"
+      redirect_to user_pod_path( params[:user_id],@pod.id)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -42,4 +53,8 @@ class WhalesController < ApplicationController
     params.require(:whale).permit( :name, :description, :photo, :tag_list) 
   end
 
+  def correct_user
+    @user = User.find(params[:user_id])
+    redirect_to(current_user) unless current_user?(@user)
+  end
 end

@@ -1,83 +1,59 @@
   <!--<h1>UserPages#profile</h1>
 <p>Find me in app/views/user_pages/profile.html.erb</p>-->
 <!--********PROFILE PAGE********-->
-<div class="container push-down200">
+<div class="container">
     <div id="profile-container" class="row clearfix">
       <div class="col-md-4 h4" id="profile-left">
         <div class="row clearfix" id="profile-photo">
           <a href="#">
-            <%= image_tag @user.photo.url %>
+            <%= image_tag @user.photo.url(:medium) %>
           </a>
         </div>
-        <div class="row clearfix"><a href="#"><p class="icon-location"></p> LOCATION</a></div>
-        <div class="row clearfix"><a href="#"><p class="icon-star"></p> RANK</a></div>
-        <div class="row clearfix"><a href="#"><p class="icon-info-1"></p> DESCRIPTION</a></div>
+        <div class="row clearfix"><a href="#"><span class="icon-location"></span> LOCATION</a></div>
+        <div class="row clearfix"><a href="#"><span class="icon-star"></span> RANK</a></div>
+        <div class="row clearfix"><a href="#"><span class="icon-info-1"></span> DESCRIPTION</a></div>
       </div>
       <div class="col-md-8" id="profile-right">
         <div id="profile-name"><h1><%= @user.name %>'s Ocean</h1></div>
       </div>
     </div>
-    <div id="set-container" class="row clearfix text-center big_Arrows">
-      <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div>
-      <div class="col-md-7" class="set-right">
+    <!--   -->
+
+  <% if @user.pods.any? %>
+      <h3 class="lead"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
+      <div class="row clearfix text-center">
+        <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
+      </div>
+    <div id="set-container" class="row clearfix text-center big_Arrows push-down20">
+      <!--   <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div> -->
+
+      <div id="pod-preview" class="">
         <div class="row clearfix">
+
+              <ol class="pods">
+                <%= render @pods %>
+              </ol>
+              <%= will_paginate @pods %>
+          <% end %>
+
+        </div>
+          <div class="user_info row clearfix">
+            <!--<= render 'shared/user_info' > -->
+          </div>
+
+
+
+      </div>
+
+      <!--<div class="col-md-8" class="set-right">
+        <div class="row clearfix">
+
           <span class="col-md-2"><a href="#"><p class ="icon-angle-left"> </p></a></span>
-          <div class="col-md-8">PODNAME(same as SetName) Goes Here</div>
+          <div class="col-md-8"><%#= @user.pods.name %></div>
           <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
+
         </div>
 
-        <% if logged_in? %>
-        <div class="row">
-          <aside class="col-md-4">
-            <section class="user_info">
-              <!--<= render 'shared/user_info' > -->
-            </section>
-            <section class="pods_form">
-              <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary"%>
-            </section>
-          </aside>
-        </div>
-        <% else %>
-
-
-        <% end %>
-
-       
-        <div id="pod-preview" class="row clearfix">
-          <div clas="row clearfix">
-            <% if @user.pods.any? %>
-           <h3>Pods (<%= @user.pods.count %>)</h3>
-           <ol class="pods">
-              <%= render @pods %>
-            </ol>
-            <%= will_paginate @pods %> 
-            <% end %>
-
-       
-
-
-
-
-
-            
-            <span class="col-md-3"><a href="#">Object1<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object2<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object3<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object4<img src="/img/placeholder.png"/></a></span>
-          </div>
-          <div clas="row clearfix">
-            <span class="col-md-3"><a href="#">Object5<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object6<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object7<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object8<img src="/img/placeholder.png"/></a></span>
-          </div>
-          <div clas="row clearfix">
-            <span class="col-md-3"><a href="#">Object9<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object10<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object11<img src="/img/placeholder.png"/></a></span>
-            <span class="col-md-3"><a href="#">Object12<img src="/img/placeholder.png"/></a></span>
-          </div>
-        </div>
 
         <div class="row clearfix small_Arrows">
           <span class="col-md-3"><a href="#"><p class ="icon-angle-left"> </p></a></span>
@@ -85,25 +61,20 @@
           <div class="col-md-3"> <a href="#"> <p class="icon-eye"> </p> </a> </div>
           <span class="col-md-3"> <a href="#"> <p class ="icon-angle-right"> </p></a></span>
         </div>
-      </div>
-      <div class="col-md-1" id="set-social-share">Vertical Floating Social Network</div>
+      </div>-->
+      <!--<div class="col-md-1" id="set-social-share">Vertical Floating Social Network</div>-->
     </div>
     <div id="view-set-container" class="row clearfix">
       <div id="view-set-results" class="col-md-10 text-center">
         <!-- Should dynamically add rows in multiples of 4-->
-        <div class="row clearfix">
-          <span class="col-md-3"><a href="#">item1<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item2<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item3<img src="/img/placeholder.png"/></a></span>
-          <span class="col-md-3"><a href="#">item4<img src="/img/placeholder.png"/></a></span>
-        </div>
+     
         <!-- should not be visible if max number of items is reached-->
         <div class="row clearfix"><button>LOAD MORE BTN</button></div>
       </div>
       <div id="view-controls" class="col-md-2 text-center">
-        <span class="row clearfix"><a href="#">RANK SET</a></span>
-        <span class="row clearfix"><a href="#">FORK SET</a></span>
-        <span class="row clearfix"><a href="#">ADD TO WISHLIST</a></span>
+        <span class="row clearfix"><a href="#"><p class ="icon-star"> </p></a></span>
+        <span class="row clearfix"><a href="#"><p class ="icon-google-circles"> </p></a></span>
+        <span class="row clearfix"><a href="#"><p class ="icon-heart"> </p></a></span>
       </div>
     </div>
 </div>

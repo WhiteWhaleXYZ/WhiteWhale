@@ -1,8 +1,9 @@
-<li>
-  <%= gravatar_for whales, size: 50 %>
-  <%= link_to whales. %>
-  <% if current_user.admin? && !current_user?(user) %>
-      | <%= link_to "delete", user, method: :delete,
-                    data: { confirm: "You sure?" } %>
-  <% end %>
+<li id="whale-<%= whale.id %>">
+  
+    <%=link_to image_tag(whale.photo.url), user_pod_whale_path(whale.pod.id,whale.id)%>
+    <span class="user"><%= link_to whale.user.name, whale.user %></span>
+    <span class="description"><%= whale.description %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(whale.created_at) %> ago.
+    </span>
 </li>

@@ -35,6 +35,9 @@ body {
 input{/*Fix bleed of borders around input*/
     background-clip: padding-box;
 }
+ul, ol {
+    padding-left: 0px;
+}
 /* GENERAL GLOBAL
 -------------------------------------------------- */
 .center{
@@ -145,6 +148,9 @@ input{/*Fix bleed of borders around input*/
     z-index: 3;
 }
 
+form button#header-search-submit {
+    padding : 6px 12px;
+}
 
 
 
@@ -289,10 +295,20 @@ input {
 #collection-item img,
 #sets-item img{
     width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
+
+/* USER PROFILE
+-------------------------------------------------- */
 #profile-container{
     background-image: url("/img/placeholderbg.jpg");
+}
+#profile-left > div {
+    margin-bottom: 15px;
+}
+#profile-photo{
+
 }
 
 /* RESPONSIVE CSS
