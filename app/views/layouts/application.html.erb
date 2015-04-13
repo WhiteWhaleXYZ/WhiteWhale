@@ -40,7 +40,9 @@
 </head>
     <body>
         <%= render 'layouts/header' %>
-        <div class="push-down160"></div>
+        <% if(!current_page?('/')) %>
+            <div class="push-down160"></div>
+        <% end %>
         <%= yield %>
         <%= render 'layouts/loginmodal' %>
         <%= render 'layouts/footer' %>
