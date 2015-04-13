@@ -148,6 +148,9 @@ ul, ol {
     z-index: 3;
 }
 
+form button#header-search-submit {
+    padding : 6px 12px;
+}
 
 
 
