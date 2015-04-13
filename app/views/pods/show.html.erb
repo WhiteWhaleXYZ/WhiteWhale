@@ -20,23 +20,22 @@
       </div>
     </div>
     <div id="set-container" class="row clearfix text-center">
-      <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div>
-      <div class="col-md-7" class="set-right">
-        <div class="row clearfix">
+      <!--<div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div>-->
+
+        <!--<div class="row clearfix">
           <span class="col-md-2"><a href="#"><p class ="icon-angle-left"> </p></a></span>
           <div class="col-md-8">PODNAME(same as SetName) Goes Here</div>
           <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
-        </div>
+        </div>-->
         <%# if pod_user? %>
         <% if logged_in? %>
-        <section class="pods_form">
-              <%=  link_to "Create A Whale", new_user_pod_whale_path(@user.id,@pod.id), class: "btn btn-lg btn-primary"%>
-            </section>
+        <section class="pods_form row clearfix">
+              <%=  link_to "Create A Whale", new_user_pod_whale_path(@user.id,@pod.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
+        </section>
         <% end %>
 
-        <div id="pod-preview" class="row clearfix">
+        <div id="pod-preview">
           <div clas="row clearfix">
-            <span class="col-md-3">WHALES HERE 
            <!--WHALES SHOULD BE RENDERED HERE  -->
            <% @pod.whales.any? %>
             <% if @pod.whales.any? %>
@@ -47,14 +46,13 @@
             <%#= will_paginate @whales %> 
             <% end %>
           </div>
-          </span>
+
           </div>
         <div class="row clearfix">
 
           
           <span class="col-md-3"><a href="#"><p class ="icon-angle-left">
                 
-
 
           </p></a></span>
           <div class="col-md-3"><%= button_to "Fork", method: :fork %></div>
