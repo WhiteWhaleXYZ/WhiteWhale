@@ -31,8 +31,7 @@ module SessionsHelper
   end
 
   def auth_user?
-    @user = User.find(params[:id])
-    if  current_user?(@user)
+    if (params[:id] && @user = User.find(params[:user_id]) && current_user?(@user))
       true
     else
       false

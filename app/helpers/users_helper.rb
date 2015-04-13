@@ -7,4 +7,12 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
+
+  def auth_user?
+    if (params[:id] && @user = User.find(params[:id]) && current_user?(@user))
+      true
+    else
+      false
+    end
+  end
 end

@@ -27,10 +27,12 @@
           <div class="col-md-8">PODNAME(same as SetName) Goes Here</div>
           <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
         </div>
-
+        <%# if pod_user? %>
+        <% if logged_in? %>
         <section class="pods_form">
               <%=  link_to "Create A Whale", new_user_pod_whale_path(@user.id,@pod.id), class: "btn btn-lg btn-primary"%>
             </section>
+        <% end %>
 
         <div id="pod-preview" class="row clearfix">
           <div clas="row clearfix">
