@@ -1,7 +1,7 @@
 <% provide(:title, 'All users') %>
 <h1>Search</h1>
 
-<%= form_tag :controller => 'user_pages', :action => 'search', :method => 'get' do %>
+<%= form_tag :controller => 'search', :action=> 'search', :method => 'get' do %>
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :name => nil %>
