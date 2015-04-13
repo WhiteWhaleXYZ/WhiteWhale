@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   get    'fork'   => 'fork#new'
   post   'fork'   => 'fork#create'
 
-  match 'search' => 'user_pages#search', via: [:get, :post]
+  match 'search' => 'search', via: [:get, :post]
 
   #get ':controller/:action/:user_id/pods'
   #post '/users/:user_id/pods/:pod_id' => 'fork#create'
