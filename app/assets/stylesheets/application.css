@@ -149,10 +149,15 @@ ul, ol {
 }
 
 form button#header-search-submit {
-    padding : 6px 12px;
+    padding: 6px 30px;
 }
 
-
+.search-page img{
+    max-width: 100%;
+}
+.search-page li{
+    list-style: none;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
