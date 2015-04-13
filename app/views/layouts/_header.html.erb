@@ -9,17 +9,25 @@
         </a>
         <a class="navbar-brand" href="/"> <p class="icon-icon-whale"> </p> </a>
       </div>
+
+
+
       <div class="col-md-6 col-md-offset-1">
-        <div id="header-search" class="row clearfix">
+        <%= form_tag :controller => 'search', :action=> 'search', :method => 'get', :id => "header-search", class: "row clearfix" do  %>
           <div class="input-group">
-            <input id="header-search-input" name="header-search-input" type="text" class="search-query form-control" placeholder="Search Items, Collections, Sets" />
-                <span class="input-group-btn">
-                    <button id="header-search-submit" name="header-search-submit" class="btn" type="button">
-                      <span class="icon-search"></span>
-                    </button>
-                </span>
+            <%= text_field_tag :search, params[:search], :id=> "header-search-input", class: "search-query form-control", placeholder: "search Items, Collections, Sets" %>
+            <span class="input-group-btn">
+              <%= button_tag(type: "submit", :name => nil, class: "btn", :id => "header-search-submit") do%>
+              <span class="icon-search"></span>
+              <% end %>
+            </span>
+          
           </div>
-        </div>
+        <% end %>
+
+        
+
+
         <div class="row navbar-collapse collapse clearfix menu">
           <ul class="nav nav-justified nav-pills">
           <% if logged_in? %>
