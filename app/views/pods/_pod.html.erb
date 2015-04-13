@@ -19,3 +19,33 @@
       Posted <%= time_ago_in_words(pod.created_at) %> ago.
     </span>
 </li>
+
+<% if false %>
+    <!-- Previous _pods.html.erb is below -->
+<li id="pod-<%= pod.id %>">
+    <span><h2><%= pod.name%></h2></span>
+    <%=link_to image_tag(pod.photo.url), user_pod_path(pod.user.id,pod.id)%>
+    <% if !pod.in?current_user.pods %>
+        <span class="user h3"><%= link_to pod.user.name, pod.user %></span>
+    <% end %>
+    <!--<span class="description"><%#= pod.description %></span>-->
+    <!--<span class="timestamp">
+      Posted <%#= time_ago_in_words(pod.created_at) %> ago.
+    </span>-->
+    <div class="">
+      <a href="#"> <p class="col-md-6 icon-google-circles"> </p> </a>
+      <a href="#"> <p class="col-md-6 icon-eye"> </p> </a>
+    </div>
+    <% if auth_user? %>
+
+
+        <div class="pods_form btn-group btn-group-justified">
+          <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-primary"%>
+          <%=  link_to "Edit A Pod", edit_user_pod_path(pod.user.id,pod.id) ,class: "btn btn-primary"%>
+        </div>
+
+    <% else %>
+
+    <% end %>
+</li>
+<% end %>
