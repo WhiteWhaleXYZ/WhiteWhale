@@ -1,5 +1,5 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+<h1>Search</h1>
 
 <%= form_tag :controller => 'user_pages', :action => 'search', :method => 'get' do %>
     <p>
@@ -8,8 +8,21 @@
     </p>
 <% end %>
 
+<h2>Users:</h2>
 <ul class="users">
   <li>
     <%= render @userslist %>
+  </li>
+</ul>
+<h2>Pods:</h2>
+<ul class="pods">
+  <li>
+    <%= render @podslist %>
+  </li>
+</ul>
+<h2>Whales:</h2>
+<ul class="whales">
+  <li>
+    <%= render @whaleslist %>
   </li>
 </ul>
