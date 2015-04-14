@@ -24,6 +24,8 @@ h2{
 }
 
 body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
     padding-bottom: 40px;
     color: #5E9AC7;
     background-color: #F4F4F4;
@@ -170,6 +172,7 @@ form button#header-search-submit {
 .carousel-caption {
     font-family: 'Open Sans';
     z-index: 1;
+    text-shadow: 2px 2px 12px black;
 }
 
 /* Declare heights because of positioning of img element */
@@ -386,9 +389,14 @@ input {
     z-index: 1;
 }
 
-.input-group-btn button, .input-group-btn button:hover{
+.input-group-btn button, .input-group-btn {
     background-color: #2576bc;
-    border: white;
+    border: transparent;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color: #13a3fb;
 }
 
 #footer{
