@@ -9,9 +9,6 @@
         </a>
         <a class="navbar-brand" href="/"> <p class="icon-icon-whale"> </p> </a>
       </div>
-
-
-
       <div class="col-md-6 col-md-offset-1">
         <%= form_tag :controller => 'search', :action=> 'search', :method => 'get', :id => "header-search", class: "row clearfix" do  %>
           <div class="input-group">
@@ -21,17 +18,14 @@
               <span class="icon-search"></span>
               <% end %>
             </span>
-          
           </div>
         <% end %>
-
         <div class="row navbar-collapse collapse clearfix menu">
           <ul class="nav nav-justified nav-pills">
-          <% if logged_in? %>
-
-            <li class="active"><a href="#"> <p class ="menu-icons icon-icon-sets"> </p> <div class="row clearfix text"> SETS </div> </a></li>
-            <li><a href="#" target="ext"> <p class ="menu-icons icon-collection"> </p> <div class="row clearfix text"> COLLECTIONS </div> </a></li>
-            <li><a href="#"> <p class ="menu-icons icon-icon-trending"> </p> <div class="row clearfix text"> TRENDING </div> </a></li>
+            <% if logged_in? %>
+                <li><a href="#"> <p class ="menu-icons icon-icon-sets"> </p> <div class="row clearfix text"> SETS </div> </a></li>
+                <li><a href="#"> <p class ="menu-icons icon-collection"> </p> <div class="row clearfix text"> COLLECTIONS </div> </a></li>
+                <li><a href="#"> <p class ="menu-icons icon-icon-trending"> </p> <div class="row clearfix text"> TRENDING </div> </a></li>
             <% end %>
           </ul>
         </div>
@@ -39,34 +33,32 @@
       <div class="col-md-3 col-xs-12 pull-right text-right logins">
         <div class="col-md-6 col-xs-6">
           <% if logged_in? %>
-
               <%= link_to "Log out", logout_path, method: "delete", :class=> "icon-logout" %>
               <%= link_to "Settings", edit_user_path(current_user), :method => "get", :class=> "icon-cog" %>
               <%= link_to "Users", users_path, :class=> "icon-user"%>
-
           <% else %>
               <a href="#" id="top-right-login" data-toggle="modal" data-target="#Login-Modal"> <p class="icon-login login-icons"> LOGIN </p> </a>
-        <% end %>
+          <% end %>
         </div>
         <div class="col-md-6 col-xs-6" id="profile">
           <% if logged_in? %>
               <div class="row clearfix" id="profile-photo">
-                  <%= link_to image_tag(current_user.photo.url), (current_user) %>
+                <%= link_to image_tag(current_user.photo.url), (current_user) %>
               </div>
           <% else %>
             <a href="#" id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal"> <p class="icon-opentable login-icons"> SIGNUP </p> </a>
-        <% end %>
+          <% end %>
         </div>
         <!--Once user is logged in to display-->
         <!--<div id="top-right-logged-in">
-            <!--<div id="top-right" class="row">
-              <div class="col-md-6"><a href="#">ICON1</a></div>
-              <div class="col-md-6"><a href="#">ICON2</a></div>
-            </div>
-            <div class="row">
-                <div class="col-md-6"><a href="#">ICON3</a></div>
-              <div class="col-md-6"><a href="#">ICON4</a></div>
-            </div>
+          <!--<div id="top-right" class="row">
+            <div class="col-md-6"><a href="#">ICON1</a></div>
+            <div class="col-md-6"><a href="#">ICON2</a></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6"><a href="#">ICON3</a></div>
+            <div class="col-md-6"><a href="#">ICON4</a></div>
+          </div>
         </div>-->
       </div>
     </div><!-- /container -->
