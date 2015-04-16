@@ -15,3 +15,25 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+/***JS & JQUERY***/
+
+//General functions are executed on ready or window resize
+$( document ).ready( readyFn );
+// OR
+$( window ).resize( readyFn );
+
+function readyFn( jQuery ) {
+
+}
+
+//Click functions don't need to be initiated if window is resized, or else flickering will occur
+$( document ).ready(function() {
+  
+    $( window ).scroll(function() {
+        if( ($(window).scrollTop() != 0) ){
+            $('.menu .menu-icons').hide();
+        }   else {
+            $('.menu .menu-icons').show();
+        }
+    });
+});

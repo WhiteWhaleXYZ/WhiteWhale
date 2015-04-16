@@ -4,26 +4,31 @@
 
 
   
-    <h2>Users:</h2>
-    <ul class="row clearfix">
-      <li class="users">
-        <li>
+
+    <div class="row clearfix search-page push-down30 addbottom40">
+
+      <div class="users col-md-4 ">
+        <p class="text-center lead-title">Users</p>
+        <div class="row clearfix push-down20">
           <%= render @userslist %>
-        </li>
-      </ul>
-      <h2>Pods:</h2>
-      <ul class="pods">
-        <li>
+        </div>
+      </div>
+
+      <div class="pods col-md-4">
+        <p class="text-center lead-title">Pods</p>
+        <div class="row clearfix push-down20">
           <%= render @podslist %>
-        </li>
-      </ul>
-      <h2>Whales:</h2>
-      <ul class="whales">
-        <li>
+        </div>
+      </div>
+
+      <div class="whales col-md-4">
+        <p class="text-center lead-title">Whales</p>
+        <div class="row clearfix push-down20">
           <%= render @whaleslist %>
-        </li>
-      </ul>
-    </ul>
+        </div>
+      </div>
+
+    </div>
 
 
 </div>
