@@ -148,8 +148,16 @@ ul, ol {
     z-index: 3;
 }
 
+form button#header-search-submit {
+    padding: 6px 30px;
+}
 
-
+.search-page img{
+    max-width: 100%;
+}
+.search-page li{
+    list-style: none;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -393,7 +401,7 @@ input {
 }
 
 .menu {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .menu .text{

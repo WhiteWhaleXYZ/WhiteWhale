@@ -1,0 +1,34 @@
+<% provide(:title, 'All users') %>
+<div class="container">
+
+
+
+  
+
+    <div class="row clearfix search-page push-down30 addbottom40">
+
+      <div class="users col-md-4 ">
+        <p class="text-center lead-title">Users</p>
+        <div class="row clearfix push-down20">
+          <%= render @userslist %>
+        </div>
+      </div>
+
+      <div class="pods col-md-4">
+        <p class="text-center lead-title">Pods</p>
+        <div class="row clearfix push-down20">
+          <%= render @podslist %>
+        </div>
+      </div>
+
+      <div class="whales col-md-4">
+        <p class="text-center lead-title">Whales</p>
+        <div class="row clearfix push-down20">
+          <%= render @whaleslist %>
+        </div>
+      </div>
+
+    </div>
+
+
+</div>

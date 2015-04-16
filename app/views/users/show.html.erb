@@ -18,13 +18,19 @@
       </div>
     </div>
     <!--   -->
-  <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-primary"%>
+  <% if current_user?(User.find(params[:id])) %>
+    <div class="row clearfix text-center">
+     <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
+   </div>
+   <% end %>
+
+
   <% if @user.pods.any? %>
       <h3 class="lead"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
-    <div id="set-container" class="push-down20 row clearfix text-center big_Arrows">
+    <div id="set-container" class="row clearfix text-center big_Arrows push-down20">
       <!--   <div class="col-md-4" id="set-photo" class="set-left"><a href="#"><img src="/img/placeholder.png"/></a></div> -->
 
-      <div id="pod-preview" class="col-md-4">
+      <div id="pod-preview" class="">
         <div class="row clearfix">
 
               <ol class="pods">
@@ -69,9 +75,9 @@
         <div class="row clearfix"><button>LOAD MORE BTN</button></div>
       </div>
       <div id="view-controls" class="col-md-2 text-center">
-        <span class="row clearfix"><a href="#">RANK SET</a></span>
-        <span class="row clearfix"><a href="#">FORK SET</a></span>
-        <span class="row clearfix"><a href="#">ADD TO WISHLIST</a></span>
+        <span class="row clearfix"><a href="#"><p class ="icon-star"> </p></a></span>
+        <span class="row clearfix"><a href="#"><p class ="icon-google-circles"> </p></a></span>
+        <span class="row clearfix"><a href="#"><p class ="icon-heart"> </p></a></span>
       </div>
     </div>
 </div>

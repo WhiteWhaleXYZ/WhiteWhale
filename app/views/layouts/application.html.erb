@@ -37,10 +37,13 @@
   <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
   <%= javascript_include_tag "application" %>
+
 </head>
     <body>
         <%= render 'layouts/header' %>
-        <div class="push-down160"></div>
+        <% if(!current_page?('/')) %>
+            <div class="push-down160"></div>
+        <% end %>
         <%= yield %>
         <%= render 'layouts/loginmodal' %>
         <%= render 'layouts/footer' %>
