@@ -10,7 +10,10 @@ gem "twitter-bootstrap-rails"
 gem 'rails', '4.2.0'
 # gem 'bootstrap-sass',  '3.2.0.0'
 gem 'bcrypt', '3.1.7'
-gem 'sqlite3'
+# gem 'sqlite3'
+# Don't instal pg because its done as a standalone using
+#  gem install --user-install pg -- --with-pg-config=/usr/pgsql-9.4/bin/pg_config
+gem 'pg'
 gem 'faker',  '1.4.2'
 # gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
