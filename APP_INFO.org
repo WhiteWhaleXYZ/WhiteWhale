@@ -134,6 +134,13 @@ $ kill -s SIGTERM `cat tmp/puma/pid`
 $ bundle exec puma -C config/puma.rb
 #+END_SRC:
 
+* Solr Config
+** Secure the solr admin console
+<ipaddress>:8983/solr
+#+BEGIN_SRC
+$ sudo firewall-cmd --remove-port=8983/tcp
+#+END_SRC
+
 
 * Ruby version
 2.2.0
