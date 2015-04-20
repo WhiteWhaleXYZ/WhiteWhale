@@ -30,4 +30,5 @@ config/database.yml
 /public/system/**
 
 #ignore solr
+/solr/**
 /solr/development/**
