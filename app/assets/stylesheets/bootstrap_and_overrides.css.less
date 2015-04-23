@@ -8,6 +8,7 @@
 
 @import "twitter/bootstrap/responsive-utilities.less";
 
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 // Set the correct sprite paths
 @iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
@@ -37,14 +38,13 @@
 // Example:
 //@link-color: #ff0000;
 
-
 /*
   ------------------GLOBALS---------------------------
 */
 @gray-base: #fff;
-@blue: #568acb;
+@blue: #2576bc;
 //@blue-rgba: rgba(86,138,203, 0.075);
-@lighter-blue: #5795c6;
+@lighter-blue: #13a3fb;
 //@lighter-blue-rgba: rgba(87,149,198, 0.075);
 @darker-blue: darken(#428bca, 20%);
 @dark-blue: #1c4667;
@@ -55,7 +55,7 @@
 @link-color: @gray-base;
 @link-hover-color: lighten(@lighter-blue, 32%);
 @link-hover-decoration: none;
-@border-width: 3px;
+@border-width: 0px;
 
 /*
   ------------------TYPOGRAPHY---------------------------
@@ -78,14 +78,15 @@
 */
 @btn-default-color:@gray-base;
 @btn-default-border:@gray-base;
-@btn-default-bg:@lighter-blue;
+@btn-default-bg:@blue;
 .btn-default{
   border-width: @border-width;
-  &:hover{border-color: @link-hover-color;}
+  &:hover{background-color: @lighter-blue;}
 }
 button{
   .btn;
   .btn-default;
+  &:hover{background-color: @lighter-blue;}
 }
 
 /*
@@ -173,6 +174,14 @@ input{
 }
 
 .btn-lg {
+  .btn;
   font-size: 18px;
+  &:hover {
+    background-color: @lighter-blue;
+  }
 }
 
+.btn-primary {
+  background-color: @blue;
+  border-color: transparent;
+}
