@@ -121,7 +121,8 @@ $ rake sunspot:reindex
 
 // Production 
 $ bundle exec rake assets:precompile
-$ bundle install --deployment
+$ RAILS_ENV=production bundle install
+NOT NOW $ bundle install --deployment
 $ RAILS_ENV=production bundle exec rake db:migrate
 $ rake sunspot:solr:start
 $ rake sunspot:reindex
