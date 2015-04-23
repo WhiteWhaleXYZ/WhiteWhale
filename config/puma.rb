@@ -20,7 +20,7 @@ rackup      DefaultRackup
 #
 # ssl_bind '127.0.0.1', '9292', { key: path_to_key, cert: path_to_cert }
 
-daemonize false
+daemonize true
 rails_env = ENV['RACK_ENV'] || 'production'
 
 rackup      DefaultRackup
