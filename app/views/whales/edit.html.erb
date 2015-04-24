@@ -1,4 +1,3 @@
-<h1>Whales#edit</h1>
 <div class="container">
   <% provide(:title, "Edit whale") %>
   <p class="lead-title text-center text-capitalize addbottom40">Update your whale</p>
@@ -6,7 +5,7 @@
   <div class="row clearfix">
     <div class="col-md-8 center text-capitalize">
       <%= form_for @whales, url: user_pod_whale_path do |f| %>
-          <!== %= render 'shared/error_messages' %> ==>
+          <!-- %= render 'shared/error_messages' %> -->
 
           <%= f.label :name %>
           <%= f.text_field :name, :placeholder => "Description", class: 'form-control' %>
