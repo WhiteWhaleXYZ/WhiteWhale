@@ -28,7 +28,7 @@ function readyFn( jQuery ) {
 
 //Click functions don't need to be initiated if window is resized, or else flickering will occur
 $( document ).ready(function() {
-  
+
     $( window ).scroll(function() {
         if( ($(window).scrollTop() != 0) ){
             $('.menu .menu-icons').hide();
@@ -36,4 +36,34 @@ $( document ).ready(function() {
             $('.menu .menu-icons').show();
         }
     });
+
+
+    /* Every time the window is scrolled fadeIn Effect... */
+    $(window).scroll( function(){
+
+        /* Check the location of each desired element */
+        $('.fadeInBlock').each( function(i){
+
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+
+                $(this).animate({'opacity':'1'},"fast");
+
+            }
+
+        });
+
+    });
+
+    /*$("#hide").click(function(){
+        $(".target").hide( "scale", {percent: 200, direction: 'horizontal'}, 2000 );
+    });
+
+    $("#show").click(function(){
+        $(".target").show( "scale", {percent: 200, direction: 'vertical' }, 2000 );
+    });*/
+
 });
