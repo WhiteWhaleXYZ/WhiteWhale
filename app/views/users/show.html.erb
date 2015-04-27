@@ -1,8 +1,7 @@
 <!--<h1>UserPages#profile</h1>
 <p>Find me in app/views/user_pages/profile.html.erb</p>-->
 <!--********PROFILE PAGE********-->
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<div class="container">
+<div class="container-fluid">
   <div id="profile-container" class="row clearfix">
     <div class="col-md-12 h4" id="profile-left">
       <div class="row clearfix" id="profile-photo">
@@ -14,7 +13,7 @@
             <%= image_tag @user.photo.url(:medium) %>
             <div class="info">
               <div class="title">
-                <a href="http://scripteden.com/"><%=@user.name%></a>
+                <%=@user.name%>
               </div>
                 <div class="desc">[LOC-ICON] LOCATION</div>
                 <div class="desc">[RNK-ICON] RANK</div>
