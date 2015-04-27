@@ -116,6 +116,9 @@ $ git diff --stat --color Dev..Prod
 // Dev 
 $ bundle exec rake db:migrate RAILS_ENV=development 
 $ bundle install --path vendor/bundle
+
+// Test can be done from the dev branch 
+$ RAILS_ENV=test bundle install --path vendor/bundle
 $ rake sunspot:solr:start
 $ rake sunspot:reindex
 

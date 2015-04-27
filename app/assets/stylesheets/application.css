@@ -692,6 +692,7 @@ button:hover {
 
 
 
+
 /* ANIMATIONS
 -------------------------------------------------- */
 
@@ -717,4 +718,7 @@ button:hover {
 #social-icons ul li:hover img
 {
     transform: scale(1.2);
+
+#post-menu-icons {
+
 }
