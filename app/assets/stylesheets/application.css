@@ -151,7 +151,8 @@ ul, ol {
 }
 
 form button#header-search-submit {
-    padding: 6px 30px;
+    padding: 6px 15px;
+    margin-right: 22px;
 }
 
 .search-page img{
@@ -410,6 +411,7 @@ button:hover {
 .menu .text {
     font-size:18px;
 }
+
 
 .big_Arrows p {
     font-size:50px;
@@ -682,4 +684,41 @@ button:hover {
 .card.hovercard .bottom {
     padding: 0 20px;
     margin-bottom: 17px;
+}
+
+
+
+
+
+
+
+
+/* ANIMATIONS
+-------------------------------------------------- */
+
+/**Global Transitions**/
+*{
+    -webkit-transition: all 200ms cubic-bezier(1.000, -0.7, 0.405, 1.425);
+    -moz-transition: all 200ms cubic-bezier(1.000, -0.7, 0.405, 1);
+    -o-transition: all 200ms cubic-bezier(1.000, -0.7, 0.405, 1);
+    transition: all 200ms cubic-bezier(1.000, -0.7, 0.405, 1);
+    /*-webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;*/
+}
+
+/**fadeIn as User Scroll**/
+.fadeInBlock {
+    opacity:0.5;
+}
+
+/**Transform Make bigger x1.3 **/
+#post-menu-icons a .img-circle:hover,
+#social-icons ul li:hover img
+{
+    transform: scale(1.2);
+
+#post-menu-icons {
+
 }
