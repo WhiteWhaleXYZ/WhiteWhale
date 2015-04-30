@@ -128,7 +128,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    pg (0.18.1)
     pr_geohash (1.0.0)
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
@@ -239,7 +238,6 @@ DEPENDENCIES
   jquery-rails
   less-rails
   paperclip (~> 4.2)
-  pg
   puma
   rails (= 4.2.0)
   rb-readline

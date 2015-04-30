@@ -66,7 +66,7 @@ group :development do
 end
 
 group :test, :production do
-      gem 'pg'
+      #gem 'pg'
 end
 
 
