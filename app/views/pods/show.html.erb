@@ -28,7 +28,7 @@
     <span class="col-md-2"><a href="#"><p class ="icon-angle-right"> </p></a></span>
     </div>-->
     <%# if pod_user? %>
-    <% if logged_in? %>
+    <% if current_user?(User.find(params[:user_id])) %>
     <section class="pods_form row clearfix">
       <%=  link_to "Create A Whale", new_user_pod_whale_path(@user.id,@pod.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
     </section>
