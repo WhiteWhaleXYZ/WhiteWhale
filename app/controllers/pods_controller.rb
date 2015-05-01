@@ -1,6 +1,6 @@
 class PodsController < ApplicationController
   before_action :logged_in_user, only: [:new,:show, :create, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :correct_user,   only: [:new,:create, :destroy]
   # before_action :correct_user sets the @user variable 
   
   def show
