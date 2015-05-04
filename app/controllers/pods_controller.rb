@@ -12,7 +12,13 @@ class PodsController < ApplicationController
   #def index
   #  @pod=Pod.all
   #end
-  
+  def destroy
+    @user=User.find(params[:user_id])
+    @pod = Pod.find(params[:id])
+    @pod.destroy
+    flash[:success] = "Pod  deleted"
+    redirect_to current_user
+  end
   def new
     @user=User.find(params[:user_id])
     @pod = @user.pods.build(params[:pod])
