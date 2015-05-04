@@ -10,6 +10,10 @@
       <div class="pods_form btn-group btn-group-justified">
         <%=  link_to "Edit", edit_user_pod_path(@user.id,@pod.id) ,class: "btn btn-primary"%>
       </div>
+      <div class="pods_form btn-group btn-group-justified">
+        <%= link_to "delete", user_pod_path(@user.id,@pod.id) , method: :delete,
+            data: { confirm: "You sure?" } ,class: "btn btn-primary"%>
+      </div>
       <div class="row clearfix">[LOC-ICON] LOCATION</div>
       <div class="row clearfix"><a href="#">[RNK-ICON] RANK</a></div>
       <div class="row clearfix">[DSC-ICON] DESCRIPTION</div>
