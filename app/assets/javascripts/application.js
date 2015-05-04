@@ -24,14 +24,14 @@ $( window ).resize( readyFn );
 
 function readyFn( jQuery ) {
 
-    if( ($(window).scrollTop() == 0) ) {
+    //if( $(window).scrollTop() === 0)  {
         var nav_height = $('#main-nav .navbar').innerHeight(); //Gets the height of header for processing
         console.log(nav_height);
         $('.push-down-content').css({"padding-top": nav_height+"px"}); //dynamically gets the padding height, the -6 was a helper px to make it exact
         $(window).scroll(function () {
             $('.push-down-content').css("padding-top", nav_height);
         });
-    });
+    //}
 }
 
 //Click functions don't need to be initiated if window is resized, or else flickering will occur
