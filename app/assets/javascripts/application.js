@@ -26,10 +26,13 @@ function readyFn( jQuery ) {
 
     //if( $(window).scrollTop() === 0)  {
         var nav_height = $('#main-nav .navbar').innerHeight(); //Gets the height of header for processing
+        $('.push-down-content').css("height", nav_height);
+
         console.log(nav_height);
-        $('.push-down-content').css({"padding-top": nav_height+"px"}); //dynamically gets the padding height, the -6 was a helper px to make it exact
+         //dynamically gets the padding height, the -6 was a helper px to make it exact
+        //$('body .push-down-content').add({"height": nav_height+"px !important;"});
         $(window).scroll(function () {
-            $('.push-down-content').css("padding-top", nav_height);
+            $('.push-down-content').css("height", nav_height);
         });
     //}
 }
@@ -37,18 +40,14 @@ function readyFn( jQuery ) {
 //Click functions don't need to be initiated if window is resized, or else flickering will occur
 $( document ).ready(function() {
 
-    /*$('.navbar #profile').click(function(){
-        var nav_height = $('#main-nav .navbar').innerHeight(); //Gets the height of header for processing
-        //console.log(nav_height);
-        $('.push-down-content').css("padding-top",nav_height); //dynamically gets the padding height, the -6 was a helper px to make it exact
-    });*/
-
     $( window ).scroll(function() {
+
         if( ($(window).scrollTop() != 0) ){
             $('.menu .menu-icons').fadeOut("fast");
             if ($('#main-body').length <= 0){
                 $('#main-nav .navbar').addClass('addbottom10'); //Adds a little extra space in the bottom
                 //$('.push-down-content').css("padding-top",nav_height-6);
+                //console.log('add bottom 10');
             }
         }   else {
             $('.menu .menu-icons').fadeIn("fast");
