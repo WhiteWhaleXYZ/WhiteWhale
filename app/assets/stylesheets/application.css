@@ -325,7 +325,7 @@ input {
 }
 /*Circular border*/
 .navbar #profile-photo{
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
     border-radius: 50%;
     width:100px;
 }
@@ -337,6 +337,11 @@ input {
     width: 100px;
     border-radius: 50% !important;
 }
+.header-profile-photo img{
+    height:100px;
+
+}
+
 
 /* MENU
 -------------------------------------------------- */

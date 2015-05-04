@@ -46,8 +46,7 @@
           <% if logged_in? %>
           <div class="clearfix" id="profile-photo">
             <!--Set the background image url to be dynamic for the current user-->
-            <%perfect_image="background-image:url("+current_user.photo.url(:thumb)+")"%>
-            <%= link_to "", (current_user) , {:class=>"header-profile-photo", :style=> "#{perfect_image}"} %>
+            <%= link_to image_tag(current_user.photo.url(:thumb)), (current_user) , {:class=>"header-profile-photo"} %>
             <!--image_path(current_user.photo.url(:thumb))-->
           </div>
           <% else %>
