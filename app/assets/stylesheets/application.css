@@ -69,9 +69,9 @@ a{
 .push-down200 {
     padding-top: 200px;
 }
-/*.push-down-content{
-    padding-top: 127px;
-}*/
+.push-down-content{
+    height: 148px;
+}
 .addbottom{
     padding-bottom: 80px;
 }
@@ -303,7 +303,7 @@ input {
     height: auto !important;
 }*/
 
-#profile-photo img,
+#profile-container #profile-photo img,
 #set-photo img,
 #pod-preview img,
 #view-set-results img,
@@ -332,14 +332,11 @@ input {
 .perfect-image{
     background :transparent no-repeat scroll 50% 50% / cover;
 }
-.header-profile-photo{
-    height: 100px;
-    width: 100px;
-    border-radius: 50% !important;
-}
+.header-profile-photo,
 .header-profile-photo img{
-    height:100px;
-
+    height: 90px;
+    width: 90px;
+    border-radius: 50% !important;
 }
 
 
