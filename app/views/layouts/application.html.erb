@@ -16,6 +16,7 @@
   <![endif]-->
 
   <%= stylesheet_link_tag "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,300,100,700' rel='stylesheet' type='text/css'>
 
   <!-- For third-generation iPad with high-resolution Retina display: -->
   <!-- Size should be 144 x 144 pixels -->
@@ -43,7 +44,7 @@
     <body>
         <%= render 'layouts/header' %>
         <% if(!current_page?('/')) %>
-            <div class="push-down160"></div>
+            <div class="push-down-content"></div>
         <% end %>
         <%= yield %>
         <%= render 'layouts/loginmodal' %>

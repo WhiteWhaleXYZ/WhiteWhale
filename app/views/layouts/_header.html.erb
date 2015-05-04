@@ -2,11 +2,13 @@
   <div class="navbar navbar-inverse navbar-static-top navbar-fixed-top container-fluid">
     <div class="container">
       <div class="navbar-header col-md-2">
+        <% if logged_in? %>
         <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
+        <% end %>
         <a class="navbar-brand" href="/"> <p class="icon-icon-whale"> </p> </a>
       </div>
       <div class="col-md-6 col-md-offset-1">
@@ -42,8 +44,11 @@
         </div>
         <div class="col-md-6 col-xs-2" id="profile">
           <% if logged_in? %>
-          <div class="row clearfix" id="profile-photo">
-            <%= link_to image_tag(current_user.photo.url), (current_user) %>
+          <div class="clearfix" id="profile-photo">
+            <!--Set the background image url to be dynamic for the current user-->
+            <%perfect_image="background-image:url("+current_user.photo.url(:thumb)+")"%>
+            <%= link_to "", (current_user) , {:class=>"header-profile-photo", :style=> "#{perfect_image}"} %>
+            <!--image_path(current_user.photo.url(:thumb))-->
           </div>
           <% else %>
           <a href="#" id="top-right-signup" href="#" data-toggle="modal" data-target="#Signup-Modal"> <p class="icon-opentable login-icons"> SIGNUP </p> </a>
