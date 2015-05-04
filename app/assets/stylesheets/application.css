@@ -40,6 +40,10 @@ input{/*Fix bleed of borders around input*/
 ul, ol {
     padding-left: 0px;
 }
+a{
+    outline: 0 !important;
+}
+
 /* GENERAL GLOBAL
 -------------------------------------------------- */
 .center{
@@ -65,6 +69,9 @@ ul, ol {
 .push-down200 {
     padding-top: 200px;
 }
+/*.push-down-content{
+    padding-top: 127px;
+}*/
 .addbottom{
     padding-bottom: 80px;
 }
@@ -74,7 +81,9 @@ ul, ol {
 .addbottom20{
     padding-bottom: 20px;
 }
-
+.addbottom10{
+    padding-bottom: 10px;
+}
 .push-down100{
     padding-top: 100px;
 }
@@ -92,7 +101,7 @@ ul, ol {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10px;
+    z-index: 10;
 }
 /* Bring navigation upfront*/
 #main-nav {
@@ -145,21 +154,23 @@ ul, ol {
     border-radius: 3px;
     color:#568acb;*/
 }
-
 .search-query:focus + button {
     z-index: 3;
 }
-
 form button#header-search-submit {
     padding: 6px 15px;
     margin-right: 22px;
 }
-
 .search-page img{
     max-width: 100%;
 }
 .search-page li{
     list-style: none;
+}
+@media screen and (max-width: 767px) {
+    .navbar .menu-icons {
+        display: none !important;
+    }
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -171,7 +182,7 @@ form button#header-search-submit {
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-    font-family: 'Open Sans';
+    /*font-family: 'Open Sans';*/
     z-index: 1;
     text-shadow: 2px 2px 12px black;
 }
@@ -312,8 +323,38 @@ input {
 #profile-left > div {
     margin-bottom: 15px;
 }
-#profile-photo{
+/*Circular border*/
+.navbar #profile-photo{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width:100px;
+}
+.perfect-image{
+    background :transparent no-repeat scroll 50% 50% / cover;
+}
+.header-profile-photo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50% !important;
+}
 
+/* MENU
+-------------------------------------------------- */
+.menu {
+    font-size: 40px;
+}
+.menu .text {
+    font-size:18px;
+}
+.logins a {
+    font-size:14px;
+    border: none;
+}
+.logins a p {
+    font-family: Lato, sans-serif; /*fix for menu disappear*/
+}
+.login-icons {
+    line-height: 18px;
 }
 
 /* RESPONSIVE CSS
@@ -333,7 +374,7 @@ input {
     }
     /* The navbar becomes detached from the top, so we round the corners */
     .navbar-wrapper .navbar {
-        border-radius: 4px;
+        /*border-radius: 4px;*/
     }
 
     /* Bump up size of carousel content */
@@ -404,28 +445,12 @@ button:hover {
     font-size: 72px;
 }
 
-.menu {
-    font-size: 40px;
-}
-
-.menu .text {
-    font-size:18px;
-}
-
-
 .big_Arrows p {
     font-size:50px;
     color: #2576bc;
 }
 
-.logins a {
-    font-size:14px;
-    border: none;
-}
 
-.login-icons {
-    line-height: 2.5em;
-}
 
 .icon-collection {
     padding-right:30px;
@@ -439,8 +464,8 @@ button:hover {
 }
 
 .card {
-    padding-top: 20px;
-    margin: 10px 0 20px 0;
+    /*padding-top: 20px;
+    margin: 10px 0 20px 0;*/
     border-top-width: 0;
     border-bottom-width: 2px;
     -webkit-border-radius: 3px;
@@ -630,10 +655,12 @@ button:hover {
 }
 
 .card.hovercard .cardheader {
-    margin-top: -25px;
+    /*margin-top: -25px;*/
     background: url("/img/beach_background.jpg");
     background-size: cover;
     height: 250px;
+    display: inline-block;
+    width: 100%;
 }
 
 .card.hovercard .cardheader h1{
@@ -643,10 +670,10 @@ button:hover {
 }
 
 .card.hovercard .avatar {
-    position: relative;
-    top: -50px;
+    /*position: relative;*/
+    /*top: -50px;
     margin-bottom: -50px;
-    margin-left: -700px;
+    margin-left: -700px;*/
 }
 
 .card.hovercard .avatar img {
@@ -661,11 +688,11 @@ button:hover {
     margin-top: -50px;
 }
 
-.card.hovercard .info {
+.card.hovercard .userinfo {
     padding: 4px 8px 10px;
 }
 
-.card.hovercard .info .title {
+.card.hovercard .userinfo .title {
     margin-bottom: 4px;
     font-size: 24px;
     line-height: 1;
@@ -673,7 +700,7 @@ button:hover {
     vertical-align: middle;
 }
 
-.card.hovercard .info .desc {
+.card.hovercard .userinfo .desc {
     overflow: hidden;
     font-size: 12px;
     line-height: 20px;
@@ -697,11 +724,15 @@ button:hover {
 -------------------------------------------------- */
 
 /**Global Transitions**/
-*{
-    -webkit-transition: all 200ms cubic-bezier(1.000, -0.7, 0.405, 1.425);
-    -moz-transition: all 200ms cubic-bezier(1.000, -0.7, 0.405, 1);
-    -o-transition: all 200ms cubic-bezier(1.000, -0.7, 0.405, 1);
-    transition: all 200ms cubic-bezier(1.000, -0.7, 0.405, 1);
+/*.menu-icons,*/
+#social-icons ul li,
+#post-menu-icons a .img-circle,
+.navbar #profile-photo
+{
+    -webkit-transition: all 200ms cubic-bezier(1.000, 0.7, 0.405, 1.4);
+    -moz-transition: all 200ms cubic-bezier(1.000, 0.7, 0.405, 1.4);
+    -o-transition: all 200ms cubic-bezier(1.000, 0.7, 0.405, 1.4);
+    transition: all 200ms cubic-bezier(1.000, 0.7, 0.405, 1.4);
     /*-webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -o-backface-visibility: hidden;
@@ -713,12 +744,15 @@ button:hover {
     opacity:0.5;
 }
 
-/**Transform Make bigger x1.3 **/
+
 #post-menu-icons a .img-circle:hover,
-#social-icons ul li:hover img
-{
+#social-icons ul li:hover{
     transform: scale(1.2);
-
-#post-menu-icons {
-
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari */
+}
+.navbar #profile-photo:hover{
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari */
 }

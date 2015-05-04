@@ -141,8 +141,8 @@ input{
 .logins a{
   .btn;
   .btn-default;
-  &,&:hover,&:active{background-color: transparent;}
-  &:hover{border-color: @link-hover-color;}
+  &,&:hover,&:focus,&:active{background-color: transparent;}
+  &:hover{color: @link-hover-color;}
   /*font-size: ceil((@font-size-base * 1.43));*/ // ~18px
 }
 
@@ -153,10 +153,14 @@ input{
 @nav-tabs-border-color: @link-hover-color;
 .nav-pills{
   & a:hover{
-    border-bottom: 3px solid @nav-tabs-border-color;
+    /*border-bottom: 3px solid @nav-tabs-border-color;*/
   }
 }
-
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form{
+  border: 0;
+  box-shadow: none;
+}
 /*
   ------------------MODAL---------------------------
 */

@@ -3,35 +3,40 @@
 <!--********PROFILE PAGE********-->
 <div class="container-fluid">
   <div id="profile-container" class="row clearfix">
-    <div class="col-md-12 h4" id="profile-left">
+    <div class="col-md-12" id="profile-left">
       <div class="row clearfix" id="profile-photo">
         <div class="card hovercard">
           <div class="cardheader">
             <h1><%= @user.name %>'s Ocean</h1>
           </div>
-          <div class="avatar">
-            <%= image_tag @user.photo.url(:medium) %>
-            <div class="info">
-              <div class="title">
-                <%=@user.name%>
-              </div>
-                <div class="desc">[LOC-ICON] LOCATION</div>
-                <div class="desc">[RNK-ICON] RANK</div>
-                <div class="desc">[DSC-ICON] DESCRIPTION</div>
+          <div class="container clearfix">
+            <div class="col-sm-3">
+                <%= image_tag @user.photo.url(:medium) %>
+                <div class="userinfo">
+                  <div class="title">
+                    <%=@user.name%>
+                  </div>
+                    <div class="desc">[LOC-ICON] LOCATION</div>
+                    <div class="desc">[RNK-ICON] RANK</div>
+                    <div class="desc">[DSC-ICON] DESCRIPTION</div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+              <% if current_user?(User.find(params[:id])) %>
+                  <div class="row clearfix text-center">
+                    <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
+                  </div>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <% if current_user?(User.find(params[:id])) %>
-      <div class="row clearfix text-center">
-        <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
-      </div>
-  <% end %>
+
   <% if @user.pods.any? %>
       <h3 class="lead"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
-      <div id="set-container" class="row clearfix text-center big_Arrows push-down20">
+      <div id="pod-container" class="clearfix text-center big_Arrows push-down20">
         <div id="pod-preview" class="">
           <div class="row clearfix">
             <ol class="pods">
