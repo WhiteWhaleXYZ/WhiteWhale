@@ -1,9 +1,27 @@
 <li id="pod-<%= pod.id %>" class="col-sm-3 col-xs-6">
 
-  <%=link_to image_tag(pod.photo.url), user_pod_path(pod.user.id,pod.id)%>
-  <span class="user"><%= link_to pod.name, pod.user %></span>
-  <span class="description"><%= pod.description %></span>
+  <%=link_to image_tag(pod.photo.url(:thumb)), user_pod_path(pod.user.id,pod.id)%>
+  <p class="pod-name push-down20"><%= link_to pod.name, pod.name %></p>
+  <!--We need an if the pod belongs to current user it shouldn't show the user name below--->
+  <p class="user">By <%= link_to pod.user.name, pod.user %></p>
+  <div class="btn-group btn-group-justified pod-menu" role="group" aria-label="">
+    <div class="btn-group" role="group">
+      <%=  link_to "Edit", edit_user_pod_path(current_user.id,pod.id) ,{class: "btn btn-default", type: "button"}%>
+    </div>
+    <div class="btn-group" role="group">
+      <a type="button" class="btn btn-default icon-google-circles">Fork</a>
+    </div>
+    <div class="btn-group" role="group">
+      <%= link_to "Delete", user_pod_path(current_user.id,pod.id) , method: :delete,
+                  data: { confirm: "You sure?" } ,class: "btn btn-primary"%>
+    </div>
+  </div>
+
+
+
+
+  <!--<span class="description"><%#= pod.description %></span>
   <span class="timestamp">
-      Posted <%= time_ago_in_words(pod.created_at) %> ago.
-    </span>
+      Posted <%#= time_ago_in_words(pod.created_at) %> ago.
+    </span>-->
 </li>

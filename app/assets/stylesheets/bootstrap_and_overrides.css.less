@@ -82,12 +82,11 @@
 .btn-default{
   border: none;
   /*border-width: @border-width;*/
-  &:hover{background-color: @lighter-blue;}
 }
 button{
   .btn;
   .btn-default;
-  &:hover{background-color: @lighter-blue;}
+  &:hover{background-color: @lighter-blue !important;}
 }
 
 .btn-lg {
@@ -96,6 +95,12 @@ button{
   &:hover {
     background-color: @lighter-blue;
   }
+}
+
+.btn-xl{
+  .btn-lg;
+  padding: 22px;
+  font-size: 22px;
 }
 
 .btn-primary {
@@ -143,6 +148,7 @@ input{
   .btn-default;
   &,&:hover,&:focus,&:active{background-color: transparent;}
   &:hover{color: @link-hover-color;}
+  padding: 3px 12px;
   /*font-size: ceil((@font-size-base * 1.43));*/ // ~18px
 }
 
