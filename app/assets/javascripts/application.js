@@ -41,18 +41,18 @@ function readyFn( jQuery ) {
 $( document ).ready(function() {
 
     $( window ).scroll(function() {
-
-        if( ($(window).scrollTop() != 0) ){
+        //Set at 30 so animation can look smoother
+        if( ($(window).scrollTop() > 30) ){
             $('.menu .menu-icons').fadeOut("fast");
             if ($('#main-body').length <= 0){
-                $('#main-nav .navbar').addClass('addbottom10'); //Adds a little extra space in the bottom
+                $('#main-nav .navbar').addClass('addbottom10',1000, "easeOutBounce"); //Adds a little extra space in the bottom
                 //$('.push-down-content').css("padding-top",nav_height-6);
                 //console.log('add bottom 10');
             }
         }   else {
             $('.menu .menu-icons').fadeIn("fast");
             //$('#main-nav .navbar').removeClass('addbottom10'); //Gets rid of it if the user scrolled down
-            $('#main-nav .navbar').removeClass('addbottom10');
+            $('#main-nav .navbar').removeClass('addbottom10',1000, "easeOutBounce");
         }
 
         /* Every time the window is scrolled fadeIn Effect... */

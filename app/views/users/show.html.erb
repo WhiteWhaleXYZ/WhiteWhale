@@ -9,7 +9,7 @@
           <div class="cardheader">
             <h1><%= @user.name %>'s Ocean</h1>
           </div>
-          <div class="container clearfix">
+          <div class="container clearfix profile-section">
             <div class="col-sm-3">
                 <%= image_tag @user.photo.url(:medium) %>
                 <div class="userinfo">
@@ -23,8 +23,12 @@
             </div>
             <div class="col-sm-9">
               <% if current_user?(User.find(params[:id])) %>
-                  <div class="row clearfix text-center">
-                    <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-lg btn-primary col-xs-6 center"%>
+                  <div class="row clearfix text-center height250">
+                    <div class="center-v-parent">
+                      <div class="bottom-v">
+                        <%=  link_to "Create A Pod", new_user_pod_path(@user.id), class: "btn btn-xl btn-primary col-xs-8 center"%>
+                      </div>
+                    </div>
                   </div>
               <% end %>
             </div>
@@ -35,21 +39,18 @@
   </div>
 
   <% if @user.pods.any? %>
-      <h3 class="lead"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
-      <div id="pod-container" class="clearfix text-center big_Arrows push-down20">
-        <div id="pod-preview" class="">
-          <div class="row clearfix">
+      <h3 class="lead text-center"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
+      <div id="pod-container" class="clearfix text-center addbottom60">
+        <div id="pod-preview" class="col-md-11 center text-center">
             <ol class="pods">
               <%= render @pods %>
             </ol>
             <%= will_paginate @pods %>
+        </div>
+      </div>
   <% end %>
-  </div>
-  <div class="user_info row clearfix">
-    <!--<= render 'shared/user_info' > -->
-  </div>
-  </div>
-  <!--<div class="col-md-8" class="set-right">
+
+  <!--<div class="col-md-8" class="pod-right">
       <div class="row clearfix">
         <span class="col-md-2"><a href="#"><p class ="icon-angle-left"> </p></a></span>
         <div class="col-md-8"><%#= @user.pods.name %></div>
@@ -62,19 +63,15 @@
         <span class="col-md-3"> <a href="#"> <p class ="icon-angle-right"> </p></a></span>
       </div>
     </div>-->
-  <!--<div class="col-md-1" id="set-social-share">Vertical Floating Social Network</div>-->
-  </div>
-  <div id="view-set-container" class="row clearfix">
-    <div id="view-set-results" class="col-md-10 text-center">
-      <!-- Should dynamically add rows in multiples of 4-->
-      <!-- should not be visible if max number of items is reached-->
-      <div class="row clearfix"><button>Load more</button></div>
-    </div>
+  <!--<div class="col-md-1" id="pod-social-share">Vertical Floating Social Network</div>-->
+
+  <!--<div class="container">
+
     <div id="view-controls" class="col-md-2 text-center">
       <span class="row clearfix"><a href="#"><p class ="icon-star"> </p></a></span>
       <span class="row clearfix"><a href="#"><p class ="icon-google-circles"> </p></a></span>
       <span class="row clearfix"><a href="#"><p class ="icon-heart"> </p></a></span>
     </div>
-  </div>
+  </div>-->
 </div>
 <!----********/ PROFILE PAGE********----->
