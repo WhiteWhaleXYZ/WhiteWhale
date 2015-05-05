@@ -42,7 +42,7 @@
       <h3 class="lead text-center"><%= @user.name%> has <%= @user.pods.count %> pods</h3>
       <div id="pod-container" class="clearfix text-center addbottom60">
         <div id="pod-preview" class="col-md-11 center text-center">
-            <ol class="pods">
+            <ol class="pods", style="list-style-type:none">
               <%= render @pods %>
             </ol>
             <%= will_paginate @pods %>
