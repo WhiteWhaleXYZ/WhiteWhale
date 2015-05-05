@@ -4,7 +4,7 @@
     <div class="col-md-4 h4" id="pod-left">
       <div class="row clearfix" id="pod-photo">
         <a href="#">
-          <%= image_tag @pod.photo.url%>
+          <%= image_tag @pod.photo.url(:medium)%>
         </a>
       </div>
       <div class="pods_form btn-group btn-group-justified">
