@@ -39,6 +39,7 @@ input{/*Fix bleed of borders around input*/
 }
 ul, ol {
     padding-left: 0px;
+    list-style: none;
 }
 a{
     outline: 0 !important;
@@ -116,6 +117,13 @@ a{
     }
 }
 
+* [class^="icon-"], * [class*=" icon-"]{
+    font-family: Lato, sans-serif;
+}
+
+.blue{
+    color:#2576bc;
+}
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -260,16 +268,45 @@ form button#header-search-submit {
     line-height: 40%;*/
 }
 
-/*#home-slider{
-    height: 500px;
-}*/
-
 /* Fix for icons not ce*/
 .carousel-control .icon-next:before {
     padding-left: 10%;
 }
 .carousel-control .icon-prev:before {
     padding-right: 10%;
+}
+
+
+#myCarousel{
+    height: auto;
+}
+
+#myCarousel .overlay {
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    position: absolute;
+    z-index: 1;
+    pointer-events:none;
+}
+
+.carousel-control{
+    z-index: 1;
+}
+#myCarousel .carousel-container {
+    background:transparent no-repeat scroll top center / cover;
+    width: inherit;
+    height: inherit;
+}
+#myCarousel #home-slider .item:first-child .carousel-container{
+    background-image: url("/assets/Featured_1.png");
+}
+#myCarousel #home-slider .item:nth-child(2) .carousel-container{
+    background-image: url("/assets/Featured_4.jpg");
+}
+#myCarousel #home-slider .item:nth-child(3) .carousel-container{
+    background-image: url("/assets/Featured_5.jpg");
 }
 
 /* MARKETING CONTENT
@@ -424,8 +461,7 @@ input {
     font-size: 22px;
 }
 .pods [class^="icon-"], [class*=" icon-"] {
-    font-family: Lato, sans-serif;
-    line-height: 22px;
+    line-height: 23px;
 }
 
 ol.pods {
@@ -500,23 +536,7 @@ ol.pods {
   /*margin-left: 0;*/
 }
 
-#myCarousel{
-    height: auto;
-}
 
-#myCarousel .overlay {
-    background-color: #000;
-    height: 100%;
-    width: 100%;
-    opacity: 0.1;
-    position: absolute;
-    z-index: 1;
-    pointer-events:none;
-}
-
-.carousel-control{
-    z-index: 1;
-}
 
 .input-group-btn button, .input-group-btn {
     background-color: #2576bc;
