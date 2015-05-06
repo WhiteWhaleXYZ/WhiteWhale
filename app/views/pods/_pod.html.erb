@@ -6,14 +6,14 @@
   <p class="user">By <%= link_to pod.user.name, pod.user %></p>
   <div class="btn-group btn-group-justified pod-menu" role="group" aria-label="">
     <div class="btn-group" role="group">
-      <%=  link_to "Edit", edit_user_pod_path(current_user.id,pod.id) ,{class: "btn btn-default", type: "button"}%>
+      <%=  link_to "Edit", edit_user_pod_path(current_user.id,pod.id) ,{class: "btn btn-default icon-", type: "button"}%>
     </div>
     <div class="btn-group" role="group">
       <a type="button" class="btn btn-default icon-google-circles">Fork</a>
     </div>
     <div class="btn-group" role="group">
       <%= link_to "Delete", user_pod_path(current_user.id,pod.id) , method: :delete,
-                  data: { confirm: "You sure?" } ,class: "btn btn-primary"%>
+                  data: { confirm: "You sure?" } , class: "btn btn-primary icon-", type: "button"%>
     </div>
   </div>
 
