@@ -855,3 +855,41 @@ button:hover {
 /*.pods li:hover img {
     border: 3px solid;
 }*/
+
+#explanations img{
+    max-width: 100%;
+    float: left;
+}
+
+#explanations {
+    border-top: 1px solid rgba(1, 1, 1, 0.2);
+    border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+    background-color: white;
+    font-size: 20px;
+    text-align: left;
+    vertical-align: middle;
+    float: left;
+}
+
+#explanation {
+    padding-top: 150px;
+}
+
+#whale-term {
+    color: black;
+}
+
+#pod-term {
+    background-color: #2A2C31;
+    color: white;
+}
+
+#trending-term {
+    color: black;
+}
+
+#sign-up-now {
+    background-color: white;
+    text-align: center;
+    color: black;
+}

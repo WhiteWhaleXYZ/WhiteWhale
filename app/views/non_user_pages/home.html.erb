@@ -84,22 +84,16 @@
         <a href="#"><img class="img-circle" src="/assets/Collections_Circled.png" width = 140px>
           <h2>PODS</h2>
         </a>
-        <p>Pod = collection of individual items</p>
-        <p>Click above to go to pods</p>
       </div>
       <div class="col-md-4">
         <a href="#"><img class="img-circle" src="/assets/Sets_Circled.png" width = 140px>
           <h2>WHALES</h2>
         </a>
-        <p>Whale = individual items</p>
-        <p>Click above to go to whales</p>
       </div>
       <div class="col-md-4">
         <a href="#"><img class="img-circle" src="/assets/Trending_Circled.png" width = 140px>
           <h2>TRENDING</h2>
         </a>
-        <p>Trending = popular pods that are on the rise</p>
-        <p>Click above to go to trending</p>
       </div>
     </div>
   </div><!-- /.row -->
@@ -108,5 +102,42 @@
     your goals</p></div>
 </div><!-- /.container -->
 
-
-
+<div id="explanations">
+  <div id="whale-term" class = "col-md-12">
+    <div class = "col-md-6">
+     <img src="/assets/WhaleExample.jpg">
+    </div >
+    <div id="explanation" class = "col-md-6">
+      <h1>This is a whale</h1>
+      <p1>____</p1>
+      <p>A whale is an individual item. When two or more whales are put together, they form a pod of whales or rather, your collection.</p>
+    </div>
+  </div>
+  <div id="pod-term" class = "col-md-12">
+    <div id="explanation" class = "col-md-6">
+      <h1>This is Tony's pod</h1>
+      <p1>____</p1>
+      <p>He'll be able to mix and match different whales together and keep track of what he's collected so far, and because others might like what he collects, they can collect them as well.</p>
+    </div>
+    <div class = "col-md-6">
+      <img src="/assets/PodExample.jpg">
+    </div >
+  </div>
+  <div id="trending-term" class = "col-md-12">
+    <div class = "col-md-6">
+      <img src="/assets/TrendingExample.jpg">
+    </div >
+    <div id="explanation" class = "col-md-6">
+      <h1>Current trends</h1>
+      <p1>____</p1>
+      <p>You can see all the different pods that are trending right now. It could be baseball cards from 1989 or Wong Fu's awkward animal plushies this week, who knows?</p>
+    </div>
+  </div>
+</div>
+<% if !logged_in? %>
+<div id="sign-up-now" class = "container-fluid">
+  <h1>Ready to Get Started?</h1>
+  <p>Just click below and you'll be on your way, Captain</p>
+  <a href="#" id="bottom-signup" href="#" data-toggle="modal" data-target="#Signup-Modal"> <p class="icon-opentable login-icons"> SIGNUP </p> </a>
+</div>
+<%end%>
