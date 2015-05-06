@@ -427,6 +427,11 @@ input {
     font-family: Lato, sans-serif;
     line-height: 22px;
 }
+
+ol.pods {
+    list-style: none;
+}
+
 .pods li .pod-menu{
     opacity: 0;
 }
