@@ -38,9 +38,13 @@
             </section>
       </div>
 
+
+
+
     </div>
   </div>
   <% end %>
+
 
 
   <!--Whales Sections-->
@@ -49,6 +53,12 @@
         <!--Whales Rendered Here  -->
         <% @pod.whales.any? %>
         <% if @pod.whales.any? %>
+            <div class="btn-group" role="group">
+      <div class = "btn btn-primary icon-google-circles", type = "button">
+        <%= link_to "Fork", {:controller => 'users', :action => 'fork',
+         :thisPod => @pod.id}, {:method => :post }%>
+      </div>
+    </div>
           <h3 class="lead text-center"><%=@pod.name%> has <%=@pod.whales.count %> whales in it</h3>
             <ol class="whales">
               <%= render @pod.whales %>
