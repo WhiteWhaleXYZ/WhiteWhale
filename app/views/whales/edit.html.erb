@@ -8,7 +8,10 @@
           <!-- %= render 'shared/error_messages' %> -->
 
           <%= f.label :name %>
-          <%= f.text_field :name, :placeholder => "Description", class: 'form-control' %>
+          <%= f.text_field :name, :placeholder => "Name", class: 'form-control' %>
+          <%= f.label(:owned, "This is owned") %>
+          <%= f.check_box(:owned) %>
+        </br>
 
           <%= f.label :description %>
           <%= f.text_field :description, :placeholder => "Description", class: 'form-control' %>
