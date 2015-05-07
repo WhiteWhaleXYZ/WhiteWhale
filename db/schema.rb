@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20150507013422) do
 
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pods", force: :cascade do |t|
     t.text     "description"
     t.integer  "user_id"
@@ -65,10 +72,6 @@ ActiveRecord::Schema.define(version: 20150507013422) do
     t.datetime "photo_updated_at"
     t.boolean  "admin",              default: false
     t.string   "location"
-    t.boolean  "owned",              default: false
-    t.string   "activation_digest"
-    t.boolean  "activated",          default: false
-    t.datetime "activated_at"
     t.text     "description"
   end
 

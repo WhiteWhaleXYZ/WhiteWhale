@@ -50,7 +50,7 @@ class WhalesController < ApplicationController
   private
 
   def whale_params
-    params.require(:whale).permit( :name, :description, :photo, :tag_list) 
+    params.require(:whale).permit( :owned, :name, :description, :photo, :tag_list) 
   end
 
   def correct_user
