@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   #get ':controller/:action/:user_id/pods'
   #post '/users/:user_id/pods/:pod_id' => 'fork#create'
 
-  post '/users/:user_id/pods/:id(.:format)' => 'pods#fork'
+  post '/users/:id(.:format)' => 'users#fork'
 
   resources :users do 
     resources :pods,  only: [:new, :show, :create, :destroy, :edit, :update] do

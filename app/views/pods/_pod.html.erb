@@ -13,7 +13,10 @@
       </div>
     <% end %>
     <div class="btn-group" role="group">
-      <a type="button" class="btn btn-primary icon-google-circles">Fork</a>
+      <div class = "btn btn-primary icon-google-circles", type = "button">
+        <%= link_to "Fork", method: :fork %>
+      </div>
+      
     </div>
     <% if current_user?(User.find(params[:id])) %>
       <div class="btn-group" role="group">
