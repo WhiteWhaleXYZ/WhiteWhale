@@ -1,5 +1,6 @@
 <li id="whale-<%= whale.id %>" class="col-sm-3 col-xs-6 addbottom40">
 
+
     <%=image_tag(whale.photo.url(:thumb))%>
     <!--<p class="whale-name push-down20"><%#= link_to whale.pod.name, whale.pod.user %></p>-->
     <p class="whale-name push-down20"><%= link_to whale.name, whale.pod.user %></p>
@@ -13,6 +14,7 @@
         </div>
     </div>
     <% end %>
+
 
   <!--<span class="name"> <%#= whale.name%></span>
     <span class="description"><%#= whale.description %></span>
