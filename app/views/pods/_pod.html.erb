@@ -14,7 +14,7 @@
     <% end %>
     <div class="btn-group" role="group">
       <div class = "btn btn-primary icon-google-circles", type = "button">
-        <%= link_to "Fork", method: :fork %>
+        <%= link_to "Fork", {:controller => 'users', :action => 'fork', :thisPod => pod.id}, {:method => :post }%>
       </div>
       
     </div>
