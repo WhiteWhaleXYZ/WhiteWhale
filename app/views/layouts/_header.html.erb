@@ -33,8 +33,9 @@
         </div>
       </div>
       <div class="col-md-3 col-xs-12 pull-right text-right logins">
-        <div class="col-md-6 col-xs-12">
+
           <% if logged_in? %>
+          <div class="col-md-6 col-xs-12">
           <%= link_to "MyProfile", current_user, :class=> "icon-user col-xs-3 col-md-12"%>
           <%= link_to "MySettings", edit_user_path(current_user), :method => "get", :class=> "icon-cog col-xs-3 col-md-12" %>
           <%= link_to "AllUsers", users_path, :class=> "icon-user col-xs-3 col-md-12"%>
@@ -42,10 +43,11 @@
 
 
           <% else %>
+          <div class="col-md-6 col-xs-6 text-center">
           <a href="#" id="top-right-login" data-toggle="modal" data-target="#Login-Modal"> <p class="icon-login login-icons"> LOGIN </p> </a>
           <% end %>
         </div>
-        <div class="col-md-6 col-xs-2" id="profile">
+        <div class="col-md-6 col-xs-6 text-center" id="profile">
           <% if logged_in? %>
           <div class="clearfix" id="profile-photo">
             <!--Set the background image url to be dynamic for the current user-->

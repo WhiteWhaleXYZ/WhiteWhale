@@ -43,6 +43,7 @@ ul, ol {
 }
 a{
     outline: 0 !important;
+    text-decoration: none !important;
 }
 
 /* GENERAL GLOBAL
@@ -99,7 +100,10 @@ a{
     padding-bottom: 40px;
 }
 .addbottom60{
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+}
+.addbottom120{
+    padding-bottom: 120px;
 }
 .push-down100{
     padding-top: 100px;
@@ -147,6 +151,12 @@ a{
     color: #fff;
 }
 
+.background-white {
+    background-color: white;
+}
+.background-gray {
+    background-color: #f4f4f4;
+}
 /**Fonts**/
 .main-title{
     padding-top: 20px;
@@ -189,7 +199,7 @@ a{
     font-size: 100px;
 }
 .navbar-inverse {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(21,30,40,0.5);
     /*background-color: rgba(153,153,153,1)*/
     /*background-color: transparent;*/
     border: transparent;
@@ -369,41 +379,30 @@ form button#header-search-submit {
 /* Featurettes for home page
 ----------------------------------------- */
 
-#explanations img{
+/*#explanations img{
     max-width: 100%;
-    float: left;
-}
+}*/
 
 .explanations {
     border-top: 1px solid rgba(1, 1, 1, 0.2);
     border-bottom: 1px solid rgba(1, 1, 1, 0.2);
-    background-color: white;
     font-size: 20px;
     text-align: left;
     vertical-align: middle;
 }
 
 #explanation {
-    padding-top: 150px;
+    padding:175px 0px 0px 20px;
 }
-
-#whale-term {
-    color: black;
+.explanations #explanation:nth-child(odd){
+    padding-left: 10%;
 }
-
-#pod-term {
-    background-color: #2A2C31;
-    color: white;
-}
-
-#trending-term {
-    color: black;
+.explanations #explanation:nth-child(even){
+    padding-right: 10%;
 }
 
 #sign-up-now {
-    background-color: white;
     text-align: center;
-    color: black;
 }
 
 
@@ -640,7 +639,7 @@ button:hover {
 }
 
 #footer{
-    background-color: rgba(0,0,0,0.75);
+    background-color: #151E28;
 }
 .back-to-top {
     font-size: 40px;
