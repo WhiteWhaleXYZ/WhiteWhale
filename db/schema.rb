@@ -65,6 +65,10 @@ ActiveRecord::Schema.define(version: 20150507013422) do
     t.datetime "photo_updated_at"
     t.boolean  "admin",              default: false
     t.string   "location"
+    t.boolean  "owned",              default: false
+    t.string   "activation_digest"
+    t.boolean  "activated",          default: false
+    t.datetime "activated_at"
     t.text     "description"
   end
 

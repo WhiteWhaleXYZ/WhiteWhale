@@ -1,8 +1,10 @@
 <li id="whale-<%= whale.id %>" class="col-sm-3 col-xs-6 addbottom40">
 
-    <%=link_to image_tag(whale.photo.url(:thumb)), edit_user_pod_whale_path(whale.pod.user.id,whale.pod.id,whale.id)%>
+
+    <%=image_tag(whale.photo.url(:thumb))%>
     <!--<p class="whale-name push-down20"><%#= link_to whale.pod.name, whale.pod.user %></p>-->
     <p class="whale-name push-down20"><%= link_to whale.name, whale.pod.user %></p>
+    <% if current_user?(User.find(params[:user_id])) %>
     <div class="btn-group btn-group-justified whale-menu" role="group" aria-label="">
         <div class="btn-group" role="group">
           <%=  link_to "Edit", edit_user_pod_whale_path(whale.pod.user.id,whale.pod.id,whale.id) ,{class: "btn btn-primary icon-", type: "button"}%>
@@ -11,6 +13,7 @@
           <a href="#" class="btn btn-primary icon-" type="button">Delete</a>
         </div>
     </div>
+    <% end %>
 
 
   <!--<span class="name"> <%#= whale.name%></span>
