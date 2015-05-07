@@ -64,12 +64,8 @@ ActiveRecord::Schema.define(version: 20150507013422) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.boolean  "admin",              default: false
-    t.boolean  "owned",              default: false
-    t.string   "activation_digest"
-    t.boolean  "activated",          default: false
-    t.datetime "activated_at"
     t.string   "location"
-    t.string   "description"
+    t.text     "description"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
