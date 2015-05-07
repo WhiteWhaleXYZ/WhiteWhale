@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
   get 'signup'  => 'users#new'
 
-  get    'fork'   => 'fork#new'
+  #get    'fork'   => 'fork#new'
   post   'fork'   => 'fork#create'
 
   match 'search' => 'search', via: [:get, :post]
