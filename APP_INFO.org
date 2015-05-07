@@ -185,4 +185,8 @@ $ bundle exec puma -C config/puma.rb
 $ rake sunspot:solr:start
 #+END_SRC
 
+* Running Tests
+$ RAILS_ENV=test rake sunspot:solr:run
+
+
 

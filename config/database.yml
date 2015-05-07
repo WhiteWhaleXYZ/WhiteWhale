@@ -23,10 +23,8 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *prod
-  database: ww_test
-  username: whitewhale
-  password: whitewhaledev
+  <<: *default
+  database: db/test.sqlite3
   
 
 production:
