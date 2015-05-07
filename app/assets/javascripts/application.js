@@ -73,6 +73,13 @@ $( document ).ready(function() {
 
     });
 
+    //Scroll Back to Top To Top Funtion
+    $(".back-to-top").click(function(e) {
+        e.preventDefault();
+        $('html,body').animate({scrollTop:0},'slow');
+        return false;
+    });
+
     /*$("#hide").click(function(){
         $(".target").hide( "scale", {percent: 200, direction: 'horizontal'}, 2000 );
     });

@@ -1,8 +1,9 @@
-<li >
+<li id="user-<%= user.id %>" class="col-sm-3 col-xs-6 addbottom40">
   <%#=gravatar_for user, size: 50 %>
-  <%=link_to user.name, user%>
-  <%=link_to image_tag(user.photo.url, size: "100"), user_path(user.id)%>
+
+  <%=link_to image_tag(user.photo.url(:thumb), size: "100"), user_path(user.id)%>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
+  <p class="user-name push-down20"><%= link_to user.name, user %></p>
 </li>
