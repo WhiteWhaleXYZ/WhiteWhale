@@ -15,32 +15,34 @@
   </div>
 
   <!--Button Sections-->
+  <% if current_user?(User.find(params[:user_id])) %>
   <div class="row clearfix addbottom40">
     <div class="col-md-9 center text-center">
 
       <div class="btn-group btn-group-justified pod-menu text-uppercase addbottom40" role="group" aria-label="">
         <div class="btn-group" role="group">
-          <%=  link_to "Edit POD", edit_user_pod_path(current_user.id,@pod.id) ,{class: "btn btn-xl btn-primary icon-", type: "button"}%>
+          <%=  link_to "Edit POD", edit_user_pod_path(@user.id,@pod.id) ,{class: "btn btn-xl btn-primary icon-", type: "button"}%>
         </div>
         <div class="btn-group" role="group">
           <!-- Need to add a class and this type to this and not sure how ??  {class: "btn btn-xl btn-primary icon-google-circles", type: "button"} -->
           <%=  link_to "Fork Pod", method: :fork%>
         </div>
         <div class="btn-group" role="group">
-          <%= link_to "Delete Pod", user_pod_path(current_user.id,@pod.id) , method: :delete,
+          <%= link_to "Delete Pod", user_pod_path(@user.id,@pod.id) , method: :delete,
                       data: { confirm: "You sure?" } , class: "btn btn-xl btn-primary icon-", type: "button"%>
         </div>
       </div>
       <div>
-        <% if current_user?(User.find(params[:user_id])) %>
+        
             <section class="pods_form">
               <%=  link_to "Create A Whale", new_user_pod_whale_path(@user.id,@pod.id), class: "btn btn-xl btn-primary col-xs-12 text-uppercase center icon-"%>
             </section>
-        <% end %>
+        
       </div>
 
     </div>
   </div>
+  <% end %>
 
   <!--Whales Sections-->
   <div class="row clearfix">
