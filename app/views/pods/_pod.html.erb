@@ -6,7 +6,7 @@
   <p class="user">By <%= link_to pod.user.name, pod.user %></p>
 
   <div class="btn-group btn-group-justified pod-menu" role="group" aria-label="">
-    <% if current_user?(User.find(params[:id])) %>
+    <% if current_user?(pod.user) %>
       <div class="btn-group" role="group">
         <%=  link_to "Edit", edit_user_pod_path(current_user.id,pod.id) ,
         {class: "btn btn-primary icon-", type: "button"}%>
@@ -18,7 +18,7 @@
       </div>
       
     </div>
-    <% if current_user?(User.find(params[:id])) %>
+    <% if current_user?(pod.user) %>
       <div class="btn-group" role="group">
         <%= link_to "Delete", user_pod_path(current_user.id,pod.id) , method: :delete,
                     data: { confirm: "You sure?" } , class: "btn btn-primary icon-", type: "button"%>
