@@ -5,6 +5,7 @@
   <!--We need an if the pod belongs to current user it shouldn't show the user name below-->
   <p class="user">By <%= link_to pod.user.name, pod.user %></p>
 
+<% if @user != nil %> 
   <div class="btn-group btn-group-justified pod-menu" role="group" aria-label="">
     <% if current_user?(pod.user) %>
       <div class="btn-group" role="group">
@@ -12,12 +13,15 @@
         {class: "btn btn-primary icon-", type: "button"}%>
       </div>
     <% end %>
+
+    
     <div class="btn-group" role="group">
       <div class = "btn btn-primary icon-google-circles", type = "button">
-        <%= link_to "Fork", {:controller => 'users', :action => 'fork', :thisPod => pod.id}, {:method => :post }%>
+        <%= link_to "Fork", {:controller => 'users', :action => 'fork',
+         :thisPod => pod.id}, {:method => :post }%>
       </div>
-      
     </div>
+
     <% if current_user?(pod.user) %>
       <div class="btn-group" role="group">
         <%= link_to "Delete", user_pod_path(current_user.id,pod.id) , method: :delete,
@@ -25,12 +29,6 @@
       </div>
     <% end %>
   </div>
+<% end %>
 
-
-
-
-  <!--<span class="description"><%#= pod.description %></span>
-  <span class="timestamp">
-      Posted <%#= time_ago_in_words(pod.created_at) %> ago.
-    </span>-->
 </li>
