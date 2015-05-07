@@ -364,8 +364,48 @@ form button#header-search-submit {
     margin-right: 10px;
 }
 
-/* Featurettes
-------------------------- */
+
+
+/* Featurettes for home page
+----------------------------------------- */
+
+#explanations img{
+    max-width: 100%;
+    float: left;
+}
+
+.explanations {
+    border-top: 1px solid rgba(1, 1, 1, 0.2);
+    border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+    background-color: white;
+    font-size: 20px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#explanation {
+    padding-top: 150px;
+}
+
+#whale-term {
+    color: black;
+}
+
+#pod-term {
+    background-color: #2A2C31;
+    color: white;
+}
+
+#trending-term {
+    color: black;
+}
+
+#sign-up-now {
+    background-color: white;
+    text-align: center;
+    color: black;
+}
+
 
 .featurette-divider {
     margin: 80px 0; /* Space out the Bootstrap <hr> more */
@@ -406,6 +446,9 @@ form button#header-search-submit {
 input {
     height: auto !important;
 }*/
+
+/* GENERAL IMG SETTTINGS
+-------------------------------------------------- */
 
 #profile-container #profile-photo img,
 #set-photo img,
@@ -874,8 +917,6 @@ button:hover {
 
 
 
-
-
 /* ANIMATIONS
 -------------------------------------------------- */
 
@@ -944,40 +985,3 @@ button:hover {
     border: 3px solid;
 }*/
 
-#explanations img{
-    max-width: 100%;
-    float: left;
-}
-
-#explanations {
-    border-top: 1px solid rgba(1, 1, 1, 0.2);
-    border-bottom: 1px solid rgba(1, 1, 1, 0.2);
-    background-color: white;
-    font-size: 20px;
-    text-align: left;
-    vertical-align: middle;
-    float: left;
-}
-
-#explanation {
-    padding-top: 150px;
-}
-
-#whale-term {
-    color: black;
-}
-
-#pod-term {
-    background-color: #2A2C31;
-    color: white;
-}
-
-#trending-term {
-    color: black;
-}
-
-#sign-up-now {
-    background-color: white;
-    text-align: center;
-    color: black;
-}
