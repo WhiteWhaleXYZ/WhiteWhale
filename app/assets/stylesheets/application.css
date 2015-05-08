@@ -975,7 +975,7 @@ button:hover {
 .navbar #profile-photo:hover,
 .pods li:hover img,
 .whales li:hover img,
-.users li:hover img,{
+.users li:hover img{
     transform: scale(1.12);
     -ms-transform: scale(1.12); /* IE 9 */
     -webkit-transform: scale(1.12); /* Safari */
