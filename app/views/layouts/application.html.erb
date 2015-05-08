@@ -44,8 +44,9 @@
     <body>
         <%= render 'layouts/header' %>
         <% if(!current_page?('/')) %>
-            <div class="push-down-content"></div>
+
         <% end %>
+        <div class="push-down-content"></div>
         <%= yield %>
         <%= render 'layouts/loginmodal' %>
         <%= render 'layouts/footer' %>

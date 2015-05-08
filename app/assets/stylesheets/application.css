@@ -339,9 +339,9 @@ form button#header-search-submit {
     height: auto;
 }
 @media screen and (max-width: 767px){
-    #myCarousel{
+    /*#myCarousel{
         margin-top: 156px;
-    }
+    }*/
     #myCarousel .left_right_buttons a{
         font-size: 42px;
     }

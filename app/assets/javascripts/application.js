@@ -27,7 +27,6 @@ function readyFn( jQuery ) {
     //if( $(window).scrollTop() === 0)  {
         var nav_height = $('#main-nav .navbar').innerHeight(); //Gets the height of header for processing
         $('.push-down-content').css("height", nav_height);
-
         //console.log(nav_height);
          //dynamically gets the padding height, the -6 was a helper px to make it exact
         //$('body .push-down-content').add({"height": nav_height+"px !important;"});
@@ -102,7 +101,6 @@ $( document ).ready(function() {
         $('html,body').animate({scrollTop:0},'slow');
         return false;
     });
-
 
 
     /*$("#hide").click(function(){
