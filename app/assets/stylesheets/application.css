@@ -143,6 +143,18 @@ a{
     opacity: 0.2;
 }
 
+/*No owned items will be less Opaque and Grayed out*/
+.not-owned{
+    opacity:0.4;
+    -webkit-filter: grayscale(0.5);
+    -moz-filter: grayscale(0.5);
+    -ms-filter: grayscale(0.5);
+    -o-filter: grayscale(0.5);
+    filter: grayscale(0.5);
+    filter: url(grayscale.svg); /* Firefox 4+ */
+    filter: gray; /* IE 6-9 */
+}
+
 /**Colors**/
 .blue{
     color:#2576bc;
@@ -326,7 +338,14 @@ form button#header-search-submit {
 #myCarousel{
     height: auto;
 }
-
+@media screen and (max-width: 767px){
+    #myCarousel{
+        margin-top: 149px;
+    }
+    #myCarousel .left_right_buttons a{
+        font-size: 42px;
+    }
+}
 #myCarousel .overlay {
     height: 100%;
     width: 100%;
@@ -393,6 +412,11 @@ form button#header-search-submit {
 
 #explanation {
     padding:175px 0px 0px 20px;
+}
+@media screen and (max-width : 991px){
+    #explanation {
+        padding-top: 40px;
+    }
 }
 .explanations #explanation:nth-child(odd){
     padding-left: 10%;
@@ -522,6 +546,7 @@ input {
         padding-top: 10px;
     }
 }
+
 .logins a p {
     font-family: Lato, sans-serif; /*fix for menu disappear*/
 }
@@ -643,6 +668,12 @@ button:hover {
 }
 .back-to-top {
     font-size: 40px;
+    position: fixed;
+    bottom: 5%;
+    right: 4%;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    border-radius: 5px;
 }
 .left_right_buttons a{
     padding-top: 140px;
@@ -932,7 +963,8 @@ button:hover {
 .whales li .whale-menu,
 .users li,
 .users li img,
-.users li .whale-menu
+.users li .whale-menu,
+#team img
 {
     -webkit-transition: all 200ms cubic-bezier(1.000, 0.7, 0.405, 1.4);
     -moz-transition: all 200ms cubic-bezier(1.000, 0.7, 0.405, 1.4);

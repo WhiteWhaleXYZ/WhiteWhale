@@ -25,7 +25,8 @@
         </div>
         <div class="btn-group" role="group">
           <!-- Need to add a class and this type to this and not sure how ??  {class: "btn btn-xl btn-primary icon-google-circles", type: "button"} -->
-          <%=  link_to "Fork Pod", method: :fork%>
+          <%= link_to "Fork", {:controller => 'users', :action => 'fork',
+                               :thisPod => @pod.id}, {:method => :post , :class => "btn btn-xl btn-primary icon-google-circles", :type => "button"}%>
         </div>
         <div class="btn-group" role="group">
           <%= link_to "Delete Pod", user_pod_path(@user.id,@pod.id) , method: :delete,
@@ -37,9 +38,6 @@
               <%=  link_to "Create A Whale", new_user_pod_whale_path(@user.id,@pod.id), class: "btn btn-xl btn-primary col-xs-12 text-uppercase center icon-"%>
             </section>
       </div>
-
-
-
 
     </div>
   </div>
@@ -54,10 +52,10 @@
         <% @pod.whales.any? %>
         <% if @pod.whales.any? %>
             <div class="btn-group" role="group">
-      <div class = "btn btn-primary icon-google-circles", type = "button">
-        <%= link_to "Fork", {:controller => 'users', :action => 'fork',
+      <!--<div class = "btn btn-primary icon-google-circles", type = "button">
+        <%#= link_to "Fork", {:controller => 'users', :action => 'fork',
          :thisPod => @pod.id}, {:method => :post }%>
-      </div>
+      </div>-->
     </div>
           <h3 class="lead text-center"><%=@pod.name%> has <%=@pod.whales.count %> whales in it</h3>
             <ol class="whales">
