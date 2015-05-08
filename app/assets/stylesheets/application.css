@@ -411,7 +411,7 @@ form button#header-search-submit {
 }
 
 #explanation {
-    padding:175px 0px 0px 20px;
+    padding:175px 40px 0px 20px;
 }
 @media screen and (max-width : 991px){
     #explanation {
