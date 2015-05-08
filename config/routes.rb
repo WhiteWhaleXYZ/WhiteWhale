@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   get 'support' => 'non_user_pages#support'
 
+  get 'team' => 'non_user_pages#team'
+
   get 'users/new'
 
   get    'login'   => 'sessions#new'
