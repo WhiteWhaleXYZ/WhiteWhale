@@ -963,7 +963,8 @@ button:hover {
 .whales li .whale-menu,
 .users li,
 .users li img,
-.users li .whale-menu
+.users li .whale-menu,
+#team img
 {
     -webkit-transition: all 200ms cubic-bezier(1.000, 0.7, 0.405, 1.4);
     -moz-transition: all 200ms cubic-bezier(1.000, 0.7, 0.405, 1.4);
@@ -1006,7 +1007,7 @@ button:hover {
 .navbar #profile-photo:hover,
 .pods li:hover img,
 .whales li:hover img,
-.users li:hover img,{
+.users li:hover img{
     transform: scale(1.12);
     -ms-transform: scale(1.12); /* IE 9 */
     -webkit-transform: scale(1.12); /* Safari */
