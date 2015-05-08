@@ -33,6 +33,10 @@ function readyFn( jQuery ) {
         $(window).scroll(function () {
             $('.push-down-content').css("height", nav_height);
         });
+        var widthofscreen = $( window ).width();
+        if( (widthofscreen > 767) && $("#myCarousel").length ){
+            $('.push-down-content').css("height", "0px");
+        }
     //}
         /*var widthofscreen = $( window ).width();
         var logins_divs = $('.logins').html();
