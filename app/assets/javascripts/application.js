@@ -28,13 +28,23 @@ function readyFn( jQuery ) {
         var nav_height = $('#main-nav .navbar').innerHeight(); //Gets the height of header for processing
         $('.push-down-content').css("height", nav_height);
 
-        console.log(nav_height);
+        //console.log(nav_height);
          //dynamically gets the padding height, the -6 was a helper px to make it exact
         //$('body .push-down-content').add({"height": nav_height+"px !important;"});
         $(window).scroll(function () {
             $('.push-down-content').css("height", nav_height);
         });
     //}
+        var widthofscreen = $( window ).width();
+        var logins_divs = $('.logins').html();
+        console.log(logins_divs);
+        //Hide icons text on small screen size
+        if(widthofscreen < 500){
+            $('.logins a').text("");
+        }
+        else{ //Places original content back unto the screen
+            $('.logins').html(logins_divs);
+        }
 }
 
 //Click functions don't need to be initiated if window is resized, or else flickering will occur
@@ -71,6 +81,19 @@ $( document ).ready(function() {
 
         });
 
+        //Only display if user is scrolled close to the bottom
+        var heightOfScreen = $('body').height(); //Size of the screen
+        var currentScrollPosition = $('body').scrollTop() //Current Scroll position
+        //console.log("height osc screen "+heightOfScreen);
+        //console.log("current scroll pos "+currentScrollPosition);
+        //If the user scrolled 1.3x of the way then it's visible
+        if ( (heightOfScreen / 1.3) > (heightOfScreen - currentScrollPosition) ){
+            $(".back-to-top").fadeIn("slow");
+        }
+        else{
+            $(".back-to-top").fadeOut("slow");
+        }
+
     });
 
     //Scroll Back to Top To Top Funtion
@@ -79,6 +102,8 @@ $( document ).ready(function() {
         $('html,body').animate({scrollTop:0},'slow');
         return false;
     });
+
+
 
     /*$("#hide").click(function(){
         $(".target").hide( "scale", {percent: 200, direction: 'horizontal'}, 2000 );

@@ -1,6 +1,8 @@
-<li id="whale-<%= whale.id %>" class="col-sm-3 col-xs-6 addbottom40">
 
-
+<li id="whale-<%= whale.id %>" class="col-sm-3 col-xs-6 addbottom40
+    <%if !whale.owned? %>
+        not-owned
+    <% end %>">
     <%=image_tag(whale.photo.url(:thumb))%>
     <!--<p class="whale-name push-down20"><%#= link_to whale.pod.name, whale.pod.user %></p>-->
     <p class="whale-name push-down20"><%= link_to whale.name, whale.pod.user %></p>
@@ -9,12 +11,11 @@
         <div class="btn-group" role="group">
           <%=  link_to "Edit", edit_user_pod_whale_path(whale.pod.user.id,whale.pod.id,whale.id) ,{class: "btn btn-primary icon-", type: "button"}%>
         </div>
-        <div class="btn-group" role="group">
+        <!--<div class="btn-group" role="group">
           <a href="#" class="btn btn-primary icon-" type="button">Delete</a>
-        </div>
+        </div>-->
     </div>
     <% end %>
-
 
   <!--<span class="name"> <%#= whale.name%></span>
     <span class="description"><%#= whale.description %></span>
