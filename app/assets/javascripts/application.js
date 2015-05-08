@@ -35,16 +35,16 @@ function readyFn( jQuery ) {
             $('.push-down-content').css("height", nav_height);
         });
     //}
-        var widthofscreen = $( window ).width();
+        /*var widthofscreen = $( window ).width();
         var logins_divs = $('.logins').html();
         console.log(logins_divs);
         //Hide icons text on small screen size
         if(widthofscreen < 500){
-            $('.logins a').text("");
+            //$('.logins a').text("");
         }
         else{ //Places original content back unto the screen
             $('.logins').html(logins_divs);
-        }
+        }*/
 }
 
 //Click functions don't need to be initiated if window is resized, or else flickering will occur
