@@ -130,6 +130,8 @@ $ RAILS_ENV=production bundle exec rake db:migrate
 $ rake sunspot:solr:start
 $ rake sunspot:reindex
 
+
+$ bundle config build.pg --with-pg-config=/usr/pgsql-9.4/bin/pg_config
 #+END_SRC
 * App Server Commands :
 #+BEGIN_SRC:
