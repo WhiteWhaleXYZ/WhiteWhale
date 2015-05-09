@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   get 'support' => 'non_user_pages#support'
 
+  get 'team' => 'non_user_pages#team'
+
   get 'users/new'
 
   get    'login'   => 'sessions#new'
@@ -40,7 +42,7 @@ Rails.application.routes.draw do
 
   get 'signup'  => 'users#new'
 
-  get    'fork'   => 'fork#new'
+  #get    'fork'   => 'fork#new'
   post   'fork'   => 'fork#create'
 
   match 'search' => 'search', via: [:get, :post]
@@ -48,7 +50,7 @@ Rails.application.routes.draw do
   #get ':controller/:action/:user_id/pods'
   #post '/users/:user_id/pods/:pod_id' => 'fork#create'
 
-  post '/users/:user_id/pods/:id(.:format)' => 'pods#fork'
+  post '/users/:id(.:format)' => 'users#fork'
 
   resources :users do 
     resources :pods,  only: [:new, :show, :create, :destroy, :edit, :update] do

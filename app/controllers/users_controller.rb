@@ -47,11 +47,23 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def fork
+      @pod = Pod.find(params[:thisPod])
+      @newPod = @pod.amoeba_dup
+      @user = User.find_by(id: session[:user_id])
+      #@newPod.photo = @pod.photo
+      @newPod.update_attributes(user_id: @user.id)
+      @newPod.save
+      redirect_to current_user# 'new' # this isn't right ? 
+    
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation, :photo)
+                                 :password_confirmation,
+                                 :photo, :description, :location)
   end
 
   # Before filters

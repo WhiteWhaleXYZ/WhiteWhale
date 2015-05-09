@@ -1,31 +1,50 @@
 <% provide(:title, 'All users') %>
 <div class="container">
+    <div class="row clearfix search-page text-center push-down30 addbottom60">
 
 
-
-  
-
-    <div class="row clearfix search-page push-down30 addbottom40">
-
-      <div class="users col-md-4 ">
-        <p class="text-center lead-title">Users</p>
-        <div class="row clearfix push-down20">
-          <%= render @userslist %>
+      <div class="btn-group btn-group-justified text-uppercase addbottom40" role="tablist" id="myTab">
+        <div class="btn-group" role="presentation">
+          <a href="#whales" aria-controls="whales" role="tab" data-toggle="tab" class="btn btn-xl btn-primary">Whales</a>
+        </div>
+        <div class="btn-group" role="presentation">
+          <!-- Need to add a class and this type to this and not sure how ??  {class: "btn btn-xl btn-primary icon-google-circles", type: "button"} -->
+          <a href="#pods" aria-controls="pods" role="tab" data-toggle="tab" class="btn btn-xl btn-primary">Pods</a>
+        </div>
+        <div class="btn-group" role="presentation">
+          <a href="#users" aria-controls="users" role="tab" data-toggle="tab" class="btn btn-xl btn-primary">Users</a>
         </div>
       </div>
 
-      <div class="pods col-md-4">
-        <p class="text-center lead-title">Pods</p>
-        <div class="row clearfix push-down20">
-          <%= render @podslist %>
-        </div>
-      </div>
+      <!--<ul class="btn-group btn-group-justified" role="tablist" id="myTab">
+        <li role="presentation" class="btn btn-xl btn-default active"><a href="#whales" aria-controls="whales" role="tab" data-toggle="tab">Whales</a></li>
+        <li role="presentation" class="btn btn-xl btn-default"><a href="#pods" aria-controls="pods" role="tab" data-toggle="tab">Pods</a></li>
+        <li role="presentation" class="btn btn-xl btn-default"><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Users</a></li>
+      </ul>-->
 
-      <div class="whales col-md-4">
-        <p class="text-center lead-title">Whales</p>
-        <div class="row clearfix push-down20">
-          <%= render @whaleslist %>
+      <div class="tab-content">
+
+        <div role="tabpanel" id="whales" class="tab-pane active fade in whales col-md-12">
+          <p class="text-center lead-title">Whales</p>
+          <div class="row clearfix push-down20">
+            <%= render @whaleslist %>
+          </div>
         </div>
+
+        <div role="tabpanel" id="pods" class="tab-pane fade pods col-md-12">
+          <p class="text-center lead-title">Pods</p>
+          <div class="row clearfix push-down20">
+            <%= render @podslist %>
+          </div>
+        </div>
+
+        <div role="tabpanel" id="users" class="tab-pane fade users col-md-12">
+            <p class="text-center lead-title">Users</p>
+            <div class="row clearfix push-down20">
+              <%= render @userslist %>
+            </div>
+        </div>
+
       </div>
 
     </div>

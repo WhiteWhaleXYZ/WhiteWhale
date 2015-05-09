@@ -7,13 +7,17 @@
       <%= form_for @whales, url: user_pod_whale_path do |f| %>
           <!-- %= render 'shared/error_messages' %> -->
 
+
+
           <%= f.label :name %>
-          <%= f.text_field :name, :placeholder => "Description", class: 'form-control' %>
+          <%= f.text_field :name, :placeholder => "Name", class: 'form-control' %>
 
           <%= f.label :description %>
           <%= f.text_field :description, :placeholder => "Description", class: 'form-control' %>
 
           <%= f.file_field :photo %>
+          <%= f.check_box(:owned) %>
+          <%= f.label(:owned, "I own this whale") %>
 
           <%= f.submit "Save changes", class: "btn btn-default" %>
 

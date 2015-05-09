@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_attached_file :photo,
   :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
   :url => "/system/:attachment/:id/:basename_:style.:extension",
-  :styles => { :medium => "300x300>", :thumb => "150x150>" },
+  :styles => { :medium => "300x300#", :thumb => "150x150#" },
   :default_url => "DefaultUser.png"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 

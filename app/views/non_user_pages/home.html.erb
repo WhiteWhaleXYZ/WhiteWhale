@@ -3,8 +3,8 @@
 <!-- Carousel
 ================================================== -->
 
-<div id="myCarousel" class="carousel slide">
-  <div class="overlay"></div>
+<div id="myCarousel" class="carousel slide" data-interval="false">
+
   <!-- Slider Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -15,33 +15,33 @@
 
   <div id="home-slider" class="carousel-inner">
     <div class="item active">
-      <img src="/assets/Featured_1.png" style="width:100%" class="img-responsive">
-      <div class="container">
+      <div class="carousel-container">
+        <div class="overlay"></div>
         <div class="carousel-caption">
           <h1>White Whale</h1>
           <p>Explore. Interact. Trade Items & Collect</p>
-          <p><a class="btn btn-lg btn-primary" href="http://getbootstrap.com">Learn More</a>
+          <!--<p><a class="btn btn-lg btn-primary" href="http://getbootstrap.com">Learn More</a>-->
           </p>
         </div>
       </div>
     </div>
     <div class="item">
-      <img src="/assets/Featured_4.jpg" style="..." class="img-responsive">
-      <div class="container">
+      <div class="carousel-container">
+        <div class="overlay"></div>
         <div class="carousel-caption">
           <h1>See what others are collecting</h1>
           <p>These featured sets and collections are the hottest things right now.</p>
-          <p><a class="btn btn-lg btn-primary" href="#">Whats Trending?</a></p>
+          <!--<p><a class="btn btn-lg btn-primary" href="#">Whats Trending?</a></p>-->
         </div>
       </div>
     </div>
     <div class="item">
-      <img src="/assets/Featured_5.jpg" style="..." class="img-responsive">
-      <div class="container">
+      <div class="carousel-container">
+        <div class="overlay"></div>
         <div class="carousel-caption">
           <h1>Show off your sets</h1>
           <p>Share and show off that collection of yours to the world!</p>
-          <p><a class="btn btn-lg btn-primary" href="#">Signup Now</a></p>
+          <!--<p><a class="btn btn-lg btn-primary" href="#">Signup Now</a></p>-->
         </div>
       </div>
     </div>
@@ -80,24 +80,81 @@
   <!-- Menu below Registration Form -->
   <div id="post-menu-icons" class="menu-icons row center text-center col-md-10">
     <div class="col-md-12">
-      <div class="col-md-4">
-        <a href="#"><img class="img-circle" src="/assets/Sets_Circled.png" width = 140px>
-        <h2>SETS</h2></a>
-      </div>
-      <div class="col-md-4">
+      <div class="col-md-4 addbottom20">
         <a href="#"><img class="img-circle" src="/assets/Collections_Circled.png" width = 140px>
-        <h2>COLLECTIONS</h2></a>
+          <h2>PODS</h2>
+        </a>
+        <p>
+          Pods are your collection. They are formed when one or more whales are placed together and you'll be able to add, collect, and customize your pod.
+        </p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 addbottom20">
+        <a href="#"><img class="img-circle" src="/assets/Sets_Circled.png" width = 140px>
+          <h2>WHALES</h2>
+        </a>
+        <p>
+          A whale is an individual item. Like Captain Ahab, you're on the search for your white whale, or rather that item you've been looking for.
+        </p>
+      </div>
+      <div class="col-md-4 addbottom20">
         <a href="#"><img class="img-circle" src="/assets/Trending_Circled.png" width = 140px>
-        <h2>TRENDING</h2></a>
+          <h2>TRENDING</h2>
+        </a>
+        <p>
+          You'll be able to see all the trending collections right now and from those, see if there's anything that sparks your interest.
+        </p>
       </div>
     </div>
   </div><!-- /.row -->
-  <div id="home-description" class="row center text-center col-md-8 push-down100 addbottom lead"><p class="">Set up collections — Interact with a community,
-    show off your sets, trade with others, and achieve
-    your goals</p></div>
+
+  <div id="home-description" class="row center text-center col-md-8 push-down100 addbottom lead">
+    <p class="blue">Set up collections — Interact with a community, show off your sets, trade with others, and achieve your goals</p>
+  </div>
 </div><!-- /.container -->
 
+<div class="explanations container-fluid background-white blue addbottom120">
+
+  <div id="whale-term" class = "row clearfix">
+    <div class = "col-md-6">
+     <img class="img-responsive" src="/assets/WhaleExample.jpg">
+    </div >
+    <div id="explanation" class = "col-md-6">
+      <h1>This is a whale</h1>
+      <p>____</p>
+      <p>A whale is an individual item. When two or more whales are put together, they form a pod of whales or rather, your collection.</p>
+    </div>
+  </div>
+
+  <div id="pod-term" class = "row clearfix background-gray">
+    <div id="explanation" class = "col-md-6">
+      <h1>This is a pod</h1>
+      <p>____</p>
+      <p>He'll be able to mix and match different whales together and keep track of what he's collected so far, and because others might like what he collects, they can collect them as well.</p>
+    </div>
+    <div class = "col-md-6">
+      <img class="img-responsive" src="/assets/PodExample.jpg">
+    </div >
+  </div>
+
+  <div id="trending-term" class = "row clearfix">
+    <div class = "col-md-6">
+      <img class="img-responsive" src="/assets/TrendingExample.jpg">
+    </div >
+    <div id="explanation" class = "col-md-6">
+      <h1>Trending</h1>
+      <p>____</p>
+      <p>You can see all the different pods that are trending right now. It could be baseball cards from 1989 or Wong Fu's awkward animal plushies this week, who knows?</p>
+    </div>
+  </div>
 
 
+
+<% if !logged_in? %>
+<div id="sign-up-now" class = "container-fluid">
+  <h1>Ready to Get Started?</h1>
+  <p class="addbottom20">Just click below and you'll be on your way, Captain!</p>
+  <a href="#" id="bottom-signup" data-toggle="modal" data-target="#Signup-Modal" class="btn btn-primary btn-xl col-sm-8 col-xs-12 center"> <p class="icon-opentable login-icons"> SIGNUP </p> </a>
+</div>
+<%end%>
+
+</div>

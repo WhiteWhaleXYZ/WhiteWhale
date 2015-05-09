@@ -1,9 +1,34 @@
-<li id="pod-<%= pod.id %>" class="col-sm-3 col-xs-6">
+<li id="pod-<%= pod.id %>" class="col-sm-3 col-xs-6 addbottom40">
 
-  <%=link_to image_tag(pod.photo.url), user_pod_path(pod.user.id,pod.id)%>
-  <span class="user"><%= link_to pod.name, pod.user %></span>
-  <span class="description"><%= pod.description %></span>
-  <span class="timestamp">
-      Posted <%= time_ago_in_words(pod.created_at) %> ago.
-    </span>
+  <%=link_to image_tag(pod.photo.url(:thumb)), user_pod_path(pod.user.id,pod.id)%>
+  <p class="pod-name push-down20"><%= link_to pod.name, pod.name %></p>
+  <!--We need an if the pod belongs to current user it shouldn't show the user name below-->
+  <p class="user">By <%= link_to pod.user.name, pod.user %></p>
+
+<% if @user != nil %> 
+  <div class="btn-group btn-group-justified pod-menu" role="group" aria-label="">
+    <% if current_user?(pod.user) %>
+      <div class="btn-group" role="group">
+        <%=  link_to "Edit", edit_user_pod_path(current_user.id,pod.id) ,
+        {class: "btn btn-primary icon-", type: "button"}%>
+      </div>
+    <% end %>
+
+    
+    <div class="btn-group" role="group">
+      <div class = "btn btn-primary icon-google-circles", type = "button">
+        <%= link_to "Fork", {:controller => 'users', :action => 'fork',
+         :thisPod => pod.id}, {:method => :post }%>
+      </div>
+    </div>
+
+    <% if current_user?(pod.user) %>
+      <div class="btn-group" role="group">
+        <%= link_to "Delete", user_pod_path(current_user.id,pod.id) , method: :delete,
+                    data: { confirm: "You sure?" } , class: "btn btn-primary icon-", type: "button"%>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
 </li>

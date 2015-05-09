@@ -80,12 +80,36 @@
 @btn-default-border:@gray-base;
 @btn-default-bg:@blue;
 .btn-default{
-  border-width: @border-width;
-  &:hover{background-color: @lighter-blue;}
+  border: none;
+  /*border-width: @border-width;*/
 }
 button{
   .btn;
   .btn-default;
+  &:hover{background-color: @lighter-blue !important;}
+}
+
+.btn-lg {
+  .btn;
+  font-size: 18px;
+  &:hover {
+    background-color: @lighter-blue;
+  }
+}
+
+.btn-xl{
+  .btn-lg;
+  padding: 22px;
+  font-size: 22px;
+  @media screen and (max-width: 500px){
+    font-size: 14px;
+  }
+}
+
+.btn-primary {
+  background-color: @blue;
+  border-color: transparent;
+  &,&:hover{border: none !important;}
   &:hover{background-color: @lighter-blue;}
 }
 
@@ -111,7 +135,8 @@ form{
     /*box-shadow: none; */
   }
   &:focus{
-    box-shadow: inset 3px 3px 1px rgba(28,70,103, 0.9), 0px 0px 20px rgba(87,149,198, 0.075);
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2) outset, 1px 1px 1px rgba(0, 0, 0, 0.2);
+    /*box-shadow: inset 3px 3px 1px rgba(28,70,103, 0.9), 0px 0px 20px rgba(87,149,198, 0.075);*/
   }
   .transition(~"border-color ease-in-out .05s, box-shadow ease-in-out .05s");
 }
@@ -125,8 +150,9 @@ input{
 .logins a{
   .btn;
   .btn-default;
-  &,&:hover{background-color: transparent;};
-  &:hover{border-color: @link-hover-color;};
+  &,&:hover,&:focus,&:active{background-color: transparent;}
+  &:hover{color: @link-hover-color;}
+  padding: 3px 12px;
   /*font-size: ceil((@font-size-base * 1.43));*/ // ~18px
 }
 
@@ -137,10 +163,14 @@ input{
 @nav-tabs-border-color: @link-hover-color;
 .nav-pills{
   & a:hover{
-    border-bottom: 3px solid @nav-tabs-border-color;
+    /*border-bottom: 3px solid @nav-tabs-border-color;*/
   }
 }
-
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form{
+  border: 0;
+  box-shadow: none;
+}
 /*
   ------------------MODAL---------------------------
 */
@@ -161,7 +191,7 @@ input{
 .close{
   font-size: 54px;
   &:hover {
-    background-color: transparent;
+    background-color: transparent !important;
     color: @blue;
   }
 }
@@ -169,19 +199,7 @@ input{
 /*
   ------------------CAROUSEL---------------------------
 */
-.carousel { /*Add little shaddow*/
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.btn-lg {
-  .btn;
-  font-size: 18px;
-  &:hover {
-    background-color: @lighter-blue;
-  }
-}
-
-.btn-primary {
-  background-color: @blue;
-  border-color: transparent;
+/*Add little shaddow*/
+.carousel {
+  /*box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);*/
 }

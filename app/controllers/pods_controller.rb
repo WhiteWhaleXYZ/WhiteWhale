@@ -1,6 +1,6 @@
 class PodsController < ApplicationController
   before_action :logged_in_user, only: [:new,:show, :create, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :correct_user,   only: [:new,:create, :destroy, :edit, :update]
   # before_action :correct_user sets the @user variable 
   
   def show
@@ -12,7 +12,13 @@ class PodsController < ApplicationController
   #def index
   #  @pod=Pod.all
   #end
-  
+  def destroy
+    @user=User.find(params[:user_id])
+    @pod = Pod.find(params[:id])
+    @pod.destroy
+    flash[:success] = "Pod  deleted"
+    redirect_to current_user
+  end
   def new
     @user=User.find(params[:user_id])
     @pod = @user.pods.build(params[:pod])
@@ -52,16 +58,7 @@ class PodsController < ApplicationController
     end  
   end  
 
-  def fork
-      @pod = Pod.find(params[:id])
-      @newPod = @pod.amoeba_dup
-      @user = User.find_by(id: session[:user_id])
-      #@newPod.photo = @pod.photo
-      @newPod.update_attributes(user_id: @user.id)
-      @newPod.save
-      redirect_to current_user# 'new' # this isn't right ? 
-    
-  end
+
 
 
   private

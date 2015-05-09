@@ -61,7 +61,7 @@ group :development do
 
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'spring', '~> 1.3.2'
+  gem 'spring', ' 1.3.3'
   gem 'sqlite3'
 end
 

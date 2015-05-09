@@ -159,7 +159,7 @@ Gemfile INFO :
 * Database creation
 
 * Database initialization
-* Database migrations and console
+* Database migrations and console searching 
     #+BEGIN_SRC
     $ bundle exec rails generate migration AddNameToPods name:string
     $ bundle exec rails generate migration RemoveNameFromPods name:string
@@ -168,6 +168,7 @@ Gemfile INFO :
       >Pods.count
        1
       >Pods.first
+       Whale.find_by name: "stuff"
 
 
     #+END_SRC
@@ -184,5 +185,9 @@ $ sudo systemctl start nginx
 $ bundle exec puma -C config/puma.rb 
 $ rake sunspot:solr:start
 #+END_SRC
+
+* Running Tests
+$ RAILS_ENV=test rake sunspot:solr:run
+
 
 
