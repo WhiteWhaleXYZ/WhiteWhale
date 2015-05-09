@@ -1,4 +1,5 @@
 #+TITLE: APP_INFO
+#+AUTHOR: whitewhale dev crew
 #+BEGIN_SRC
 #+END_SRC
 
@@ -121,16 +122,23 @@ $ bundle install --path vendor/bundle
 $ RAILS_ENV=test bundle install --path vendor/bundle
 $ rake sunspot:solr:start
 $ rake sunspot:reindex
+// Use bundel to run rake 
+$ bundle exec rake sunspot:solr:start
+$ bundle exec rake sunspot:reindex
 
 // Production 
 $ bundle exec rake assets:precompile
+//user this instead of deployment for current setup
 $ RAILS_ENV=production bundle install
-NOT NOW $ bundle install --deployment
+!!NOT NOW $ bundle install --deployment
 $ RAILS_ENV=production bundle exec rake db:migrate
 $ rake sunspot:solr:start
 $ rake sunspot:reindex
+// Use bundel to run rake 
+$ bundle exec rake sunspot:solr:start
+$ bundle exec rake sunspot:reindex
 
-
+// necessary to build the pg gem with bundle command 
 $ bundle config build.pg --with-pg-config=/usr/pgsql-9.4/bin/pg_config
 #+END_SRC
 * App Server Commands :
@@ -158,8 +166,9 @@ Gemfile INFO :
 #+BEGIN_SRC: 
 
 #+END_SRC:
-* Database creation
-
+* Database Type and Gem
+Postgres 9.4 : gem pg 1.18
+Config: /usr/pgsql-9.4/bin/pg_config
 * Database initialization
 * Database migrations and console searching 
     #+BEGIN_SRC
@@ -180,13 +189,27 @@ Gemfile INFO :
 $ bundle exec rake test 
 #+END_SRC:
 * Deployment instructions
-git pull
-* Server-App Startup
+** install process 
+1. git clone :
+2. run nginx 
+3. run solr
+4. run puma
+
+** software dependencies
+1. nginx
+2. postgres
+3. imagemagick
+4. rvm / ruby
+5. independent gems: 
+   - bundle
+
+
+* Web-Server Startup
 #+BEGIN_SRC 
+// after editing /etc/nginx/nginx.conf 
 $ sudo systemctl start nginx
+// or 
 $ sudo systemctl restart nginx
-$ bundle exec puma -C config/puma.rb 
-$ rake sunspot:solr:start
 #+END_SRC
 
 * Running Tests
