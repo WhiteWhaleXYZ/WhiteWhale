@@ -184,6 +184,7 @@ git pull
 * Server-App Startup
 #+BEGIN_SRC 
 $ sudo systemctl start nginx
+$ sudo systemctl restart nginx
 $ bundle exec puma -C config/puma.rb 
 $ rake sunspot:solr:start
 #+END_SRC
