@@ -1,7 +1,7 @@
 <li id="pod-<%= pod.id %>" class="col-sm-3 col-xs-6 addbottom40">
 
   <%=link_to image_tag(pod.photo.url(:thumb)), user_pod_path(pod.user.id,pod.id)%>
-  <p class="pod-name push-down20"><%= link_to pod.name, pod.name %></p>
+  <p class="pod-name push-down20"><%= link_to pod.name, user_pod_path(pod.user_id,pod.id) %></p>
   <!--We need an if the pod belongs to current user it shouldn't show the user name below-->
   <p class="user">By <%= link_to pod.user.name, pod.user %></p>
 
