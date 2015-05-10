@@ -1,4 +1,4 @@
-#+TITLE: APP_INFO
+ls#+TITLE: APP_INFO
 #+AUTHOR: whitewhale dev crew
 #+BEGIN_SRC
 #+END_SRC
@@ -155,7 +155,6 @@ $ bundle exec puma -C config/puma.rb
 $ sudo firewall-cmd --remove-port=8983/tcp
 #+END_SRC
 
-
 * Ruby version
 2.2.0
 * Rails Version
@@ -166,9 +165,18 @@ Gemfile INFO :
 #+BEGIN_SRC: 
 
 #+END_SRC:
-* Database Type and Gem
+* Database 
 Postgres 9.4 : gem pg 1.18
 Config: /usr/pgsql-9.4/bin/pg_config
+#+BEGIN_SRC
+$ sudo systemctl start postgresql-9.4.service // start postgres
+$ sudo systemctl enable postgresql-9.4.service  //auto start on reboot 
+-----------
+output from enable 
+ln -s '/usr/lib/systemd/system/postgresql-9.4.service' '/etc/systemd/system/multi-user.target.wants/postgresql-9.4.service'
+
+#+END_SRC
+
 * Database initialization
 * Database migrations and console searching 
     #+BEGIN_SRC
