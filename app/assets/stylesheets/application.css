@@ -151,7 +151,7 @@ a{
     -ms-filter: grayscale(0.5);
     -o-filter: grayscale(0.5);
     filter: grayscale(0.5);
-    filter: url(grayscale.svg); /* Firefox 4+ */
+    /*filter: url(grayscale.svg); /* Firefox 4+ */
     filter: gray; /* IE 6-9 */
 }
 
