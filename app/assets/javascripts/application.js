@@ -37,6 +37,14 @@ function readyFn( jQuery ) {
         if( (widthofscreen > 767) && $("#myCarousel").length ){
             $('.push-down-content').css("height", "0px");
         }
+
+        //To enhance UX and give user more room, for mobile we make navbar static
+        if( widthofscreen < 499 ){
+            $('.navbar-static-top').removeClass('navbar-fixed-top');
+        }
+        else{
+            $('.navbar-static-top').addClass('navbar-fixed-top');
+        }
     //}
         /*var widthofscreen = $( window ).width();
         var logins_divs = $('.logins').html();
@@ -86,15 +94,17 @@ $( document ).ready(function() {
 
         //Only display if user is scrolled close to the bottom
         var heightOfScreen = $('body').height(); //Size of the screen
-        var currentScrollPosition = $('body').scrollTop() //Current Scroll position
+        var currentScrollPosition = $(window).scrollTop() //Current Scroll position
         //console.log("height osc screen "+heightOfScreen);
         //console.log("current scroll pos "+currentScrollPosition);
-        //If the user scrolled 1.3x of the way then it's visible
-        if ( (heightOfScreen / 1.3) > (heightOfScreen - currentScrollPosition) ){
+        //If the user scrolled 1/3rd of the way then it's visible
+        if ( (heightOfScreen / 1.5) > (heightOfScreen - currentScrollPosition) ){
             $(".back-to-top").fadeIn("slow");
+            //console.log("show me");
         }
         else{
             $(".back-to-top").fadeOut("slow");
+            //console.log("hide me");
         }
 
     });
