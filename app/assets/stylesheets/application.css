@@ -999,7 +999,7 @@ button:hover {
     filter: blur(2px) grayscale(0.4);
 }
 
-#post-menu-icons a .img-circle:hover,
+#post-menu-icons img:hover,
 #social-icons ul li:hover{
     transform: scale(1.2);
     -ms-transform: scale(1.2); /* IE 9 */
