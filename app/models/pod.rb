@@ -11,14 +11,14 @@ class Pod < ActiveRecord::Base
   amoeba do
     enable
 
-    puts "I was here"
+    #puts "I was here"
     nullify :photo_file_name
     nullify :photo_content_type
     nullify :photo_file_size
     nullify :photo_updated_at
 
     customize(lambda { |orig_obj,copy_of_obj|
-        puts "and here"
+        #puts "and here"
         copy_of_obj.photo = orig_obj.photo
     })
   end

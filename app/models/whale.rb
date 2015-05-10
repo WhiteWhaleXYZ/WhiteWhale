@@ -17,6 +17,7 @@ class Whale < ActiveRecord::Base
 		customize(lambda { |orig_obj,copy_of_obj|
 
 			copy_of_obj.photo = orig_obj.photo
+			copy_of_obj.owned = false
 		})
   end
 
