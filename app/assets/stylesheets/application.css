@@ -954,7 +954,7 @@ button:hover {
 /**Global Transitions**/
 /*.menu-icons,*/
 #social-icons ul li,
-#post-menu-icons a .img-circle,
+#post-menu-icons .img-circle,
 .navbar #profile-photo,
 .pods li,
 .pods li img,
@@ -1028,6 +1028,6 @@ button:hover {
 }
 
 .Beta-logo {
-    height: 80px;
+    height: 40px;
     margin-top: -10px;
 }
