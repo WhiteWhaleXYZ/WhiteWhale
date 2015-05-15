@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  #namespace :user do
-  #  root  to: redirect( "/users/:user_id")
-  #end
+  #Routes for entire app
 
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete]
 
@@ -42,16 +40,14 @@ Rails.application.routes.draw do
 
   get 'signup'  => 'users#new'
 
-  #get    'fork'   => 'fork#new'
+
   post   'fork'   => 'fork#create'
 
   match 'search' => 'search', via: [:get, :post]
 
-  #get ':controller/:action/:user_id/pods'
-  #post '/users/:user_id/pods/:pod_id' => 'fork#create'
-
   post '/users/:id(.:format)' => 'users#fork'
 
+  #defines how url will be layed out
   resources :users do 
     resources :pods,  only: [:new, :show, :create, :destroy, :edit, :update] do
       resources :whales,  only: [:new, :show, :create, :destroy, :edit, :update]
