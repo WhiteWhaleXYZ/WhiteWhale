@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  #defones attributes for users including regex to validate email address
   has_many :pods ,dependent: :destroy
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
@@ -10,11 +11,12 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }, allow_blank: true
 
+  #defines what is searchable for pod
   searchable do
     text :name, :email
   end
 
-
+  #allows photos to be attached using paperclip and sets default image and sizing
   has_attached_file :photo,
   :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
   :url => "/system/:attachment/:id/:basename_:style.:extension",

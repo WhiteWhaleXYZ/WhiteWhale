@@ -1,17 +1,16 @@
 class PodsController < ApplicationController
+  #defines what must be true to interact with pod controller
   before_action :logged_in_user, only: [:new,:show, :create, :destroy]
   before_action :correct_user,   only: [:new,:create, :destroy, :edit, :update]
-  # before_action :correct_user sets the @user variable 
-  
+
+  #show pod page
   def show
     @user=User.find(params[:user_id])
     @pod = Pod.find(params[:id])
     @whales = @pod.whales.paginate(page: params[:page])
   end
 
-  #def index
-  #  @pod=Pod.all
-  #end
+  #delete a pod
   def destroy
     @user=User.find(params[:user_id])
     @pod = Pod.find(params[:id])
@@ -19,12 +18,15 @@ class PodsController < ApplicationController
     flash[:success] = "Pod  deleted"
     redirect_to current_user
   end
+
+  #get form
   def new
     @user=User.find(params[:user_id])
     @pod = @user.pods.build(params[:pod])
-    #respond_with(@pod)
+    
   end
 
+  #create new pod
   def create
     @pod = current_user.pods.build(pod_params)
     if @pod.save
@@ -35,10 +37,12 @@ class PodsController < ApplicationController
     end
   end
   
+  #get edit page
   def edit
     @pod = Pod.find(params[:id])
   end
 
+  #update info from edit page
   def update
     @user= User.find(params[:user_id])
     @pod = Pod.find(params[:id])
@@ -50,6 +54,7 @@ class PodsController < ApplicationController
     end
   end
 
+  #allow tagging
   def tagged
     if params[:tag].present? 
       @pods = Pods.tagged_with(params[:tag])
@@ -62,7 +67,7 @@ class PodsController < ApplicationController
 
 
   private
-
+  #what you can interact with
   def pod_params
     params.require(:pod).permit( :user_id, :name, :description, :photo, :tag_list) 
   end
