@@ -1,4 +1,7 @@
 Rails.application.configure do
+  # Author: whitewhale
+  # File: test.rb
+  # Application settings for the test env
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's

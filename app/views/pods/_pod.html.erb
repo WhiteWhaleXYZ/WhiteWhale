@@ -1,3 +1,9 @@
+<!--
+    Author: whitewhale
+    File _pod.html.erb
+    -----------------
+    html stub for including  pods into other pages
+  -->
 <li id="pod-<%= pod.id %>" class="col-sm-3 col-xs-6 addbottom40">
 
   <%=link_to image_tag(pod.photo.url(:thumb)), user_pod_path(pod.user.id,pod.id)%>
