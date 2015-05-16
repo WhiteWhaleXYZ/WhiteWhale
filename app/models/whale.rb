@@ -7,9 +7,8 @@ class Whale < ActiveRecord::Base
 	validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
 
-  #allows for deep copy of whales in forking process
+       #allows for deep copy of whales in forking process
   	amoeba do
-		amoeba do
 			enable
 	
 			 #clears fields of old info
@@ -26,7 +25,7 @@ class Whale < ActiveRecord::Base
 			})
   	end
 	
-  	#defines what is searchable for whale
+
   	searchable do
   	  text :name, :description
   	end

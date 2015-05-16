@@ -1,4 +1,7 @@
 Rails.application.configure do
+  # Author: whitewhale
+  # File: production.rb
+  # Application settings for the production env
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

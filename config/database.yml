@@ -1,3 +1,7 @@
+# Author: whitewhale
+# File: database.yml
+# database description file for application
+
 # SQLite version 3.x
 #   gem install sqlite3
 #
