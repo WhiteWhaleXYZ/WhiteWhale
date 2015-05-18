@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  
   def search
     @query = User.search do
       fulltext params[:search]

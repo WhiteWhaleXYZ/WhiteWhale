@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   get 'team' => 'non_user_pages#team'
 
-  get 'users/new'
+  get '/users/:id/recommend' => 'user_pages#recommend'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
