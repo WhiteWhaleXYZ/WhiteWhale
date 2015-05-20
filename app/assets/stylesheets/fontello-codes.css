@@ -1,4 +1,8 @@
-
+/*
+ * if you like to use your own @font-face rules, but still wish to benefit of css generation. That can be very
+ * convenient for automated assets build systems. When you need to update font - no needs to manually edit files, just
+ * override old version with archive content.
+ */
 .icon-google-circles:before { content: '\e800'; } /* '' */
 .icon-heart:before { content: '\e801'; } /* '' */
 .icon-instagram-circled:before { content: '\e802'; } /* '' */

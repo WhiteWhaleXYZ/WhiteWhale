@@ -713,6 +713,8 @@ button:hover {
     -ms-transform: scale(1.2); /* IE 9 */
     -webkit-transform: scale(1.2); /* Safari */
 }
+
+/* styling for some pictures and user icons on home page, grows slightly larger when the mouse hovers over them */
 .navbar #profile-photo:hover,
 .pods li:hover img,
 .whales li:hover img,
@@ -722,30 +724,19 @@ button:hover {
     -webkit-transform: scale(1.12); /* Safari */
 }
 
+/* styling for pictures on team page, grows slightly larger when the mouse hovers over them */
 #team img:hover {
     transform: scale(1.12);
     -ms-transform: scale(1.12); /* IE 9 */
     -webkit-transform: scale(1.12); /* Safari */
 }
 
-
-
-
-
-/* ------------------------------------------------
- Tone you gota do these all the way down, everything else above is done
--------------------------------------------------- */
-
 #session_remember_me {
     width: auto;
     /*margin-left: 0;*/
 }
 
-
-.icon-collection {
-    padding-right:30px;
-}
-
+/* Styling for the image on the 404 page */
 .lost-fisherman {
     padding-top:125px;
     text-align: center;
@@ -753,6 +744,11 @@ button:hover {
     margin-left: auto;
 }
 
+/*
+ * User's picture on user profile page
+ * Crops the picture into a circular shape and includes a banner of the default ocean cover photo.
+ * Contains user's name or the current pod's username underneath.
+ */
 .card {
     /*padding-top: 20px;
     margin: 10px 0 20px 0;*/

@@ -1,3 +1,4 @@
+/* if you need IE7 support, but still don't wish to put char codes directly into html*/
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'fontello';
   font-style: normal;
