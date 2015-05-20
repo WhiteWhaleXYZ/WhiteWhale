@@ -1,4 +1,6 @@
-ls#+TITLE: APP_INFO
+##This is a simple info page for the White Whale group. Contains many
+##different commands we use for git, digital ocean, etc. 
+#+TITLE: APP_INFO
 #+AUTHOR: whitewhale dev crew
 #+BEGIN_SRC
 #+END_SRC

@@ -23,7 +23,6 @@ class PodsController < ApplicationController
   def new
     @user=User.find(params[:user_id])
     @pod = @user.pods.build(params[:pod])
-    
   end
 
   #create new pod
@@ -62,9 +61,6 @@ class PodsController < ApplicationController
       @pods = Pods.postall
     end  
   end  
-
-
-
 
   private
   #what you can interact with
