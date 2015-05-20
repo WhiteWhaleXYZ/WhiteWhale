@@ -1,13 +1,13 @@
+<!--Edit page for whale so we can supply it name, description, photo, and checkmark if we own it-->
 <div class="container">
   <% provide(:title, "Edit whale") %>
   <p class="lead-title text-center text-capitalize addbottom40">Update your whale</p>
 
   <div class="row clearfix">
     <div class="col-md-8 center text-capitalize">
+      <!--Actual form for the editing-->
       <%= form_for @whales, url: user_pod_whale_path do |f| %>
           <!-- %= render 'shared/error_messages' %> -->
-
-
 
           <%= f.label :name %>
           <%= f.text_field :name, :placeholder => "Name", class: 'form-control' %>

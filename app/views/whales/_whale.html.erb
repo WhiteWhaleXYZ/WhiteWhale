@@ -1,11 +1,14 @@
 
+<!--Individual whale item-->
 <li id="whale-<%= whale.id %>" class="col-sm-3 col-xs-6 addbottom40
     <%if !whale.owned? %>
         not-owned
     <% end %>">
+    <!--Spits out our thumbnail image for our whale-->
     <%=image_tag(whale.photo.url(:thumb))%>
-    <!--<p class="whale-name push-down20"><%#= link_to whale.pod.name, whale.pod.user %></p>-->
+    <!--Spits out the name of our whale and links it to the pod that whale belongs to-->
     <p class="whale-name push-down20"><%= link_to whale.name, whale.pod.user %></p>
+    <!--If the whale belongs to the current user, then they should be able to edit it-->
     <% if current_user?(whale.pod.user) %>
     <div class="btn-group btn-group-justified whale-menu" role="group" aria-label="">
         <div class="btn-group" role="group">
@@ -17,9 +20,4 @@
     </div>
     <% end %>
 
-  <!--<span class="name"> <%#= whale.name%></span>
-    <span class="description"><%#= whale.description %></span>
-    <span class="timestamp">
-      Posted <%#= time_ago_in_words(whale.created_at) %> ago.
-    </span>-->
 </li>

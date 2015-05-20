@@ -1,8 +1,10 @@
+<!--Page that lets us create a new whale into our pod-->
 <% provide(:title, 'Create New Whale') %>
 <h1>Create New Whale</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    <!--Form takes the whale name, checkmark if we own it, the description, and its photo-->
     <%= form_for(@whale, :url=>user_pod_whales_path(@user, @pod)) do |f| %>
 
         <%= f.label :name %>
