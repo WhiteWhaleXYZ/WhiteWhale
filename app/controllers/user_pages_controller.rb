@@ -3,7 +3,9 @@ class UserPagesController < ApplicationController
   end
 
   # Recommending for users 
-  # TODO: make it work 
+  # TODO: slighty bugged, recommends too many collections
+  # takes a user's list of pods, grabs a name of one of the pods,
+  # and recommends pods based on that name 
   def recommend
     @user = current_user
     @pods = @user.pods

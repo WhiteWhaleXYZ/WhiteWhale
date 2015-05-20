@@ -2,10 +2,13 @@ Rails.application.routes.draw do
 
   #Routes for entire app
 
+  #route for the 404 page, redirects if there on any non-existant page
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete]
 
+  #if the user cannot access a page, it sends them home
   root  :to => 'non_user_pages#home'
      
+  #gets for the various pages
   get 'sessions/new'
 
   get 'non_user_pages/404'

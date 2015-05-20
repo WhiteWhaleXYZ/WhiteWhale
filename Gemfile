@@ -51,7 +51,9 @@ gem 'sunspot_rails'
 
 group :development do 
   gem 'capistrano', '~> 3.1.0'
+  #better error page informations for development
   gem 'better_errors'
+  #the searching gem for development use
   gem 'sunspot_solr'
   # Capistrano tasks to manage puma app server
   gem 'capistrano3-puma' , require: false
@@ -62,10 +64,12 @@ group :development do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring', ' 1.3.3'
+  #sqlite gem during development
   gem 'sqlite3'
 end
 
 group  :production do
+      #postgres
       gem 'pg'
 end
 
