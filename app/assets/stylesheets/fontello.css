@@ -1,3 +1,8 @@
+/* different kinds of css, for all situations. Should be ok with twitter bootstrap. Also, you can skip <i> style and
+ * assign icon classes directly to text elements, if you don't mind about IE7.
+ */
+
+/* Contains formatting for custom fontello fonts from source directory listed in fonts folder */
 @font-face {
   font-family: 'fontello';
   src: url('../fonts/fontello.eot?51462879');
@@ -18,7 +23,7 @@
   }
 }
 */
- 
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
@@ -49,7 +54,7 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
+
 .icon-google-circles:before { content: '\e800'; } /* '' */
 .icon-heart:before { content: '\e801'; } /* '' */
 .icon-instagram-circled:before { content: '\e802'; } /* '' */

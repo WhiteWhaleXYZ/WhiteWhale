@@ -1,3 +1,9 @@
+/*
+ * basic css file, but with embedded WOFF font, to avoid CORS issues in Firefox and IE9+, when fonts are hosted on the
+ * separate domain. We strongly recommend to resolve this issue by `Access-Control-Allow-Origin` server headers. But if
+ * you're ok with this hack - this file is for you. Note, that data url moved to separate @font-face to avoid problems
+ * with <IE9, when string is too long.
+ */
 @font-face {
   font-family: 'fontello';
   src: url('../fonts/fontello.eot?41670983');

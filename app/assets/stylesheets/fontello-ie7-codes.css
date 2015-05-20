@@ -1,4 +1,8 @@
-
+/*
+ * if you like to use your own @font-face rules, but still wish to benefit of css generation. That can be very
+ * convenient for automated assets build systems. When you need to update font - no needs to manually edit files, just
+ * override old version with archive content.
+ */
 .icon-google-circles { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
 .icon-heart { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;&nbsp;'); }
 .icon-instagram-circled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe802;&nbsp;'); }
